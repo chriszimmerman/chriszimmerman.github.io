@@ -1,14 +1,14 @@
-Semantic Versioning
+# Semantic Versioning
 
 At work, the topic of semantic versioning came up. I decided to do some research on the topic since I had not heard of the term before. 
 
-What is semantic versioning?
+## What is semantic versioning?
 
-Semantic versioning is convention for version naming for your products, whether they be libraries, APIs, etc. Its purpose is to prevent difficulties in releasing new versions of your product. It may be difficult to release a new version of your product if you have to wait for new versions of your product's dependencies to be released. You may also be reluctant to adopt new versions of packages or libraries since you might not know if a new version will break your existing code. Semantic versioning allows developers to easily reason about when it is and isn't appropriate to adopt a new version of a dependency.
+Semantic versioning is a convention for version-naming for your products, whether they be libraries, APIs, etc. Its purpose is to prevent difficulties in releasing new versions of your product. It may be difficult to release a new version of your product if you have to wait for new versions of your product's dependencies to be released. You may also be reluctant to adopt new versions of packages or libraries since you might not know if a new version will break your existing code. Semantic versioning allows developers to easily reason about when it is and isn't appropriate to adopt a new version of a dependency.
 
 For semantic versioning, your product must define a public API. The basic format for your API's version should be as follows:
 
-	major.minor.patch
+	`major.minor.patch`
 
 For example, let's say there is a library called Yarner, a string manipulation library. It's current version is 2.3.5. This means that the major version is 2, the minor version is 3, and the patch version is 5.
 
@@ -20,7 +20,7 @@ The significance of the numbers is as follows:
 			Patch number is reset to zero.
 	-patch - incrmented when non-API-breaking bug fixes are made.
 
-Example
+## Example
 
 I have a library called AreaCalculator which has a public method, CalculateRectangleArea. It is currently version 1.2.0. It has the following signature: 
 
@@ -34,7 +34,7 @@ This was fixed and now it properly calculates the area by returning length * wid
 
 Fixing this bug doesn't break the interface of CalculateRectangleArea and it's not a new feature, so the release containing this fix can be versioned as 1.2.1.
 
-Another example
+## Another example
 
 For my social website Stalk.me, I have provided an API v1.3.2 with which clients can find Users via the public FindPeopleNearby method. FindPeopleNearby takes a FindUserRequest object as its parameter. It has two fields, City and RangeInMiles.
 
@@ -61,10 +61,10 @@ public class FindUserRequest {
 	public int RangeInMiles {get; set;}
 }
 
-Conclusion
+## Conclusion
 
 I hope these examples have illustrated how semantic versioning works and why you would want to adhere to it. The following link is how I learned about semantic versioning and is essentially what I have discussed in this blog, plus more:
 
-http://semver.org
+[Semantic Versioning](http://semver.org)
 
 Thanks for reading!
