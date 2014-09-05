@@ -42,28 +42,31 @@
 
 <p>For my social website Stalk.me, I have provided an API v1.3.2 with which clients can find Users via the public FindPeopleNearby method. FindPeopleNearby takes a FindUserRequest object as its parameter. It has two fields, City and RangeInMiles.</p>
 
-<p>//v1.3.2
+<pre><code>//v1.3.2
 public class FindUserRequest {
 	public string City { get; set; }
 	public int RangeInMiles { get; set; }
-}</p>
+}
+</code></pre>
 
 <p>During development, I decided to utilize state in addition to city for location since towns with the same name can be in different states. I have added a new field, State, that clients can put on their request. This doesn’t break any functionality, so I can increase the minor version, which results in the patch version resetting to zero.</p>
 
-<p>//v1.4.0
+<pre><code>//v1.4.0
 public class FindUserRequest {
 	public string City { get; set; }
 	public string State { get; set; }
 	public int RangeInMiles { get; set; }
-}</p>
+}
+</code></pre>
 
 <p>During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone’s location. However, clients may be depending on City and State existing to find location in their clients. I’m going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserReuqest:  </p>
 
-<p>//v2.0.0
+<pre><code>//v2.0.0
 public class FindUserRequest {
 	public string ZipCode {get; set;}
 	public int RangeInMiles {get; set;}
-}</p>
+}
+</code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
 
