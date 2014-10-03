@@ -2,52 +2,12 @@
 layout: default
 ---
 
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Chriszimmerman.github.io by chriszimmerman</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-  </head>
-  <body>
-	<div id="header">
-		<nav>
-			<li class="fork"><a href="https://github.com/chriszimmerman">View On GitHub</a></li>
-        </nav>
+{% for post in site.posts %}
+	<div class="post-list-item">
+		<div class="date-section">
+			{{ post.date | date: "%A %B %-d, %Y" }}
+		</div>
+		<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
 	</div>
-
-	<div class="wrapper">
-		<section>
-			<div id="title">
-				<h1>House of Black and White</h1>
-				<p></p>
-				<hr>
-				<span class="credits left">Project maintained by <a href="https://github.com/chriszimmerman">chriszimmerman</a></span>
-				<span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-			</div>
-		</section>
-
-		{% for post in site.posts %}
-			<div class="post-list-item">
-				<div class="date-section">
-					{{ post.date | date: "%A %B %-d, %Y" }}
-				</div>
-				<h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-			</div>
-			<hr/>
-		{% endfor %}
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-</body>
-</html>
+	<hr/>
+{% endfor %}

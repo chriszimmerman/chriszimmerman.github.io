@@ -1,3 +1,8 @@
+---
+layout: post
+title: Semantic Versioning
+---
+
 # Semantic Versioning
 
 At work, the topic of semantic versioning came up. I decided to do some research on the topic since I had not heard of the term before. 
