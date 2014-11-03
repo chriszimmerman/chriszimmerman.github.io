@@ -41,7 +41,9 @@ For whatever dumb reason, CalculateRectangleArea was calculating the area by mul
 
 	return length * length;
  
-This was fixed and now it properly calculates the area by returning length * width.
+This was fixed and now the function correctly calculates the rectangle's area by returning the rectangle's length times width:
+	
+	return length * width;
 
 Fixing this bug doesn't break the interface of CalculateRectangleArea and it's not a new feature, so the release containing this fix can be versioned as 1.2.1.
 
