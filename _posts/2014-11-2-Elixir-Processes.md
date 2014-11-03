@@ -1,4 +1,10 @@
-Proceses In Elixir
+---
+layout: post
+title: Proceses In Elixir
+---
+
+Processes In Elixir
+===================
 
 Elixir makes use to the Erlang VM to create and manage many processes. Concurrency is easy and inexpensive in Elixir.
 
@@ -27,9 +33,10 @@ proctut.exs
 
 		def get_message do
 			receive do
-				{sender, msg} -> IO.puts "#{inspect(self)} here."
-								 IO.puts "Received a message from #{inspect(sender)}." 
-								 IO.puts "It says \"#{msg}\"."
+				{sender, msg} -> 
+					IO.puts "#{inspect(self)} here."
+					IO.puts "Received a message from #{inspect(sender)}." 
+					IO.puts "It says \"#{msg}\"."
 			end
 		end
 	end
