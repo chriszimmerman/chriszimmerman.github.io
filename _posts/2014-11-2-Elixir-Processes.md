@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Proceses In Elixir
+title: Processes In Elixir
 ---
 
 Processes In Elixir
@@ -12,7 +12,7 @@ You can make a new process in Elixir by using the spawn function:
 
 	spawn(module, :function_name, [optional_arguments])
 
-The spawn function takes a module and a function from said module, as well as a list of optional arguments to pass to the function. Spawn retruns a process identifier, or pid. A pid consists of three numbers which are used to identify a process. If you type `self` into iex, you'll find that iex itself runs as an elixir process.
+The spawn function takes a module and a function from said module, as well as a list of optional arguments to pass to the function. Spawn returns a process identifier, or pid. A pid consists of three numbers which are used to identify a process. If you type `self` into iex, you'll find that iex itself runs as an elixir process.
 
 	iex(1)> self
 	#PID<0.53.0>

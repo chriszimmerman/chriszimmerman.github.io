@@ -29,7 +29,7 @@ The significance of the numbers is as follows:
 			Minor and patch numbers are reset to zero.
 	-minor - incremented when non-API-breaking changes are made.
 			Patch number is reset to zero.
-	-patch - incrmented when non-API-breaking bug fixes are made.
+	-patch - incremented when non-API-breaking bug fixes are made.
 
 ## Example
 
