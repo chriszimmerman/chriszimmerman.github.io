@@ -28,9 +28,50 @@ Elixir's syntax is a combination of Ruby and Erlang. This makes sense since Jose
 
 In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.   
 
-Let's take a look at some code!
+# Let's take a look at some code
 
-	# Comment lines in Elixir start with a hashtag like in Ruby
+Elixir has variables
+
+	age = 25
+
+	name = "Anthony Bourdain"
+
+	isChef = true
+
+One thing that's different about Elixir from most langauges is that the = operator is NOT the assignment operator. It's a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.
+
+	defmodule Coolness do
+		def coolness name do
+			case name do
+				"Chris" -> "You're pretty cool!"
+				"Nick" -> "You're okay"
+				"Dan" -> "Who is Dan?"
+				_ -> "You be lame"
+			end
+		end
+	end
+
+An aside: one little weird thing about Elixir is that if you have named functions that aren't lambdas, they must be contained within a module. Here I have a module named Coolness that contains the function coolness. 
+
+Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.
+
+	iex(1)> [1, x, 3] = [1, 2, 3]
+	[1, 2, 3]
+	iex(2)>x
+	2
+
+In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.
+
+	square = fn number -> number * number end
+
+	add = fn number1, number2 -> number1 + number2 end
+
+	IO.puts square.(3)	# 9
+
+	IO.puts add.(8,9)	# 17
+
+	# Named variables for comparison.
+	# Comment lines in Elixir start with a hashtag like in Ruby.
 	defmodule MyMath do
 		def square number do
 			number * number
@@ -41,11 +82,11 @@ Let's take a look at some code!
 		end
 	end
 
-One little weird thing about Elixir is that if you have named functions that aren't lambdas, they must be contained within a module. Here I have a module named MyMath that contains two functions: square and add.
 
 Language background
 Language features
 Processes/concurrency/multithreading
+iex
 Macros
 Testing framework - ExUnit
 Mix

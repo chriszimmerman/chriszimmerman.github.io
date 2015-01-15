@@ -60,7 +60,7 @@
 		Minor and patch numbers are reset to zero.
 -minor - incremented when non-API-breaking changes are made.
 		Patch number is reset to zero.
--patch - incrmented when non-API-breaking bug fixes are made.
+-patch - incremented when non-API-breaking bug fixes are made.
 </code></pre>
 
 <h2 id="example">Example</h2>
@@ -103,7 +103,7 @@ public class FindUserRequest {
 }
 </code></pre>
 
-<p>During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone’s location. However, clients may be depending on City and State existing to find location in their clients. I’m going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserReuqest:  </p>
+<p>During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone’s location. However, clients may be depending on City and State existing to find location in their clients. I’m going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserRequest:  </p>
 
 <pre><code>//v2.0.0
 public class FindUserRequest {
