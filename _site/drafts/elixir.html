@@ -17,12 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   </head>
   <body>
-	<div id="header">
-		<nav>
-			<li class="fork"><a href="https://github.com/chriszimmerman">View On GitHub</a></li>
-        </nav>
-	</div>
-
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -57,7 +51,7 @@
 
 <p>In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.   </p>
 
-<p>Let’s take a look at some code!</p>
+<h1 id="lets-take-a-look-at-some-code">Let’s take a look at some code</h1>
 
 <p>Elixir has variables</p>
 
@@ -68,15 +62,42 @@ name = "Anthony Bourdain"
 isChef = true
 </code></pre>
 
-<p>square = fn number -&gt; number * number end</p>
+<p>One thing that’s different about Elixir from most langauges is that the = operator is NOT the assignment operator. It’s a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.</p>
 
-<p>add = fn number1, number2 -&gt; number1 + number2 end</p>
+<pre><code>defmodule Coolness do
+	def coolness name do
+		case name do
+			"Chris" -&gt; "You're pretty cool!"
+			"Nick" -&gt; "You're okay"
+			"Dan" -&gt; "Who is Dan?"
+			_ -&gt; "You be lame"
+		end
+	end
+end
+</code></pre>
 
-<p>IO.puts square.(3)	# 9</p>
+<p>An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named Coolness that contains the function coolness. </p>
 
-<p>IO.puts add.(8,9)	# 17</p>
+<p>Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.</p>
 
-<pre><code># Comment lines in Elixir start with a hashtag like in Ruby
+<pre><code>iex(1)&gt; [1, x, 3] = [1, 2, 3]
+[1, 2, 3]
+iex(2)&gt;x
+2
+</code></pre>
+
+<p>In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.</p>
+
+<pre><code>square = fn number -&gt; number * number end
+
+add = fn number1, number2 -&gt; number1 + number2 end
+
+IO.puts square.(3)	# 9
+
+IO.puts add.(8,9)	# 17
+
+# Named variables for comparison.
+# Comment lines in Elixir start with a hashtag like in Ruby.
 defmodule MyMath do
 	def square number do
 		number * number
@@ -88,11 +109,10 @@ defmodule MyMath do
 end
 </code></pre>
 
-<p>One little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named MyMath that contains two functions: square and add.</p>
-
 <p>Language background
 Language features
 Processes/concurrency/multithreading
+iex
 Macros
 Testing framework - ExUnit
 Mix</p>
