@@ -66,7 +66,7 @@ During development, I decided to utilize state in addition to city for location 
 		public int RangeInMiles { get; set; }
 	}
 
-During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone's location. However, clients may be depending on City and State existing to find location in their clients. I'm going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserReuqest:  
+During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone's location. However, clients may be depending on City and State existing to find location in their clients. I'm going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserRequest:  
 
 	//v2.0.0
 	public class FindUserRequest {
