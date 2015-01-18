@@ -34,9 +34,9 @@ If you want to mess around with some of the code examples you'll see in a bit, y
 
 # iex - Interactive Elixir
 
-iex (or Interactive Elixir) is Elixir's repl. If you have Elixir installed, you can start iex by typing the command `iex`.
+iex (or Interactive Elixir) is Elixir's repl. If you have Elixir installed, you can start iex by typing the command `iex`
 
-iex has many useful helper functions. The most useful one is probably the help function: `h`. `h` will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, `h Enum.map` gets you the following output:
+iex has many useful helper functions. The most useful one is probably the help function `h` which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, `h Enum.map` gets you the following output:
 
                             def map(collection, fun)
 
