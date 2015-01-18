@@ -15,18 +15,45 @@ Elixir is a functional programming language created by Jose Valim in 2012. Elixi
 # Language goals
 When Jose started creating Elixir, he had three goals in mind: compatibility, productivity, and extensibility.
 
-## Compatibility
+### Compatibility
 In order to take advantage of Erlang's features such as its concurrency model and libraries, Elixir strives to stay compatible with the underlying Erlang VM. This allows Elixir code to compile to Erlang byte code without a performance degredation. 
 
-## Productivity
+### Productivity
 
 The core of the Elixir language is very small. This allows a lot of the language to be written in itself, making it a homoiconic language. Many of the language's constructs have been written using macros. This allows developers to easily extend the language using their own macros for their own purposes, making it easy to build things like DSLs.
 
 Elixir's syntax is a combination of Ruby and Erlang. This makes sense since Jose was on the core Rails team. Some people say that Elixir improves upon Erlang's "weird" syntax. I have virtually no experience in writing Erlang code, so I don't have an informed opinion on that. The syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable to program in. I get things done in Ruby. So this is a plus for me. 
 
-## Extensibility
+### Extensibility
 
 In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.   
+
+# Obtaining Elixir
+
+If you want to mess around with some of the code examples you'll see in a bit, you can grab the latest release of Elixir from [elixir-lang.org](http://elixir-lang.org/). You can probably also get it from the package manager of your choice. 
+
+# iex - Interactive Elixir
+
+iex (or Interactive Elixir) is Elixir's repl. If you have Elixir installed, you can start iex by typing the command `iex`.
+
+iex has many useful helper functions. The most useful one is probably the help function: `h`. `h` will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, `h Enum.map` gets you the following output:
+
+                            def map(collection, fun)
+
+	Returns a new collection, where each item is the result of invoking fun on each
+	corresponding item of collection.
+
+	For dicts, the function expects a key-value tuple.
+
+	Examples
+
+	┃ iex> Enum.map([1, 2, 3], fn(x) -> x * 2 end)
+	┃ [2, 4, 6]
+	┃
+	┃ iex> Enum.map([a: 1, b: 2], fn({k, v}) -> {k, -v} end)
+	┃ [a: -1, b: -2]
+
+Another commonly used helper function is for compiling files: `c`. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: `c "primes.ex"` 
 
 # Let's take a look at some code
 
@@ -70,7 +97,7 @@ In Elixir, functions can be assigned to variables. These are known as lambdas. L
 
 	IO.puts add.(8,9)	# 17
 
-	# Named variables for comparison.
+	# Named functions for comparison.
 	# Comment lines in Elixir start with a hashtag like in Ruby.
 	defmodule MyMath do
 		def square number do
@@ -83,10 +110,8 @@ In Elixir, functions can be assigned to variables. These are known as lambdas. L
 	end
 
 
-Language background
 Language features
 Processes/concurrency/multithreading
-iex
 Macros
 Testing framework - ExUnit
 Mix
