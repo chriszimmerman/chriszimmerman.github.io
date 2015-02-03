@@ -80,6 +80,9 @@ One thing that's different about Elixir from most langauges is that the = operat
 
 An aside: one little weird thing about Elixir is that if you have named functions that aren't lambdas, they must be contained within a module. Here I have a module named Coolness that contains the function coolness. 
 
+	iex(1)> Coolness.coolness "Dan"
+	"Who is Dan?"
+
 Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.
 
 	iex(1)> [1, x, 3] = [1, 2, 3]
@@ -109,10 +112,41 @@ In Elixir, functions can be assigned to variables. These are known as lambdas. L
 		end
 	end
 
+# Macros
+
+Elixir has support for macros. With a small core language, it's very easy to extend the language for one's own specific purposes via macros. One benefit of macros is that it's easy to create a custom domain specific language. 
+
+The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In ruby, there is a keyword, `unless` that allows one to write conditionals that will execute if the statement in the `unless` clause is not true. Basically, think of it as an 'if not' statement.
+
+	defmodule MacroExample do
+		defmacro unless(condition, clauses) do
+			do_this_if_false = Keyword.get(clauses, :do, nil)
+			do_this_if_true = Keyword.get(clauses, :else, nil)
+
+			quote do
+				case unquote condition do
+					expression when expression in [false, nil] -> unquote do_this_if_false
+					_																					 -> unquote do_this_if_true
+				end
+			end
+		end
+	end
+
+	require MacroExample
+
+	MacroExample.unless 5 == 3 do
+		IO.puts "5 != 3"
+	else
+		IO.puts "5 == 3"
+	end
+
+What's going on here? The `do_this_if_false` and `do_this_if_true` variables grab the code that should be executed for each respective clause. Here's where things get weird for those not familiar with macros. 
+
+The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, that's the condition that's evaluated to determine which clause to execute. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
+
 
 Language features
 Processes/concurrency/multithreading
-Macros
 Testing framework - ExUnit
 Mix
 
