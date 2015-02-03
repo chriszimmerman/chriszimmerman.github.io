@@ -152,7 +152,9 @@ The `quote` function takes a block of code and stores it as its internal represe
 # Mix
 
 [Elixir-lang.org](http://elixir-lang.org)
+
 [Elixir Wikipedia article](http://en.wikipedia.org/wiki/Elixir_%28programming_language%29)
+
 [Wikipedia entry on concurrency](http://en.wikipedia.org/wiki/Erlang_%28programming_language%29#Concurrency_and_distribution_orientation)
+
 [Elixir language design goals](elixir-lang.org/blog/2013/08/08/elixir-design-goals/)
-http://en.wikipedia.org/wiki/Homoiconicity
