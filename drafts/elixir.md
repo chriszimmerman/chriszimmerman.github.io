@@ -145,12 +145,14 @@ What's going on here? The `do_this_if_false` and `do_this_if_true` variables gra
 The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, that's the condition that's evaluated to determine which clause to execute. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
 
 
-Language features
-Processes/concurrency/multithreading
-Testing framework - ExUnit
-Mix
+# Processes/concurrency/multithreading
 
-http://en.wikipedia.org/wiki/Elixir_%28programming_language%29
-http://en.wikipedia.org/wiki/Erlang_%28programming_language%29#Concurrency_and_distribution_orientation
-elixir-lang.org/blog/2013/08/08/elixir-design-goals/
+# Testing framework - ExUnit
+
+# Mix
+
+[Elixir-lang.org](http://elixir-lang.org)
+[Elixir Wikipedia article](http://en.wikipedia.org/wiki/Elixir_%28programming_language%29)
+[Wikipedia entry on concurrency](http://en.wikipedia.org/wiki/Erlang_%28programming_language%29#Concurrency_and_distribution_orientation)
+[Elixir language design goals](elixir-lang.org/blog/2013/08/08/elixir-design-goals/)
 http://en.wikipedia.org/wiki/Homoiconicity
