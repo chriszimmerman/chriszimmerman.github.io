@@ -132,24 +132,31 @@ The following example is the hello world of macros, as well as the extent of my 
 		end
 	end
 
-	require MacroExample
-
-	MacroExample.unless 5 == 3 do
-		IO.puts "5 != 3"
-	else
-		IO.puts "5 == 3"
-	end
-
 What's going on here? The `do_this_if_false` and `do_this_if_true` variables grab the code that should be executed for each respective clause. Here's where things get weird for those not familiar with macros. 
 
 The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, that's the condition that's evaluated to determine which clause to execute. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
 
-
+	iex(1)> require MacroExample
+	nil
+	iex(2)> MacroExample.unless 5 != 3 do
+	...(2)> IO.puts "5 == 3"
+	...(2)> else
+	...(2)> IO.puts "5 != 3"
+	...(2)> end
+	{% raw %}
+	{{:., [line: 3], [{:__aliases__, [counter: 0, line: 3], [:IO]}, :puts]},
+	 [line: 3], ["5 == 3"]}
+	{% endraw %}
+	5 != 3
+	:ok
+	
 # Processes/concurrency/multithreading
 
 # Testing framework - ExUnit
 
 # Mix
+
+# References
 
 [Elixir-lang.org](http://elixir-lang.org)
 
