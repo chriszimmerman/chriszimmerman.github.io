@@ -143,10 +143,7 @@ The `quote` function takes a block of code and stores it as its internal represe
 	...(2)> else
 	...(2)> IO.puts "5 != 3"
 	...(2)> end
-	{% raw %}
-	{{:., [line: 3], [{:__aliases__, [counter: 0, line: 3], [:IO]}, :puts]},
-	 [line: 3], ["5 == 3"]}
-	{% endraw %}
+	{% raw %}{{:., [line: 3], [{:__aliases__, [counter: 0, line: 3], [:IO]}, :puts]}, [line: 3], ["5 == 3"]} {% endraw %}
 	5 != 3
 	:ok
 	
