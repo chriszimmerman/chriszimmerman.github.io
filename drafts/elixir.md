@@ -157,4 +157,4 @@ The `quote` function takes a block of code and stores it as its internal represe
 
 [Wikipedia entry on concurrency](http://en.wikipedia.org/wiki/Erlang_%28programming_language%29#Concurrency_and_distribution_orientation)
 
-[Elixir language design goals](elixir-lang.org/blog/2013/08/08/elixir-design-goals/)
+[Elixir language design goals](http://elixir-lang.org/blog/2013/08/08/elixir-design-goals/)
