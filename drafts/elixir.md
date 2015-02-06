@@ -38,6 +38,8 @@ iex (or Interactive Elixir) is Elixir's repl. If you have Elixir installed, you 
 
 iex has many useful helper functions. The most useful one is probably the help function `h` which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, `h Enum.map` gets you the following output:
 
+{% gist f2a31e4dac4b35773f9b help.txt %}
+
                             def map(collection, fun)
 
 	Returns a new collection, where each item is the result of invoking fun on each
@@ -59,6 +61,8 @@ Another commonly used helper function is for compiling files: `c`. You can pass 
 
 Elixir has variables
 
+{% gist f2a31e4dac4b35773f9b variables.exs %}
+
 	age = 25
 
 	name = "Anthony Bourdain"
@@ -66,6 +70,8 @@ Elixir has variables
 	isChef = true
 
 One thing that's different about Elixir from most langauges is that the = operator is NOT the assignment operator. It's a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.
+
+{% gist f2a31e4dac4b35773f9b coolness.exs %}
 
 	defmodule Coolness do
 		def coolness name do
@@ -80,10 +86,14 @@ One thing that's different about Elixir from most langauges is that the = operat
 
 An aside: one little weird thing about Elixir is that if you have named functions that aren't lambdas, they must be contained within a module. Here I have a module named Coolness that contains the function coolness. 
 
+{% gist f2a31e4dac4b35773f9b coolness_output.txt %}
+
 	iex(1)> Coolness.coolness "Dan"
 	"Who is Dan?"
 
 Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.
+
+{% gist f2a31e4dac4b35773f9b pattern_matching_destructuring.txt %}
 
 	iex(1)> [1, x, 3] = [1, 2, 3]
 	[1, 2, 3]
@@ -91,6 +101,8 @@ Pattern matching can also be used to extract values from data structures such as
 	2
 
 In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.
+
+{% gist f2a31e4dac4b35773f9b lambdas_and_functions.exs %}
 
 	square = fn number -> number * number end
 
@@ -118,6 +130,8 @@ Elixir has support for macros. With a small core language, it's very easy to ext
 
 The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In ruby, there is a keyword, `unless` that allows one to write conditionals that will execute if the statement in the `unless` clause is not true. Basically, think of it as an 'if not' statement.
 
+{% gist f2a31e4dac4b35773f9b macro_example.exs %}
+
 	defmodule MacroExample do
 		defmacro unless(condition, clauses) do
 			do_this_if_false = Keyword.get(clauses, :do, nil)
@@ -135,6 +149,8 @@ The following example is the hello world of macros, as well as the extent of my 
 What's going on here? The `do_this_if_false` and `do_this_if_true` variables grab the code that should be executed for each respective clause. Here's where things get weird for those not familiar with macros. 
 
 The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, that's the condition that's evaluated to determine which clause to execute. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
+
+{% gist f2a31e4dac4b35773f9b macro_output.txt %}
 
 	iex(1)> require MacroExample
 	nil
