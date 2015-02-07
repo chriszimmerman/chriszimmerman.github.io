@@ -90,6 +90,27 @@ On the other hand, Elixir makes concurrency quite painless. It's very easy to st
 
 As said before, processes are how Elixir implements concurrency. I wrote [an earlier post on processes](http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html) which I'll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the `self` keyword. The `spawn/1` and `spawn/3` functions are used to create processes that will execute the functions passed into them.  
 
+Let's see some examples. I'm going to open up iex and type my Elixir code there. First of all, I'm going to start a process that listens for a message and will print "I received something" when it receives a message.
+
+	iex(1)> pid = spawn(fn -> receive do _ -> IO.puts "I got something!" end end)
+	#PID<0.63.0>
+
+The spawn function returns the pid of the process that's created. With this, we know where to send our messages.
+
+	iex(2)> send(pid, "what's up?")
+	I got something!
+	"what's up?"
+
+I sent a message just containing a string, "what's up?", to the address of the process stored in pid. That process received the message and executed its lambda function. 
+
+The `receive do` block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:
+
+	iex(3)> send(pid, "what's up?")
+	"what's up?"
+
+Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we're going to have to write our function differently. 
+
+
 # Testing framework - ExUnit
 
 # Mix

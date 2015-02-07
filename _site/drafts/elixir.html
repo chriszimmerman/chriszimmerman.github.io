@@ -118,6 +118,29 @@
 
 <p>As said before, processes are how Elixir implements concurrency. I wrote <a href="http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html">an earlier post on processes</a> which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the <code>self</code> keyword. The <code>spawn/1</code> and <code>spawn/3</code> functions are used to create processes that will execute the functions passed into them.  </p>
 
+<p>Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I received something” when it receives a message.</p>
+
+<pre><code>iex(1)&gt; pid = spawn(fn -&gt; receive do _ -&gt; IO.puts "I got something!" end end)
+#PID&lt;0.63.0&gt;
+</code></pre>
+
+<p>The spawn function returns the pid of the process that’s created. With this, we know where to send our messages.</p>
+
+<pre><code>iex(2)&gt; send(pid, "what's up?")
+I got something!
+"what's up?"
+</code></pre>
+
+<p>I sent a message just containing a string, “what’s up?”, to the address of the process stored in pid. That process received the message and executed its lambda function. </p>
+
+<p>The <code>receive do</code> block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:</p>
+
+<pre><code>iex(3)&gt; send(pid, "what's up?")
+"what's up?"
+</code></pre>
+
+<p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. </p>
+
 <h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
 
 <h1 id="mix">Mix</h1>
