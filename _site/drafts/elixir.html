@@ -50,7 +50,7 @@
 
 <p>The core of the Elixir language is very small. This allows a lot of the language to be written in itself, making it a homoiconic language. Many of the language’s constructs have been written using macros. This allows developers to easily extend the language using their own macros for their own purposes, making it easy to build things like DSLs.</p>
 
-<p>Elixir’s syntax is a combination of Ruby and Erlang. This makes sense since Jose was on the core Rails team. Some people say that Elixir improves upon Erlang’s “weird” syntax. I have virtually no experience in writing Erlang code, so I don’t have an informed opinion on that. The syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable to program in. I get things done in Ruby. So this is a plus for me. </p>
+<p>Elixir’s syntax is a combination of Ruby and Erlang. This makes sense since Jose was on the core Rails team. Some people say that Elixir improves upon Erlang’s “weird” syntax. I have virtually no experience in writing Erlang code, so I don’t have an informed opinion on that. Elixir’s syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable to program in. I get things done in Ruby. So this is a plus for me. </p>
 
 <h3 id="extensibility">Extensibility</h3>
 
@@ -92,6 +92,8 @@
 
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs"> </script>
 
+<p>Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, <code>MyMath.square</code> is identified by <code>MyMath.square/1</code> and <code>MyMath.add</code> is identified by <code>MyMath.add/2</code>.</p>
+
 <h1 id="macros">Macros</h1>
 
 <p>Elixir has support for macros. With a small core language, it’s very easy to extend the language for one’s own specific purposes via macros. One benefit of macros is that it’s easy to create a custom domain specific language. </p>
@@ -100,20 +102,21 @@
 
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs"> </script>
 
-<p>What’s going on here? The <code>do_this_if_false</code> and <code>do_this_if_true</code> variables grab the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros. </p>
+<p>What’s going on here? The <code>do_this_if_false</code> and <code>do_this_if_true</code> variables hold the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros. </p>
 
-<p>The <code>quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code>unquote</code> is a function that will evaluate the code passed into it. In this example, that’s the condition that’s evaluated to determine which clause to execute. Since <code>false</code> and <code>nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code>do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code>do_this_if_true</code> variable gets executed and returned. </p>
+<p>The <code>quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code>unquote</code> is a function that will evaluate the code passed into it. In this example, the condition that’s evaluated to determine which clause to execute will be passed into <code>unquote</code> since that condition actually needs to be evaluated to find out whether it’s true or false. Since <code>false</code> and <code>nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code>do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code>do_this_if_true</code> variable gets executed and returned. </p>
 
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_output.txt"> </script>
 
-<h1 id="concurrency">Concurrency</h1>
-<p>Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more powerful. In the paper <a href="https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf">The Free Lunch Is Over</a>, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. </p>
+<h1 id="concurrency-and-why-you-should-care-about-it">Concurrency (and why you should care about it)</h1>
+
+<p>Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more beneficial. Single-threaded programming just ain’t gonna cut it anymore.  In the paper <a href="https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf">The Free Lunch Is Over</a>, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. </p>
 
 <p>On the other hand, Elixir makes concurrency quite painless. It’s very easy to start up multiple processes to do their own work. Elixir takes advantage of Erlang’s <a href="http://en.wikipedia.org/wiki/Actor_model">actor model</a> implementation. In the actor model, each actor (in this case, an actor is an Elixir process) does its own work that only it knows about. Actors communicate with each other via messages.</p>
 
 <h1 id="processes">Processes</h1>
 
-<p>As said before, processes are how Elixir implements concurrency. Each process has its own process ID (or pid) which is used in interprocess communication. </p>
+<p>As said before, processes are how Elixir implements concurrency. I wrote <a href="http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html">an earlier post on processes</a> which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the <code>self</code> keyword. The <code>spawn/1</code> and <code>spawn/3</code> functions are used to create processes that will execute the functions passed into them.  </p>
 
 <h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
 

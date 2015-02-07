@@ -22,7 +22,7 @@ In order to take advantage of Erlang's features such as its concurrency model an
 
 The core of the Elixir language is very small. This allows a lot of the language to be written in itself, making it a homoiconic language. Many of the language's constructs have been written using macros. This allows developers to easily extend the language using their own macros for their own purposes, making it easy to build things like DSLs.
 
-Elixir's syntax is a combination of Ruby and Erlang. This makes sense since Jose was on the core Rails team. Some people say that Elixir improves upon Erlang's "weird" syntax. I have virtually no experience in writing Erlang code, so I don't have an informed opinion on that. The syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable to program in. I get things done in Ruby. So this is a plus for me. 
+Elixir's syntax is a combination of Ruby and Erlang. This makes sense since Jose was on the core Rails team. Some people say that Elixir improves upon Erlang's "weird" syntax. I have virtually no experience in writing Erlang code, so I don't have an informed opinion on that. Elixir's syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable to program in. I get things done in Ruby. So this is a plus for me. 
 
 ### Extensibility
 
@@ -64,6 +64,8 @@ In Elixir, functions can be assigned to variables. These are known as lambdas. L
 
 {% gist f2a31e4dac4b35773f9b lambdas_and_functions.exs %}
 
+Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, `MyMath.square` is identified by `MyMath.square/1` and `MyMath.add` is identified by `MyMath.add/2`.
+
 # Macros
 
 Elixir has support for macros. With a small core language, it's very easy to extend the language for one's own specific purposes via macros. One benefit of macros is that it's easy to create a custom domain specific language. 
@@ -72,20 +74,21 @@ The following example is the hello world of macros, as well as the extent of my 
 
 {% gist f2a31e4dac4b35773f9b macro_example.exs %}
 
-What's going on here? The `do_this_if_false` and `do_this_if_true` variables grab the code that should be executed for each respective clause. Here's where things get weird for those not familiar with macros. 
+What's going on here? The `do_this_if_false` and `do_this_if_true` variables hold the code that should be executed for each respective clause. Here's where things get weird for those not familiar with macros. 
 
-The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, that's the condition that's evaluated to determine which clause to execute. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
+The `quote` function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. `unquote` is a function that will evaluate the code passed into it. In this example, the condition that's evaluated to determine which clause to execute will be passed into `unquote` since that condition actually needs to be evaluated to find out whether it's true or false. Since `false` and `nil` are 'falsy' values in Elixir, if the condition evaluates to either, the code in the `do_this_if_false` variable gets executed and returned. Otherwise, the code in the `do_this_if_true` variable gets executed and returned. 
 
 {% gist f2a31e4dac4b35773f9b macro_output.txt %}
 
-# Concurrency
-Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more powerful. In the paper [The Free Lunch Is Over](https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf), this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. 
+# Concurrency (and why you should care about it)
+
+Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more beneficial. Single-threaded programming just ain't gonna cut it anymore.  In the paper [The Free Lunch Is Over](https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf), this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. 
 
 On the other hand, Elixir makes concurrency quite painless. It's very easy to start up multiple processes to do their own work. Elixir takes advantage of Erlang's [actor model](http://en.wikipedia.org/wiki/Actor_model) implementation. In the actor model, each actor (in this case, an actor is an Elixir process) does its own work that only it knows about. Actors communicate with each other via messages.
 
 # Processes
 
-As said before, processes are how Elixir implements concurrency. Each process has its own process ID (or pid) which is used in interprocess communication. 
+As said before, processes are how Elixir implements concurrency. I wrote [an earlier post on processes](http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html) which I'll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the `self` keyword. The `spawn/1` and `spawn/3` functions are used to create processes that will execute the functions passed into them.  
 
 # Testing framework - ExUnit
 
