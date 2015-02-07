@@ -66,21 +66,7 @@
 
 <p>iex has many useful helper functions. The most useful one is probably the help function <code>h</code> which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, <code>h Enum.map</code> gets you the following output:</p>
 
-<pre><code>                        def map(collection, fun)
-
-Returns a new collection, where each item is the result of invoking fun on each
-corresponding item of collection.
-
-For dicts, the function expects a key-value tuple.
-
-Examples
-
-┃ iex&gt; Enum.map([1, 2, 3], fn(x) -&gt; x * 2 end)
-┃ [2, 4, 6]
-┃
-┃ iex&gt; Enum.map([a: 1, b: 2], fn({k, v}) -&gt; {k, -v} end)
-┃ [a: -1, b: -2]
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=help.txt"> </script>
 
 <p>Another commonly used helper function is for compiling files: <code>c</code>. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: <code>c "primes.ex"</code> </p>
 
@@ -88,63 +74,23 @@ Examples
 
 <p>Elixir has variables</p>
 
-<pre><code>age = 25
-
-name = "Anthony Bourdain"
-
-isChef = true
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=variables.exs"> </script>
 
 <p>One thing that’s different about Elixir from most langauges is that the = operator is NOT the assignment operator. It’s a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.</p>
 
-<pre><code>defmodule Coolness do
-	def coolness name do
-		case name do
-			"Chris" -&gt; "You're pretty cool!"
-			"Nick" -&gt; "You're okay"
-			"Dan" -&gt; "Who is Dan?"
-			_ -&gt; "You be lame"
-		end
-	end
-end
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness.exs"> </script>
 
 <p>An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named Coolness that contains the function coolness. </p>
 
-<pre><code>iex(1)&gt; Coolness.coolness "Dan"
-"Who is Dan?"
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness_output.txt"> </script>
 
 <p>Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.</p>
 
-<pre><code>iex(1)&gt; [1, x, 3] = [1, 2, 3]
-[1, 2, 3]
-iex(2)&gt;x
-2
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=pattern_matching_destructuring.txt"> </script>
 
 <p>In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.</p>
 
-<pre><code>square = fn number -&gt; number * number end
-
-add = fn number1, number2 -&gt; number1 + number2 end
-
-IO.puts square.(3)	# 9
-
-IO.puts add.(8,9)	# 17
-
-# Named functions for comparison.
-# Comment lines in Elixir start with a hashtag like in Ruby.
-defmodule MyMath do
-	def square number do
-		number * number
-	end
-
-	def add number1, number2 do
-		number1 + number2
-	end
-end
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs"> </script>
 
 <h1 id="macros">Macros</h1>
 
@@ -152,38 +98,22 @@ end
 
 <p>The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In ruby, there is a keyword, <code>unless</code> that allows one to write conditionals that will execute if the statement in the <code>unless</code> clause is not true. Basically, think of it as an ‘if not’ statement.</p>
 
-<pre><code>defmodule MacroExample do
-	defmacro unless(condition, clauses) do
-		do_this_if_false = Keyword.get(clauses, :do, nil)
-		do_this_if_true = Keyword.get(clauses, :else, nil)
-
-		quote do
-			case unquote condition do
-				expression when expression in [false, nil] -&gt; unquote do_this_if_false
-				_																					 -&gt; unquote do_this_if_true
-			end
-		end
-	end
-end
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs"> </script>
 
 <p>What’s going on here? The <code>do_this_if_false</code> and <code>do_this_if_true</code> variables grab the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros. </p>
 
 <p>The <code>quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code>unquote</code> is a function that will evaluate the code passed into it. In this example, that’s the condition that’s evaluated to determine which clause to execute. Since <code>false</code> and <code>nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code>do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code>do_this_if_true</code> variable gets executed and returned. </p>
 
-<pre><code>iex(1)&gt; require MacroExample
-nil
-iex(2)&gt; MacroExample.unless 5 != 3 do
-...(2)&gt; IO.puts "5 == 3"
-...(2)&gt; else
-...(2)&gt; IO.puts "5 != 3"
-...(2)&gt; end
-{{:., [line: 3], [{:__aliases__, [counter: 0, line: 3], [:IO]}, :puts]}, [line: 3], ["5 == 3"]} 
-5 != 3
-:ok
-</code></pre>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_output.txt"> </script>
 
-<h1 id="processesconcurrencymultithreading">Processes/concurrency/multithreading</h1>
+<h1 id="concurrency">Concurrency</h1>
+<p>Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more powerful. In the paper <a href="https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf">The Free Lunch Is Over</a>, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. </p>
+
+<p>On the other hand, Elixir makes concurrency quite painless. It’s very easy to start up multiple processes to do their own work. Elixir takes advantage of Erlang’s <a href="http://en.wikipedia.org/wiki/Actor_model">actor model</a> implementation. In the actor model, each actor (in this case, an actor is an Elixir process) does its own work that only it knows about. Actors communicate with each other via messages.</p>
+
+<h1 id="processes">Processes</h1>
+
+<p>As said before, processes are how Elixir implements concurrency. Each process has its own process ID (or pid) which is used in interprocess communication. </p>
 
 <h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
 
