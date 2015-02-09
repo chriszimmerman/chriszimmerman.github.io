@@ -118,7 +118,7 @@
 
 <p>As said before, processes are how Elixir implements concurrency. I wrote <a href="http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html">an earlier post on processes</a> which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the <code>self</code> keyword. The <code>spawn/1</code> and <code>spawn/3</code> functions are used to create processes that will execute the functions passed into them.  </p>
 
-<p>Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I received something” when it receives a message.</p>
+<p>Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I got something!” when it receives a message.</p>
 
 <pre><code>iex(1)&gt; pid = spawn(fn -&gt; receive do _ -&gt; IO.puts "I got something!" end end)
 #PID&lt;0.63.0&gt;
@@ -139,13 +139,86 @@ I got something!
 "what's up?"
 </code></pre>
 
-<p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. </p>
+<p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. For starters, we’ll put it in a module. We now have something like this: </p>
 
-<h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
+<pre><code>defmodule Message do
+	def listen_for_message do
+		receive do
+			_ -&gt; IO.puts "I got something!"
+		end
+	end
+end
+</code></pre>
+
+<p>Next, let’s just tweak it a little bit:</p>
+
+<pre><code>defmodule Message do
+	def listen_for_message do
+		receive do
+			_ -&gt; IO.puts "I got something!"
+			listen_for_message
+		end
+	end
+end
+</code></pre>
+
+<p>Now the function will recursively call itself after processing a message. This ensures that the process lives on to handle more messages.</p>
+
+<pre><code>iex(1)&gt; pid = spawn(Message, :listen_for_message, [])
+#PID&lt;0.76.0&gt;
+iex(2)&gt; send(pid, "hi there")
+I got something!
+"hi there"
+iex(3)&gt; send(pid, "hi there")
+I got something!
+"hi there"
+iex(4)&gt; send(pid, "hi there")
+I got something!
+"hi there"
+</code></pre>
+
+<p>Personlly, I think I have yet to demonstrate how having multiple processes is a big win. I hope to demonstrate this to you in the near future. </p>
 
 <h1 id="mix">Mix</h1>
 
+<p>Mix is a lovely little tool to aid you in managing your projects in Elixir. Mix comes with Elixir. By using the <code>mix new [project name]</code> command, you can create an empty Elixir project with an organized structure. If I create a new project called foo, it produces the following:</p>
+
+<pre><code>zimmy$ mix new foo
+* creating README.md
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/foo.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/foo_test.exs
+
+Your mix project was created successfully.
+You can use mix to compile it, test it, and more:
+
+		cd foo
+		mix test
+
+Run `mix help` for more commands.
+</code></pre>
+
+<p>This creates some files that are found in most github projects, such as the <code>README</code> and <code>gitignore</code> files. A <code>lib</code> directory was created. This is where you put your source files. Test files go in the <code>test</code> directory. Config files are stored in <code>config</code>.</p>
+
+<p>The interesting file here is <code>mix.exs</code>. In your mix file, you can define dependences that your project has, somewhat like a gemfile in Ruby projects. Running the command <code>mix deps.get</code> will fetch your dependencies for your project. For a further list of <code>mix</code> commands, just type <code>mix -h</code>.</p>
+
+<h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
+
+<p>ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there’s not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true. A cool thing about ExUnit is that you can specify if you want your unit tests to run in parallel. Sounds like a great tool for keeping a build under 10 minutes. :)</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>I hope you found reading this post informative and a decent use of your time. Elixir is a neat language that seems to be growing at a fast pace. Like I said, easy concurrency is something that will certainly help software development going forward. This language is good at that. I hope you get out there and fiddle around with the language. :D</p>
+
 <h1 id="references">References</h1>
+
+<p>On my Elixir journey, I have read <a href="https://pragprog.com/book/elixir/programming-elixir">Programming Elixir by Dave Thomas</a>. If you’re the type to pick up a book on a subject to learn about it, I highly suggest this book. I like the format of the book. He’ll teach you an aspect of Elixir and then give you exercises to complete using the knowledge you just learned. </p>
 
 <p><a href="http://elixir-lang.org">Elixir-lang.org</a></p>
 
