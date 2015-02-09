@@ -175,7 +175,74 @@ The interesting file here is `mix.exs`. In your mix file, you can define depende
 
 # Testing framework - ExUnit
 
-ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there's not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true. A cool thing about ExUnit is that you can specify if you want your unit tests to run in parallel. Sounds like a great tool for keeping a build under 10 minutes. :)
+ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there's not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true. 
+
+Let's say I'm writing a CSV to HTML converter. I want to test that my function that converts a CSV row to an HTML table row is correct. I might have something like this:
+
+	defmodule ConverterTest do
+		use ExUnit.Case
+
+		test "convert_row converts a csv row into an html table row" do
+			csv_row = "Jim Jones,19,Computer Science"
+			expected_html_table_row = "<tr><td>Jim Jones</td><td>19</td><td>Computer Science</td></tr>"
+			assert Converter.convert_row(csv_row) == expected_html_table_row
+		end
+	end
+
+I can then run `mix test`:
+
+	zimmy$ mix test
+
+
+		1) test convert_row converts a csv row into an html table row (ConverterTest)
+			 test/converter_test.exs:4
+			 ** (UndefinedFunctionError) undefined function: Converter.convert_row/1
+			 stacktrace:
+				 (converter) Converter.convert_row("Jim Jones,19,Computer Science")
+				 test/converter_test.exs:7
+
+
+
+	Finished in 0.04 seconds (0.04s on load, 0.00s on tests)
+	1 tests, 1 failures
+
+	Randomized with seed 969569
+
+Because I haven't written the funciton yet, it's obviously going to fail. I'll write the function now.
+
+	def convert_row(csv_row) do
+		data = String.split(csv_row, ",")
+		data_in_cells = Enum.map(data, fn datum -> "<td>#{datum}</td>" end) 
+		joined_cells = Enum.join(data_in_cells)
+		"<tr>#{joined_cells}</tr>"
+	end
+
+I'm going to split the CSV using a comma delimiter to get each piece of data. I'll the use a map function that will wrap each piece of cell data in <td> tags. I make use of Elixir's string interpolation to do this. Enum.join merges the strings together. I then finish up by wrapping that string in <tr> tags. 
+
+Does it work?
+
+	zimmy$ mix test
+	Compiled lib/converter.ex
+	Generated converter.app
+	.
+
+	Finished in 0.04 seconds (0.04s on load, 0.00s on tests)
+	1 tests, 0 failures
+
+	Randomized with seed 536134
+
+Sweet. It works! Before going on, I would like to digress a little and tell you about Elixir's pipe operator, `|>`. I'm going to write the code differently in order to make my test pass.
+
+	def convert_row(csv_row) do
+		data = String.split(csv_row, ",")
+		|> Enum.map(fn datum -> "<td>#{datum}</td>" end) 
+		|> Enum.join
+		|> fn data -> "<tr>#{data}</tr>" end.()
+	end
+
+Essentially, the pipe operator allows you to take the result of the previous line and use it as the first argument for the function that gets called on the next line. I split my CSV row up with my comma delimiter as before. With the pipe operator, I can just specify what function I want to apply to my collection with map. Elixir knows I want to use data as the first parameter, the collection to map. That mapped collection then gets passed into Enum.join. That joined string then gets passed into my lambda that wraps <tr> tags around my row. Pretty next, huh?
+
+A cool thing about ExUnit is that you can specify if you want your unit tests to run in parallel. Sounds like a great tool for keeping a build under 10 minutes. :)
 
 # Conclusion
 
