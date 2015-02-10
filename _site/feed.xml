@@ -7,6 +7,181 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Elixir Sampler Flight</title>
+        <description>&lt;h1 id=&quot;elixir-sampler-flight&quot;&gt;Elixir Sampler Flight&lt;/h1&gt;
+
+&lt;p&gt;Over the past few months, I’ve been messing around with the Elixir programming language. As far as functional languages go, I have yet to find one that I can stick to. Elixir has been my latest FP adventure. I’d like to give you a sampling of the Elixir language along with some of its features and tools.&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Elixir is a functional programming language created by José Valim in 2012. Elixir runs on the Erlang Virtual Machine, BEAM. This allows Elixir to take advantage of Erlang’s awesome concurrency capabilities. &lt;/p&gt;
+
+&lt;h1 id=&quot;language-goals&quot;&gt;Language goals&lt;/h1&gt;
+&lt;p&gt;When José started creating Elixir, he had three goals in mind: compatibility, productivity, and extensibility.&lt;/p&gt;
+
+&lt;h3 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h3&gt;
+&lt;p&gt;In order to take advantage of Erlang’s features such as its concurrency model and libraries, Elixir strives to stay compatible with the underlying Erlang VM. This allows Elixir code to compile to Erlang byte code without a performance degredation. &lt;/p&gt;
+
+&lt;h3 id=&quot;productivity&quot;&gt;Productivity&lt;/h3&gt;
+
+&lt;p&gt;The core of the Elixir language is very small. This allows a lot of the language to be written in itself, making it a homoiconic language. Many of the language’s constructs have been written using macros. This allows developers to easily extend the language using their own macros for their own purposes, making it easy to build things like DSLs.&lt;/p&gt;
+
+&lt;p&gt;Elixir’s syntax is a combination of Ruby and Erlang. This makes sense since José was on the core Rails team. Some people say that Elixir improves upon Erlang’s “weird” syntax. I have virtually no experience in writing Erlang code, so I don’t have an informed opinion on that. Elixir’s syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable for programming. I get things done in Ruby so this is a plus for me. &lt;/p&gt;
+
+&lt;h3 id=&quot;extensibility&quot;&gt;Extensibility&lt;/h3&gt;
+
+&lt;p&gt;In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.   &lt;/p&gt;
+
+&lt;h1 id=&quot;obtaining-elixir&quot;&gt;Obtaining Elixir&lt;/h1&gt;
+
+&lt;p&gt;If you want to mess around with some of the code examples you’ll see in a bit, you can grab the latest release of Elixir from &lt;a href=&quot;http://elixir-lang.org/&quot;&gt;elixir-lang.org&lt;/a&gt;. You can probably also get it from the package manager of your choice. &lt;/p&gt;
+
+&lt;h1 id=&quot;iex&quot;&gt;iex&lt;/h1&gt;
+
+&lt;p&gt;iex (or Interactive Elixir) is Elixir’s repl. If you have Elixir installed, you can start iex by typing the command &lt;code&gt;iex&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;iex has many useful helper functions. The most useful one is probably the help function &lt;code&gt;h&lt;/code&gt; which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, &lt;code&gt;h Enum.map&lt;/code&gt; gets you the following output:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=help.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Another commonly used helper function is for compiling files: &lt;code&gt;c&lt;/code&gt;. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: &lt;code&gt;c &quot;primes.ex&quot;&lt;/code&gt; &lt;/p&gt;
+
+&lt;h1 id=&quot;lets-take-a-look-at-some-code&quot;&gt;Let’s take a look at some code&lt;/h1&gt;
+
+&lt;p&gt;Elixir has variables:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=variables.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;One thing that’s different about Elixir from most languages is that the = operator is NOT the assignment operator. It’s a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named &lt;code&gt;Coolness&lt;/code&gt; that contains the function &lt;code&gt;coolness&lt;/code&gt;. &lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness_output.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=pattern_matching_destructuring.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, &lt;code&gt;MyMath.square&lt;/code&gt; is identified by &lt;code&gt;MyMath.square/1&lt;/code&gt; and &lt;code&gt;MyMath.add&lt;/code&gt; is identified by &lt;code&gt;MyMath.add/2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;macros&quot;&gt;Macros&lt;/h1&gt;
+
+&lt;p&gt;Elixir has support for macros. With a small core language, it’s very easy to extend the language for one’s own specific purposes via macros. One benefit of macros is that it’s easy to create a custom domain specific language. &lt;/p&gt;
+
+&lt;p&gt;The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In Ruby, there is a keyword, &lt;code&gt;unless&lt;/code&gt; that allows one to write conditionals that will execute if the statement in the &lt;code&gt;unless&lt;/code&gt; clause is not true. Basically, think of it as an ‘if not’ statement.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;What’s going on here? The &lt;code&gt;do_this_if_false&lt;/code&gt; and &lt;code&gt;do_this_if_true&lt;/code&gt; variables hold the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros. &lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;quote&lt;/code&gt; function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. &lt;code&gt;unquote&lt;/code&gt; is a function that will evaluate the code passed into it. In this example, the condition that’s evaluated to determine which clause to execute will be passed into &lt;code&gt;unquote&lt;/code&gt; since that condition actually needs to be evaluated to find out whether it’s true or false. Since &lt;code&gt;false&lt;/code&gt; and &lt;code&gt;nil&lt;/code&gt; are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the &lt;code&gt;do_this_if_false&lt;/code&gt; variable gets executed and returned. Otherwise, the code in the &lt;code&gt;do_this_if_true&lt;/code&gt; variable gets executed and returned. &lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_output.txt&quot;&gt; &lt;/script&gt;
+
+&lt;h1 id=&quot;concurrency-and-why-you-should-care-about-it&quot;&gt;Concurrency (and why you should care about it)&lt;/h1&gt;
+
+&lt;p&gt;Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more beneficial. Single-threaded programming just ain’t gonna cut it anymore.  In the paper &lt;a href=&quot;https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf&quot;&gt;The Free Lunch Is Over&lt;/a&gt;, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. &lt;/p&gt;
+
+&lt;p&gt;On the other hand, Elixir makes concurrency quite painless. It’s very easy to start up multiple processes to do their own work. Elixir takes advantage of Erlang’s &lt;a href=&quot;http://en.wikipedia.org/wiki/Actor_model&quot;&gt;actor model&lt;/a&gt; implementation. In the actor model, each actor (in this case, an actor is an Elixir process) does its own work that only it knows about. Actors communicate with each other via messages.&lt;/p&gt;
+
+&lt;h1 id=&quot;processes&quot;&gt;Processes&lt;/h1&gt;
+
+&lt;p&gt;As said before, processes are how Elixir implements concurrency. I wrote &lt;a href=&quot;http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html&quot;&gt;an earlier post on processes&lt;/a&gt; which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the &lt;code&gt;self&lt;/code&gt; keyword. The &lt;code&gt;spawn/1&lt;/code&gt; and &lt;code&gt;spawn/3&lt;/code&gt; functions are used to create processes that will execute the functions passed into them.  &lt;/p&gt;
+
+&lt;p&gt;Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I got something!” when it receives a message.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process1.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;The spawn function returns the pid of the process that’s created. With this, we know where to send our messages.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process2.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;I sent a message just containing a string, “what’s up?”, to the address of the process stored in pid. That process received the message and executed its lambda function. &lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;receive do&lt;/code&gt; block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. For starters, we’ll put it in a module. We now have something like this: &lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message1.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Next, let’s just tweak it a little bit:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message2.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now the function will recursively call itself after processing a message. This ensures that the process lives on to handle more messages.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt&quot;&gt; &lt;/script&gt;
+
+&lt;h1 id=&quot;mix&quot;&gt;Mix&lt;/h1&gt;
+
+&lt;p&gt;Mix is a lovely little tool to aid you in managing your projects in Elixir. Mix comes with Elixir. By using the &lt;code&gt;mix new [project name]&lt;/code&gt; command, you can create an empty Elixir project with an organized structure. If I create a new project called foo, it produces the following:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;This creates some files that are found in most GitHub projects, such as the &lt;code&gt;README&lt;/code&gt; and &lt;code&gt;gitignore&lt;/code&gt; files. A &lt;code&gt;lib&lt;/code&gt; directory was created. This is where you put your source files. Test files go in the &lt;code&gt;test&lt;/code&gt; directory. Config files are stored in &lt;code&gt;config&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The interesting file here is &lt;code&gt;mix.exs&lt;/code&gt;. In your mix file, you can define dependences that your project has, somewhat like a gemfile in Ruby projects. Running the command &lt;code&gt;mix deps.get&lt;/code&gt; will fetch your dependencies for your project. For a further list of &lt;code&gt;mix&lt;/code&gt; commands, just type &lt;code&gt;mix -h&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;testing-framework---exunit&quot;&gt;Testing framework - ExUnit&lt;/h1&gt;
+
+&lt;p&gt;ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there’s not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true. &lt;/p&gt;
+
+&lt;p&gt;Let’s say I’m writing a CSV to HTML converter. I want to test that my function that converts a CSV row to an HTML table row is correct. I might have something like this:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=converter_test.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;I can then run &lt;code&gt;mix test&lt;/code&gt;:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test1.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Because I haven’t written the function yet, it’s obviously going to fail. I’ll write the function now.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;I’m going to split the CSV using a comma delimiter to get each piece of data. I’ll the use a map function that will wrap each piece of cell data in &amp;lt;td&amp;gt; tags. I make use of Elixir’s string interpolation to do this. Enum.join merges the strings together. I then finish up by wrapping that string in &amp;lt;tr&amp;gt; tags. &lt;/p&gt;
+
+&lt;p&gt;Does it work?&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test2.txt&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Sweet. It works! Before going on, I would like to digress a little and tell you about Elixir’s pipe operator, &lt;code&gt;|&amp;gt;&lt;/code&gt;. I’m going to write the code differently in order to make my test pass.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row2.exs&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Essentially, the pipe operator allows you to take the result of the previous expression and use it as the first argument for the next function that gets called. I split my CSV row up with my comma delimiter as before. With the pipe operator, I can just specify what function I want to apply to my collection with map. Elixir knows I want to use data as the first parameter, the collection to map. That mapped collection then gets passed into Enum.join. That joined string then gets passed into my lambda that wraps &amp;lt;tr&amp;gt; tags around my row. Pretty next, huh?&lt;/p&gt;
+
+&lt;p&gt;A cool thing about ExUnit is that you can specify if you want your unit tests to run in parallel. Sounds like a great tool for keeping a build under 10 minutes. :)&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;I hope you found reading this post informative and a decent use of your time. Elixir is a neat language that seems to be growing at a fast pace. Like I said, easy concurrency is something that will certainly help software development going forward. This language is good at that. I hope you get out there and fiddle around with the language. :D&lt;/p&gt;
+
+&lt;h1 id=&quot;references&quot;&gt;References&lt;/h1&gt;
+
+&lt;p&gt;On my Elixir journey, I have read &lt;a href=&quot;https://pragprog.com/book/elixir/programming-elixir&quot;&gt;Programming Elixir by Dave Thomas&lt;/a&gt;. If you’re the type to pick up a book on a subject to learn about it, I highly suggest this book. I like the format of the book. He’ll teach you an aspect of Elixir and then give you exercises to complete using the knowledge you just learned. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://elixir-lang.org&quot;&gt;Elixir-lang.org&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Elixir_%28programming_language%29&quot;&gt;Elixir Wikipedia article&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Erlang_%28programming_language%29#Concurrency_and_distribution_orientation&quot;&gt;Wikipedia entry on concurrency&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://elixir-lang.org/blog/2013/08/08/elixir-design-goals/&quot;&gt;Elixir language design goals&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 09 Feb 2015 00:00:00 -0500</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/02/09/Elixir-Sampler-Flight.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/02/09/Elixir-Sampler-Flight.html</guid>
+      </item>
+    
+      <item>
         <title>Processes In Elixir</title>
         <description>&lt;h1 id=&quot;processes-in-elixir&quot;&gt;Processes In Elixir&lt;/h1&gt;
 
