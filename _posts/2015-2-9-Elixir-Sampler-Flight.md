@@ -126,7 +126,7 @@ Next, let's just tweak it a little bit:
 
 Now the function will recursively call itself after processing a message. This ensures that the process lives on to handle more messages.
 
-{% gist f2a31e4dac4b35773f9b process3.txt %}
+{% gist f2a31e4dac4b35773f9b process4.txt %}
 
 
 # Mix

@@ -118,7 +118,7 @@
 
 &lt;p&gt;Now the function will recursively call itself after processing a message. This ensures that the process lives on to handle more messages.&lt;/p&gt;
 
-&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt&quot;&gt; &lt;/script&gt;
+&lt;script src=&quot;https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process4.txt&quot;&gt; &lt;/script&gt;
 
 &lt;h1 id=&quot;mix&quot;&gt;Mix&lt;/h1&gt;
 
