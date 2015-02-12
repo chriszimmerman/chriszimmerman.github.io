@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Processes In Elixir
+comments: true
 ---
 
 Processes In Elixir

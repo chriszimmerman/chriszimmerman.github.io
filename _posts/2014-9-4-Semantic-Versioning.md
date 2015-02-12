@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Semantic Versioning
+comments: true
 ---
 
 # Semantic Versioning

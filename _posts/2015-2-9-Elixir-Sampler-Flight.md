@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Elixir Sampler Flight
+comments: true
 ---
 
 Elixir Sampler Flight
