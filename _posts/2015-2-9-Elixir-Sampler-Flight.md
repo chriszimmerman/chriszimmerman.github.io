@@ -2,6 +2,9 @@
 layout: post
 title: Elixir Sampler Flight
 comments: true
+tags:
+- elixir
+- code
 ---
 
 Elixir Sampler Flight

@@ -2,6 +2,9 @@
 layout: post
 title: Processes In Elixir
 comments: true
+tags:
+- elixir
+- code
 ---
 
 Processes In Elixir

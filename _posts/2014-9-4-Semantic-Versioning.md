@@ -2,6 +2,10 @@
 layout: post
 title: Semantic Versioning
 comments: true
+tags:
+- semantic versioning
+- software
+- api
 ---
 
 # Semantic Versioning
