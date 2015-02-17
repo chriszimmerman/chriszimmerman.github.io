@@ -21,4 +21,4 @@ module Jekyll
 	end
 end
  
-Liquid::Template.register_tag('categories', Jekyll::CategoryListTag) 
+Liquid::Template.register_tag('tags', Jekyll::CategoryListTag) 
