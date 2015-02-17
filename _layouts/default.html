@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>House of Black and White</title>
+		<link rel="stylesheet" href="/stylesheets/hyde.css">
     <link rel="stylesheet" href="/stylesheets/styles.css">
     <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -18,6 +19,12 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
+	<div class="sidebar">
+		<h1>Categories</h1>
+		<ul id="categories">
+			{% category_list %}
+		</ul>
+	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -31,8 +38,8 @@
 				<span class="credits left">Project maintained by <a href="https://github.com/chriszimmerman">chriszimmerman</a></span>
 				<span class="credits right">Theme by <a href="https://twitter.com/michigangraham">mattgraham</a> </span>
 			</div>
+			{{ content }}
 		</section>
-		{{ content }}
 
 		{% if page.comments %}
 			<div id="disqus_thread"></div>
@@ -48,8 +55,8 @@
 					})();
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			</div>
 		{% endif %}
+	</div>
 
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 </body>
