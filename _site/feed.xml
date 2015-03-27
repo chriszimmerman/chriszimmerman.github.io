@@ -7,6 +7,102 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Retrospectives - A Tool for Team Improvement</title>
+        <description>&lt;h1 id=&quot;retrospectives---a-tool-for-team-improvement&quot;&gt;Retrospectives - A Tool for Team Improvement&lt;/h1&gt;
+
+&lt;p&gt;One way of improving a software development team is to regularly hold retrospectives (or ‘retros’ for short). A retrospective is an exercise where a team sets aside a timeboxed amount of time (typically one hour) and looks back on previous times, discussing what went well, what problems could have been avoided, and what could have been done better. Retrospectives are an opportunity to identify and discuss problems, as well as introduce ideas to make the team better. Retrospectives work best when performed in consistent intervals, whether it be every week, every month, or every project.&lt;/p&gt;
+
+&lt;h1 id=&quot;who-should-attend-the-retro&quot;&gt;Who Should Attend the Retro?&lt;/h1&gt;
+
+&lt;p&gt;Typically, when it comes to who attends a retro, smaller groups of people are better. Speaking from personal experience, I have been in several retros involving large groups of people (sometimes as large as the entire office!) and they were DISASTERS. With large groups of people, retros tend to go for much longer than intended. People get tired and lose focus. Conversations that occur in the retro may be of interest to only a small percentage of the people in attendance, leading to people messing around on their phones and not paying attention.&lt;/p&gt;
+
+&lt;p&gt;All of the developers on the team should attend. If the office has tens of developers who work on smaller feature teams, then the developers on those feature teams should attend. Any BAs or QAs who work directly with the developers should be there as well. Managers and bosses should not attend. Their presence may cause people to not be totally honest about how they feel for fear of some type of retribution.&lt;/p&gt;
+
+&lt;p&gt;Ideally, an impartial third party should be the moderator of the retro. &lt;/p&gt;
+
+&lt;p&gt;Retro attendance should not be mandatory. If anyone on the team feels like retrospectives do not bring value, or if the person feels like their time will not be effectively spent in the retro, they should not be forced to come.&lt;/p&gt;
+
+&lt;h1 id=&quot;where-should-the-retro-be-held&quot;&gt;Where Should the Retro Be Held?&lt;/h1&gt;
+
+&lt;p&gt;A room large enough to comfortably hold all of the people attending the retro should be used. There should also be a whiteboard available. The whiteboard will host the data provided by those attending the retro. &lt;/p&gt;
+
+&lt;h1 id=&quot;what-materials-are-required&quot;&gt;What materials are required?&lt;/h1&gt;
+
+&lt;p&gt;Writing utensils, such as markers or pens, are necessary. Index cards and Post-its are great, especially if there are multiple colors. Many retro exercises make use of different colored paper in one form or another. The moderator may want a timer to make sure things don’t run too long. &lt;/p&gt;
+
+&lt;h1 id=&quot;how-long-should-the-retro-be&quot;&gt;How long should the retro be?&lt;/h1&gt;
+
+&lt;p&gt;An hour should be sufficient for retro. How that hour should be allocated will be elaborated on shortly.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-flow-of-a-typical-retrospective&quot;&gt;The Flow of A Typical Retrospective&lt;/h1&gt;
+
+&lt;p&gt;A typical retrospective can be divided into several phases:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Set the stage - 5 minutes&lt;/li&gt;
+  &lt;li&gt;Gather data - 10 minutes&lt;/li&gt;
+  &lt;li&gt;Generate insights - 20 minutes&lt;/li&gt;
+  &lt;li&gt;Decide what to do - 20 minutes&lt;/li&gt;
+  &lt;li&gt;Close the retrospective - 5 minutes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The times I have specified above are not absolute. Feel free to tweak these values to make them fit better for your retros. This is an example of what a retro might be for a small team. Larger teams will obviously require more time. Longer retros should have breaks interspersed.&lt;/p&gt;
+
+&lt;h2 id=&quot;set-the-stage&quot;&gt;Set the stage&lt;/h2&gt;
+
+&lt;p&gt;At the start of the retro, the moderator should thank everyone for coming. The fact that people are attending alone shows that the people in the room have a desire to make a better team. The moderator should explain the purpose of the retro, as well as the schedule, for any people who are unfamiliar with how a retro works.&lt;/p&gt;
+
+&lt;p&gt;Tell the team that the purpose of the retro is not to blame anyone. Read them the &lt;a href=&quot;http://retrospectivewiki.org/index.php?title=The_Prime_Directive&quot;&gt;Prime Directive&lt;/a&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;“Regardless of what we discover, we understand and truly believe that everyone did the best job they could, given what they knew at the time, their skills and abilities, the resources available, and the situation at hand.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Remind them that this is an opportunity to learn and get better, not to blame.&lt;/p&gt;
+
+&lt;p&gt;One exercise that I like to do is an ice-breaker. I pose a simple question that asks for a short answer to everyone in the room. An example would be ‘In a few words, how do you feel the last week went?’ The objective is to get everyone to start talking. Once they start talking by answering a simple question such as this, they will be more prone to engage in conversation throughout the retro. This exercise also gives a reading about how the team feels in general.&lt;/p&gt;
+
+&lt;h2 id=&quot;gather-data&quot;&gt;Gather data&lt;/h2&gt;
+
+&lt;p&gt;The next phase in the retro is where members of the team provide data about the period of time the retro is focused on. There are a number of exercises that can be done to collect data. Some of my gotos are Mad Sad Glad, and 4 L’s (Liked, Lacked, Learned, Longed For). These types of exercises allow the group to generate data from multiple emotions and mindsets, providing a comprehensive picture. It’s best if this data is placed in an area where everyone in the room can look at it, such as on a whiteboard. Different colored index cards or post-its help with associating with different emotions (red for mad, blue for sad, etc.).&lt;/p&gt;
+
+&lt;h2 id=&quot;generate-insights&quot;&gt;Generate insights&lt;/h2&gt;
+
+&lt;p&gt;Once data has been collected, that data can tell a story. One way of generating insights is by mute mapping. Allow 10 or so minutes for everyone to go up to the board and group data that they think are related. After these groups are formed, circle them or box them to signify that they are grouped together. Try to come up with themes for each group. Allow the team members to vote for one or two topics to talk about. Let the team discuss the topic(s) in detail.&lt;/p&gt;
+
+&lt;h2 id=&quot;decide-what-to-do&quot;&gt;Decide what to do&lt;/h2&gt;
+
+&lt;p&gt;At this point, there should have been discussion about the time period the retro is focused on. Team members should have some ideas of things they want to do (or keep doing) to make things better. I recommend steering the team toward making SMART goals. SMART is an acronym.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Specific&lt;/li&gt;
+  &lt;li&gt;Measurable&lt;/li&gt;
+  &lt;li&gt;Attainable&lt;/li&gt;
+  &lt;li&gt;Relevant&lt;/li&gt;
+  &lt;li&gt;Timely&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;SMART goals are concrete and are easy to see if they have been met or not after a specified period of time. They are also realistic. Have the team come up with two or three smart goals. Place them somewhere everyone can easily see them so that the goals are not easily forgotten about. &lt;/p&gt;
+
+&lt;h2 id=&quot;close-the-retrospective&quot;&gt;Close the retrospective&lt;/h2&gt;
+
+&lt;p&gt;End the retrospective by retro’ing the retro. Ask the team for feedback. What was good? What was bad? What was missing? Tell the team that you welcome any feedback they want to give you, whether it be in public or private.&lt;/p&gt;
+
+&lt;p&gt;Finally, thank everyone for investing their time in coming to the retro.&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;Retrospectives are a great way for a software development team to identify problems and look for ways to improve. If you want a great resource on retrospectives, check out &lt;a href=&quot;http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649&quot;&gt;Agile Retrospectives - Making Good Teams Great&lt;/a&gt;. Pretty much everything I talked about in this post (and more!) can be found in this book.&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649&quot;&gt;Agile Retrospectives - Making Good Teams Great&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://retrospectivewiki.org/index.php?title=The_Prime_Directive&quot;&gt;Prime Directive&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Mar 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/03/27/Retrospectives.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/03/27/Retrospectives.html</guid>
+      </item>
+    
+      <item>
         <title>Elixir Sampler Flight</title>
         <description>&lt;h1 id=&quot;elixir-sampler-flight&quot;&gt;Elixir Sampler Flight&lt;/h1&gt;
 
