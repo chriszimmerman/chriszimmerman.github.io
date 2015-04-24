@@ -7,6 +7,85 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Game Programming</title>
+        <description>&lt;h1 id=&quot;game-programming-in-c-with-xna&quot;&gt;Game Programming in C# With XNA&lt;/h1&gt;
+
+&lt;p&gt;Every year for the past few years I’ve been going to PAX East in Boston. Every time, I get inspired to make video games but never actually act on that inspiration. I don’t know if it’s due to A) a lack of original ideas, B) poor artistic skill, C) laziness, or D) all of the above.&lt;/p&gt;
+
+&lt;p&gt;Shortly after my trip to PAX East in March of this year, I started a Coursera class about game programming in C#. In this class, I learned about writing C# games using the XNA Framework. The class was aimed at people who have never done programming before, but that was fine. Because I already knew the language features of C# taught in the class, I was able to focus on the XNA objects and APIs, as well as game-programming-specific concepts, such as collision detection, and calculating sprite velocities.&lt;/p&gt;
+
+&lt;p&gt;I would like to share what I learned in the course from the XNA and game development perspective.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-game-loop&quot;&gt;The Game Loop&lt;/h2&gt;
+
+&lt;p&gt;One of the most fundamental concepts in game programming is the game loop. The game loop constantly runs, checking for user input and updating the environment. For example, the game loop may have code to draw a bullet sprite from a spaceship when the left mouse button is pressed. There may be code to check for when a bullet sprite comes into contact with an alien sprite and play an explosion animation when that occurs. The game loop repeats indefinitely until the game is terminated.&lt;/p&gt;
+
+&lt;p&gt;The following code sample is from a simplified blackjack game I wrote for an assignment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;protected override void Update(GameTime gameTime)
+{
+	MouseState mouseState = Mouse.GetState();
+	foreach(var menuButton in menuButtons){
+		if(currentState == GameState.WaitingForPlayer || currentState == GameState.DisplayingHandResults){
+			menuButton.Update(mouseState);
+		}
+	}
+
+	switch(currentState){
+		case GameState.PlayerHitting:
+			PlayerHit();
+			break;
+		case GameState.WaitingForDealer:
+			DealerTurn();
+			break;
+		case GameState.DealerHitting:
+			DealerHit();
+			break;
+		case GameState.CheckingHandOver:
+			CheckHandOver();
+			break;
+		case GameState.DisplayingHandResults:
+			break;
+		case GameState.Exiting:
+			Exit();
+			break;
+		default:
+			break;
+	}
+
+	base.Update(gameTime);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Every time this method executes (which is happening very often), it’s getting information about the mouse which is stored in mouseState. This includes the X and Y position of the cursor, which button(s) are pressed, etc. The blackjack game was designed around a DFA, the states of which are determined by each of the GameState enum values. If the game is in either of the two states where player input is awaited (GameState.WaitingForPlayer and GameState.DisplayingHandResults), it’s going to call the Update method on each menu button within the game, which will check if any of the buttons (such as the Hit, Stand, or Quit buttons) have been clicked. If the game is not in any of those states, it’s going to go through the switch statement and execute the appropriate code which represents the DFA transition. &lt;/p&gt;
+
+&lt;h2 id=&quot;sprites&quot;&gt;Sprites&lt;/h2&gt;
+
+&lt;p&gt;In 2D game programming, all objects in the world are displayed as sprites. Player characters, enemies the player fights, items the player gets, and other objects and entities in the world are displayed as sprites. Sprites are rectangles of varying sizes that have images placed on them.&lt;/p&gt;
+
+&lt;p&gt;place sprite example here&lt;/p&gt;
+
+&lt;h2 id=&quot;collision-detection&quot;&gt;Collision Detection&lt;/h2&gt;
+
+&lt;p&gt;In order for games to be interesting, things need to happen when sprites interact with each other. Collision detection is a term used to describe when the game checks for when sprites intersect each other and what to do when that happens. In Super Mario Bros. if Mario walks into a goomba, he shrinks if he’s big or he dies if he’s small. However, if he jumps on the goomba, he’ll bounce back up and get points.&lt;/p&gt;
+
+&lt;p&gt;Motivation&lt;/p&gt;
+
+&lt;p&gt;Topics - C#, game programming, XNA&lt;/p&gt;
+
+&lt;p&gt;Projects
+blackjack, french fries shooting at teddy bears&lt;/p&gt;
+
+&lt;p&gt;XNA
+Mouse, MouseState, Texture2D, Rectangle, velocity2
+LoadContent, Draw, Update&lt;/p&gt;
+</description>
+        <pubDate>Fri, 01 May 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/05/01/Game-Programming.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/05/01/Game-Programming.html</guid>
+      </item>
+    
+      <item>
         <title>Retrospectives - A Tool for Team Improvement</title>
         <description>&lt;h1 id=&quot;retrospectives---a-tool-for-team-improvement&quot;&gt;Retrospectives - A Tool for Team Improvement&lt;/h1&gt;
 
