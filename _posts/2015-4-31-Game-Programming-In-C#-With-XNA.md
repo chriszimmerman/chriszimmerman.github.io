@@ -1,5 +1,12 @@
 ---
 layout: post
+title: Game Programming C# With XNA
+comments: true
+tags:
+- C#
+- XNA
+- Game Programming
+- Video Games
 ---
 
 #Game Programming in C# With XNA
