@@ -113,6 +113,6 @@ One thing I dislike about game programming in XNA is that it seems difficult to 
 I have talked about some basic 2D game development concepts, as well as some of the XNA Framework's API. Using the knowledge I've learned from the course, I've been able to make a few simple games that are fun to play. If you've ever wanted to make a video game, I encourage checking out this course. Get out there and have some fun!
 
 ##Resources
-[Coursera - Game Programming in C3](https://class.coursera.org/gameprogramming-002)
+[Coursera - Game Programming in C#](https://class.coursera.org/gameprogramming-002)
 
 [Microsoft XNA](https://www.microsoft.com/en-us/download/details.aspx?id=20914)
