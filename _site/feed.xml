@@ -12,7 +12,7 @@
 
 &lt;p&gt;Recently, I attended an exceptional philly.rb meetup where two talks were presented. One was on &lt;a href=&quot;http://www.slideshare.net/WilliamJeffries1/civic-hacking-on-rails&quot;&gt;civic hacking&lt;/a&gt; and one was on &lt;a href=&quot;http://lanyrd.com/2015/mwrc/sdkmkc/#link-cbfhz&quot;&gt;language exploration&lt;/a&gt;. The talk on language exploration, titled “Make up your own ‘Hello, world!’”, inspired me to take a short-to-medium-term look into a new language.&lt;/p&gt;
 
-&lt;p&gt;In Justin Campbell’s talk, he discusses the importance of learning new languages and how to go about it. Here’s the gist: take up a new language and implement a nontrivial-yet-not-crazily-complex project. Try to embrace the idioms of the language while implementing your project so that you expand your mind, gain new perspective, and bring what you’ve learned back into the languages you currently work in. Justin’s ‘Hello world’ of choice is a URL shortener. It’s a nontrivial project and ensures that you’ll be using a not insignificant portion of the language’s features in order to implement it.&lt;/p&gt;
+&lt;p&gt;In Justin Campbell’s talk, he discusses the importance and benefits of learning new languages. Here’s the gist: take up a new language and implement a nontrivial-yet-not-crazily-complex project. Try to embrace the idioms of the language while implementing your project so that you expand your mind, gain new perspective, and bring what you’ve learned back into the languages you currently work in. Justin’s ‘Hello world’ of choice is a URL shortener. It’s a nontrivial project and ensures that you’ll be using a not insignificant portion of the language’s features in order to implement it.&lt;/p&gt;
 
 &lt;p&gt;I decided to try this idea and timebox learning a new language to a month. The language I chose: Python. My version of ‘Hello, world!’: a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku&quot;&gt;sudoku&lt;/a&gt; solver. With a sudoku solver, you can learn how to get user input in several ways: from a file, from them typing it in by hand, from a web form. Once you get the input, you need to parse and validate the puzzle to see if it’s already invalid. If not, you can attempt to solve it. As far as solving goes, I kept my solver simple and used a brute force algorithm to solve the puzzle. &lt;/p&gt;
 
@@ -22,7 +22,7 @@
 
 &lt;p&gt;However, I wanted to make sure I wasn’t missing out on anything. I heard that Python had fantastic libraries like SciPy and NumPy for support in science and math-related tasks. After attending this talk, I saw this as a great opportunity to get a taste for a language without heavily investing in it.&lt;/p&gt;
 
-&lt;h2 id=&quot;project&quot;&gt;Project&lt;/h2&gt;
+&lt;h2 id=&quot;projects&quot;&gt;Project(s)&lt;/h2&gt;
 
 &lt;p&gt;For my first week or so with Python, I went through a good deal of &lt;a href=&quot;https://automatetheboringstuff.com/&quot;&gt;Automating the Boring Stuff With Python&lt;/a&gt; by Al Sweigart. Because of my Ruby background, I didn’t find much in Python too unfamiliar. Going through this book got my head around fundamentals of Python like how to name variables/classes/methods and basic syntax. &lt;/p&gt;
 
@@ -61,7 +61,24 @@ solver = Solver()
 self.assertTrue(solver.is_valid(puzzle))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In my project, I represent a sudoku puzzle as a list of lists of &lt;code&gt;Square&lt;/code&gt; objects, which contain 4 properties: &lt;code&gt;number&lt;/code&gt;, &lt;code&gt;row&lt;/code&gt;, &lt;code&gt;column&lt;/code&gt;, and &lt;code&gt;block&lt;/code&gt;. My solution has two objects: a &lt;code&gt;FileReader&lt;/code&gt; and a &lt;code&gt;Solver&lt;/code&gt;. The responsibility of the &lt;code&gt;FileReader&lt;/code&gt; object is to read the contents of a file and convert it into my representation of a sudoku puzzle. An example file looks like this:&lt;/p&gt;
+&lt;p&gt;In my project, I represent a sudoku puzzle as a list of lists of &lt;code&gt;Square&lt;/code&gt; objects. Here is my Square class:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class Square(object):
+	def __init__(self, number, row, column, block):
+		self.number = number
+		self.row = row 
+		self.column = column 
+		self.block = block
+
+	def __eq__(self, other):
+		return (isinstance(other, self.__class__)
+				and self.__dict__ == other.__dict__)
+
+	def __hash__(self):
+		return int(str(self.number) + str(self.row) + str(self.column) + str(self.block))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;My solution has two objects: a &lt;code&gt;FileReader&lt;/code&gt; and a &lt;code&gt;Solver&lt;/code&gt;. The responsibility of the &lt;code&gt;FileReader&lt;/code&gt; object is to read the contents of a file and convert it into my representation of a sudoku puzzle. An example file looks like this:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;_ 4 3 9 _ _ 2 _ 5
 8 _ 5 _ 7 _ 6 _ _
@@ -74,17 +91,21 @@ _ _ 4 _ 2 _ 5 _ 7
 1 _ 6 _ _ 7 4 2 _
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;One method reads the file, getting a list of strings as output. Another function sanitizes that list of strings, extracts the numbers (or blanks) and converts them into sudoku &lt;code&gt;Square&lt;/code&gt; objects. &lt;/p&gt;
+&lt;p&gt;One method reads the file, getting a list of strings as output. Another method sanitizes that list of strings, extracts the numbers (or blanks) and converts them into sudoku &lt;code&gt;Square&lt;/code&gt; objects. &lt;/p&gt;
 
-&lt;p&gt;The responsibility of the &lt;code&gt;Solver&lt;/code&gt; class is to take that list of lists and 1) make sure that the puzzle is even solveable with the squares that are already filled in and 2) to find the solution if one can be found. As said before, I use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking&quot;&gt;brute force algorithm&lt;/a&gt; to solve the puzzle. Once the puzzle is solved, the solution is printed.&lt;/p&gt;
+&lt;p&gt;The responsibility of the &lt;code&gt;Solver&lt;/code&gt; class is to take that list of lists and 1) make sure that the puzzle is even solvable with the squares that are already filled in and 2) to find the solution if one can be found. As said before, I use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking&quot;&gt;brute force algorithm&lt;/a&gt; to solve the puzzle. Once the puzzle is solved, the solution is printed.&lt;/p&gt;
 
 &lt;h2 id=&quot;impressions-of-python&quot;&gt;Impressions of Python&lt;/h2&gt;
 
-&lt;p&gt;I like Python. But I like Ruby better. Mostly due to personal preferences, I suppose. Ruby acutally has private methods. Python has no concept of privateness. I like chaining methods. I prefer &lt;code&gt;&quot;kitties&quot;.upcase.reverse.length&lt;/code&gt; over &lt;code&gt;len(&quot;kitties&quot;.upper()[::-1])&lt;/code&gt;. If I had a job where I wrote in Python, I wouldn’t be upset. But Ruby would be better. &lt;/p&gt;
+&lt;p&gt;As I expected, I found Python very similar to Ruby. I didn’t discover anything mind-blowing like I most likely would have if I had tried something unfamiliar, like ELM, Swift, or Haskell. I found this to be a bummer, as one of the potential benefits of learning a new programming language is having your brain expanded in different ways.&lt;/p&gt;
+
+&lt;p&gt;I like Python. But I like Ruby better. Mostly due to personal preferences, I suppose. Ruby actually has private methods. Python has no concept of privateness. I like chaining methods. I prefer &lt;code&gt;&quot;kitties&quot;.upcase.reverse.length&lt;/code&gt; over &lt;code&gt;len(&quot;kitties&quot;.upper()[::-1])&lt;/code&gt;. If I had a job where I wrote in Python, I wouldn’t be upset. But Ruby would be a much more preferable alternative. &lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;I’m glad that I did this exercise, even if I found out that Python isn’t a language that I would like to pursue further at this time. I highly suggest taking an approach similar to mine or Justin’s to investigate a new language.&lt;/p&gt;
+&lt;p&gt;I’m glad that I did this exercise, even if I found out that Python isn’t a language that I would like to pursue further at this time. Justin has a really great way for looking into new programming languages and I’m glad that I tried his idea. I highly recommend taking a similar approach for learning a new programming language.&lt;/p&gt;
+
+&lt;p&gt;You can find the source code for my solver &lt;a href=&quot;https://github.com/chriszimmerman/python_month/tree/master/sudoku&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://lanyrd.com/2015/mwrc/sdkmkc/#link-cbfhz&quot;&gt;Make Up Your Own ‘Hello, World!’&lt;/a&gt;&lt;/p&gt;
