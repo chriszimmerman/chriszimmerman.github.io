@@ -7,6 +7,79 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Equality Comparison In JavaScript</title>
+        <description>&lt;h1 id=&quot;equality-comparison-in-javascript&quot;&gt;Equality Comparison In JavaScript&lt;/h1&gt;
+
+&lt;p&gt;Let’s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn’t expect. &lt;/p&gt;
+
+&lt;h2 id=&quot;truthy-and-falsy-values&quot;&gt;Truthy and Falsy Values&lt;/h2&gt;
+
+&lt;p&gt;When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be ‘truthy’ or ‘falsy’. For example, if you opened up a console in your browser and typed the following statement:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0 == false;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You would get &lt;code&gt;true&lt;/code&gt; as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;false == false;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;which is a true statement.&lt;/p&gt;
+
+&lt;p&gt;In JavaScript, the following values are falsy:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0
+&#39;&#39; and &quot;&quot; (the empty string)
+null
+undefined
+false
+NaN (not a number)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Truthy values evaluate to true when coerced into booleans. Examples of truthy values are:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;3
+&quot;Borat&quot;
+true
+{ location: &quot;Minnesota&quot;, population: 12000000 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;just-use--and-&quot;&gt;Just Use === and !==&lt;/h2&gt;
+
+&lt;p&gt;I probably should have said this right off the bat:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Don’t ever use the == and != operators when writing JavaScript code.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;No good will come of this. Whenever encountering code that uses these operators, unnecessary mental energy must be expended thinking about the possibility of the gotchas that these operators bring. Instead, just use these operators:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;===
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;!==
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.  &lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In JavaScript, use === and !== for comparision. Your brain (and other brains!) will thank you.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison Operators&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness&quot;&gt;Comparison and Sameness&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 22 Jul 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</guid>
+      </item>
+    
+      <item>
         <title>Javascript - call() and apply()</title>
         <description>&lt;h1 id=&quot;javascript---call-and-apply&quot;&gt;Javascript - call() and apply()&lt;/h1&gt;
 
