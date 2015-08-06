@@ -27,7 +27,8 @@ In my experience, the desk has a monitor, mouse, and keyboard for each developer
 
 Each dev having their own monitor, mouse, and keyboard allows them to easily jump in and contribute. I have heard of places where the keyboard, mouse, and monitor are shared, but I have not worked that way personally. I have also heard of places that will have the monitors face opposite directions, resulting in the developers facing each other. I hear this lends to having better conversations, but again, I don't have any personal experience with this.
 
-![My pairing desk at eMoney](../../../../images/8-3-15/dan.png "My pairing desk at eMoney")
+![My pairing desk at eMoney](../../../../images/8-3-15/dan.jpg "My pairing desk at eMoney")
+My pairing desk at eMoney
 
 ### Machines
 
