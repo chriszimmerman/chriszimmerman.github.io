@@ -9,21 +9,31 @@ tags:
 
 #My Thoughts and Experiences on Pair Programming
 
-At the time of writing this blog, I have about 3.5 years of experience as a professional software developer. For the majority of my career, I have worked in places that have done pair programming, or pairing. Overall, I have had positive experiences with pairing. I wish to speak about my experiences with pair programming, explaining some of the benefits and difficulties that come with the practice.
+At the time of writing this post, I have about 3.5 years of experience as a professional software developer. For the majority of my career, I have worked in places that have done pair programming, or pairing. Overall, I have had positive experiences with pairing. I wish to speak about my experiences with pair programming, explaining some of the benefits and difficulties that come with the practice.
 
 ##What is pair programming?
 
-Pair programming, or pairing, is when two developers actively work together on writing a piece of software at the same time. Pairing can be done with two developers sitting at the same workstation, or it can be done remotely. Pair programming yields a number of great benefits, including real-time code reviews and increased knowledge transfer.
+Pair programming is when two developers actively work together on writing a piece of software at the same time. Pairing can be done with two developers sitting at the same workstation, or it can be done remotely. Pair programming yields a number of great benefits, including real-time code reviews and increased knowledge transfer.
 
 ###Pair switching
 
-When developers pair program, the same developers don't stay together all the time. Unless the team consists of two developers. By switching pairs, developers work with other developers on the team and get exposed to other work. My experience with pair switching has been the following.
+When developers pair program, the same developers don't stay together all the time (unless the team consists of two developers). By switching pairs, developers work with other developers on the team and get exposed to other work. My experience with pair switching has been the following:
 
-Devs A and B have been working on task 1 and devs C and D have been working on task 2. The pairs will work on their respective tasks for a given period of time that is agreed upon by the team. I have paired with people for a whole day, for a half day, or for two hours. After the period of time, the pairs will switch up. Devs A and C will work on task 1 and devs B and D will work on task 2. Dev A brings Dev C up to task on the work that has been done by A and B. Dev D will bring Dev B up to speed on what has been done by devs C and D for task 2.
+Devs A and B have been working on task 1 and devs C and D have been working on task 2. The pairs have worked on their respective tasks for a given period of time that is agreed upon by the team. I have paired with people for a whole day, for a half day, or for two hours. After that period of time, the pairs will switch up. Devs A and C will work on task 1 and devs B and D will work on task 2. Dev A brings Dev C up to task on the work that has been done by devs A and B. Dev D will bring Dev B up to speed on what has been done by devs C and D for task 2.
 
-The devs will work for that same period of time again. The developer who just came onto the task will stay on while the other person switches off. Because Dev A was on task 1 longer than Dev C, Dev A will switch off and Dev C will bring Dev D up to speed on task 1.
+The devs will work for that same period of time again. Afterward, the developer who most recently came onto the task will stay on while the other person switches off. Because Dev A was on task 1 longer than Dev C, Dev A will switch off and Dev C will bring Dev D up to speed on task 1.
 
 This is just an example of how to pair switch. Sometimes the same people will end up pairing together often or certain people will gravitate toward certain tasks. I think it's good to work with everyone on your team and get exposed to as much work as possible. 
+
+###The driver and navigator roles
+
+In pairing, at any given time, one developer plays the role of driver. This is the person actually writing code. Their concern is with the immediate task at hand.
+
+The other developer plays the role of navigator. The navigator keeps a higher level picture of the work in their head. They think about the current task as well as what has been done and what has yet to be done. During a pairing session, developers will frequently exchange these roles.
+
+### The odd person
+
+When there is an odd number of developers on your team, there will be a person left over after devs pair up. This person is referred to the "odd person." At one job, we didn't allow the odd person to push any production code without someone else reviewing it. Obviously, you can't just have a dev sitting around doing nothing. In my experience, this person usually worked on investigations or tooling for the team. In other places, the odd person may be allowed to push production code as long as it's code reviewed by somebody else.
 
 ##Setting up an environment conducive to effective pairing
 
@@ -31,7 +41,7 @@ In order to pair effectively, developers need to have the proper environment set
 
 ###The desk
 
-First, let's talk about the desk (or table, if you prefer). Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other's space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It's the worst. 
+First, let's talk about the desk. Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other's space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It's the worst. 
 
 In my experience, the desk has a monitor, mouse, and keyboard for each developer. The desk should be large enough so that all of these things can fit comfortably. 
 
@@ -70,13 +80,13 @@ Pairing is also great for experimentation. One person in the pair can propose an
 
 ###Mentoring
 
-I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it's truly needed. When a junior and senior developer pair, it's usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn't stray.
+I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it's truly needed. When a junior and senior developer pair, it's usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn't stray too far off.
 
 I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase. 
 
-At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find things.
+At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find what we needed to change.
 
-About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to grow together.
+About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to struggle and grow together.
 
 ###Being kept on track
 
@@ -86,7 +96,7 @@ I also mean this in a benign way. Having a pair present is great for preventing 
 
 ###Growth and challenge
 
-I can say that I'm always challenged when pairing with someone (unless we're stuck doing a menial or tedious task). I might have to explain somebody coming onto the task I was working on what I was doing. It might be the other way around; I might have to get myself up to speed on work that I was not involved in. I have to be way more into mentally that if I were by myself because I don't want to let my pair down. This has hands down made me a better software developer. When pairing, I'm constantly pushed and I'm cool with that. 
+I can say that I'm always challenged when pairing with someone (unless we're stuck doing a menial or tedious task). I might have to explain to somebody coming onto the task that I was working on what I was doing. It might be the other way around; I might have to get myself up to speed on work that I was not involved in. I have to be way more into it mentally than if I were by myself because I don't want to let my pair down. Hands down, this has made me a better software developer. When pairing, I'm constantly pushed and I'm cool with that. 
 
 ###Gelling
 
@@ -100,25 +110,27 @@ Pairing isn't a silver bullet. Like anything, there are drawbacks that come with
 
 Are you making trival changes to a configuration file? Are you tweaking the position of a UI control on a web page?  Are you doing a boring, repetitive task? If you said yes to any of these, you probably don't need another person with you on these tasks. Some tasks are awful enough with just one person doing them and there is no benefit to subjecting another developer to the work. In fact, that other developer's time is most likely better spent working on something else.
 
-At my old job, I worked on a WinForms app. Occasionally, we'd have to make changes to the UI. This involved using a designer in Visual Studio that didn't \*quite\* show what would actually appear in the app, so we'd have to make our changes in the designer, compile, fire up the app, and go to the view to make sure the changes appeared how we intended them to appear. The cycle of tweak/compile/fire-up-app/go-to-view was several minutes. It was brutal. I paired on that task with somebody. Totally unnecessary.
+At my old job, I worked on a WinForms app. Occasionally, we'd have to make changes to the UI. This involved using a designer in Visual Studio that didn't \*quite\* show what would actually appear in the app, so we'd have to make our changes in the designer, compile, fire up the app, and go to the view to make sure the changes appeared how we intended them to appear. The cycle of tweak/compile/fire-up-app/go-to-view was several minutes. It was brutal. I paired on that task with somebody. It was totally unnecessary to have two people working on that task.
 
 ###Staying engaged
 
-It's important that both people stay engaged on the task. Sometimes, a pair might have one person who has a more assertive personality and ends up hogging the keyboard, leaving the other person bored. Try to share duties. Practicing Test-Driven Development and ping-pong pairing help alleviate this issue. Each member of the pair doesn't go too long without doing work.
+It's important that both people stay engaged on the task. Sometimes, a pair might have one person who has a more assertive personality and ends up hogging the keyboard, leaving the other person bored. Try to share duties. Practicing [Test-Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) and [ping-pong pairing](http://c2.com/cgi/wiki?PairProgrammingPingPongPattern) help alleviate this issue. Each member of the pair doesn't go too long without doing work.
 
-If your pair looks bored, you can try asking an innocuous question without sounding accusatory like, "What do you think if we do X here?" That'll get the other person back into the work.
+If your pair looks bored, you can try asking an innocuous question without sounding accusatory like, "What do you think if we do X here?" That will usually get the other person back into the work.
 
 ###Friction
 
 Sometimes you get stuck working with people you may disagree with professionally. Or even with people who are complete jerks. It happens. The best way to deal with this problem, in my experience, is to avoid it. Work with people who share your values. Work with people you enjoy working with.
 
-Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Swtich to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don't have to do it.
+Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Swtich to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don't have to deal with it.
 
 If you can't avoid working with them, try to communicate your issues with the person in a constructive way. Retrospectives are a good venue for this. Talking to the person one-on-one works as well.
 
 There was a point in time where I dreaded every third day of work (assuming the pairing rotation remained constant) because it meant pairing with someone who didn't share my code quality values. This took away from enjoyment of my job. Fortunately, the problem solved itself and the person moved to another team. My day-to-day became much better.
 
 ###Imposter syndrome, ho!
+
+When you're working next to a person all day for 8 hours a day, they will see you make mistakes. This constant visibility into how you perform as a programmer can be stressful, especially if you're somebody like me with imposter syndrome. My way of dealing with this is reminding myself that I'm a human being that makes mistakes. As long as I'm giving my best, that's all that anyone can ask for.
 
 ###It's exhausting
 
@@ -130,4 +142,4 @@ Some people have certain personality types that prevent them from being effectiv
 
 ##Conclusion
 
-For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can't be lazy. I can't be on autopilot. I'm kept honest. I feel that this keeps me at the top of my game. It can be a little stressful and exhausting, but I think it's for the best. Usually, that person sitting next to me has a lot of good ideas in their head and it's nice to learn about them. Sometimes I contribute ideas too. :)
+Hopefully, my experiences have given you some insight into pair programming. For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can't be lazy. I can't be on autopilot. I'm kept honest. I feel that this keeps me at the top of my game. It can be a little stressful and exhausting, but I think it's for the best. When I pair with someone, we're able to fill in each other's gaps, resulting in code of a higher quality.
