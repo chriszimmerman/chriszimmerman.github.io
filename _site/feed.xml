@@ -7,101 +7,10 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>My Thoughts and Experiences on Pair Programming</title>
-        <description>&lt;h1 id=&quot;my-thoughts-and-experiences-on-pair-programming&quot;&gt;My Thoughts and Experiences on Pair Programming&lt;/h1&gt;
+        <title>My Thoughts and Experiences on Pair Programming - Challenges</title>
+        <description>&lt;h1 id=&quot;my-thoughts-and-experiences-on-pair-programming-part-3&quot;&gt;My Thoughts and Experiences on Pair Programming: Part 3&lt;/h1&gt;
 
-&lt;p&gt;At the time of writing this post, I have about 3.5 years of experience as a professional software developer. For the majority of my career, I have worked in places that have done pair programming, or pairing. Overall, I have had positive experiences with pairing. I wish to speak about my experiences with pair programming, explaining some of the benefits and difficulties that come with the practice.&lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-pair-programming&quot;&gt;What is pair programming?&lt;/h2&gt;
-
-&lt;p&gt;Pair programming is when two developers actively work together on writing a piece of software at the same time. Pairing can be done with two developers sitting at the same workstation, or it can be done remotely. Pair programming yields a number of great benefits, including real-time code reviews and increased knowledge transfer.&lt;/p&gt;
-
-&lt;h3 id=&quot;pair-switching&quot;&gt;Pair switching&lt;/h3&gt;
-
-&lt;p&gt;When developers pair program, the same developers don’t stay together all the time (unless the team consists of two developers). By switching pairs, developers work with other developers on the team and get exposed to other work. My experience with pair switching has been the following:&lt;/p&gt;
-
-&lt;p&gt;Devs A and B have been working on task 1 and devs C and D have been working on task 2. The pairs have worked on their respective tasks for a given period of time that is agreed upon by the team. I have paired with people for a whole day, for a half day, or for two hours. After that period of time, the pairs will switch up. Devs A and C will work on task 1 and devs B and D will work on task 2. Dev A brings Dev C up to task on the work that has been done by devs A and B. Dev D will bring Dev B up to speed on what has been done by devs C and D for task 2.&lt;/p&gt;
-
-&lt;p&gt;The devs will work for that same period of time again. Afterward, the developer who most recently came onto the task will stay on while the other person switches off. Because Dev A was on task 1 longer than Dev C, Dev A will switch off and Dev C will bring Dev D up to speed on task 1.&lt;/p&gt;
-
-&lt;p&gt;This is just an example of how to pair switch. Sometimes the same people will end up pairing together often or certain people will gravitate toward certain tasks. I think it’s good to work with everyone on your team and get exposed to as much work as possible. &lt;/p&gt;
-
-&lt;h3 id=&quot;the-driver-and-navigator-roles&quot;&gt;The driver and navigator roles&lt;/h3&gt;
-
-&lt;p&gt;In pairing, at any given time, one developer plays the role of driver. This is the person actually writing code. Their concern is with the immediate task at hand.&lt;/p&gt;
-
-&lt;p&gt;The other developer plays the role of navigator. The navigator keeps a higher level picture of the work in their head. They think about the current task as well as what has been done and what has yet to be done. During a pairing session, developers will frequently exchange these roles.&lt;/p&gt;
-
-&lt;h3 id=&quot;the-odd-person&quot;&gt;The odd person&lt;/h3&gt;
-
-&lt;p&gt;When there is an odd number of developers on your team, there will be a person left over after devs pair up. This person is referred to the “odd person.” At one job, we didn’t allow the odd person to push any production code without someone else reviewing it. Obviously, you can’t just have a dev sitting around doing nothing. In my experience, this person usually worked on investigations or tooling for the team. In other places, the odd person may be allowed to push production code as long as it’s code reviewed by somebody else.&lt;/p&gt;
-
-&lt;h2 id=&quot;setting-up-an-environment-conducive-to-effective-pairing&quot;&gt;Setting up an environment conducive to effective pairing&lt;/h2&gt;
-
-&lt;p&gt;In order to pair effectively, developers need to have the proper environment set up. This means having both 1) a physical environment (chairs, desks, keyboards, mice, etc.) and 2) a development environment (IDEs, editors, tools, etc.) where both developers can work comfortably. &lt;/p&gt;
-
-&lt;h3 id=&quot;the-desk&quot;&gt;The desk&lt;/h3&gt;
-
-&lt;p&gt;First, let’s talk about the desk. Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other’s space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It’s the worst. &lt;/p&gt;
-
-&lt;p&gt;In my experience, the desk has a monitor, mouse, and keyboard for each developer. The desk should be large enough so that all of these things can fit comfortably. &lt;/p&gt;
-
-&lt;p&gt;Each dev having their own monitor, mouse, and keyboard allows them to easily jump in and contribute. I have heard of places where the keyboard, mouse, and monitor are shared, but I have not worked that way personally. I have also heard of places that will have the monitors face opposite directions, resulting in the developers facing each other. I hear this lends to having better conversations, but again, I don’t have any personal experience with this.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../images/8-3-15/dan.jpg&quot; alt=&quot;My pairing desk at eMoney Advisor&quot; title=&quot;My pairing desk at eMoney Advisor&quot; /&gt;
-My pairing desk at eMoney&lt;/p&gt;
-
-&lt;h3 id=&quot;machines&quot;&gt;Machines&lt;/h3&gt;
-
-&lt;p&gt;At my current job, I have &lt;em&gt;my&lt;/em&gt; machine. I log into it with &lt;em&gt;my&lt;/em&gt; credentials and I’m responsible for what happens with that machine. &lt;/p&gt;
-
-&lt;p&gt;I dislike this. It encourages thinking in terms of the individual instead of in terms of the pair. Or in terms of the team, for that matter.&lt;/p&gt;
-
-&lt;p&gt;At my previous job, I had my own network account, but my team had a set of team machines. On each machine, we created a local team account with the proper permissions to get work done. We agreed as a team on a particular setup for the machines so that no matter what machine you worked on, it was indistinquishable from any of the other machines.&lt;/p&gt;
-
-&lt;p&gt;Having machines with the same setup saves a lot of headaches because you don’t have to worry about which tools, packages, etc. are installed on a given machine. Another advantage of having team machines is that if a pair ends the day in the middle of work that is not ready to be committed, it’s easy to jump back into it the next day and not have to worry about things like if a member of the pair will be out the next day.&lt;/p&gt;
-
-&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
-
-&lt;p&gt;When devs pair, they’ll be using the same tools. Examples of tools can be text editors, IDEs, plugins, and keyboard configurations. It’s best to come to some sort of agreement on which tools to use. I’ve been on teams that come of with working agreements for tools and it’s worked out well when the team members respect the working agreements.&lt;/p&gt;
-
-&lt;p&gt;Going back to the comfort motif, make sure to decide on tools that most, if not all, members of the team are comfortable using. Because I’m such a nice dude, I’m willing to concede on certain things to make the other person more comfortable. For example, I like to use the VSVim plugin for Visual Studio. I pair with people who dislike using vim, so I’ll disable the plugin when I pair with them as to not hamper their productivity. While I feel vim is great for text editing (and you should totally use it!), I can get by without it.&lt;/p&gt;
-
-&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;/h2&gt;
-
-&lt;h3 id=&quot;no-single-point-of-failure&quot;&gt;No single point of failure&lt;/h3&gt;
-
-&lt;p&gt;As I said, there are many benefits to pair programming. For starters, because two developers are actively working on solving a problem or writing a feature, both devs will have the knowledge of the work in their heads. This results in redundancy on the team. There is no “The Guy” on the team who, should they get hit by a bus, go on vacation, or decide to quit, would end up screwing the team over (whether intentionally or unintentionallly). There is no single point of failure.&lt;/p&gt;
-
-&lt;h3 id=&quot;collaboration-and-improved-design&quot;&gt;Collaboration and improved design&lt;/h3&gt;
-
-&lt;p&gt;When two brains are working on writing software, both are giving input and critique to the design of the software being written. Pairing is a great vessel for collaboration. With pairing, you get multiple perspectives of a problem.&lt;/p&gt;
-
-&lt;p&gt;Pairing is also great for experimentation. One person in the pair can propose an experimental idea to try and the pair can critique and improve it. If there are feelings that the pair is going too far down a rabbit hole, the experiment can be aborted.&lt;/p&gt;
-
-&lt;h3 id=&quot;mentoring&quot;&gt;Mentoring&lt;/h3&gt;
-
-&lt;p&gt;I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it’s truly needed. When a junior and senior developer pair, it’s usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn’t stray too far off.&lt;/p&gt;
-
-&lt;p&gt;I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase. &lt;/p&gt;
-
-&lt;p&gt;At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find what we needed to change.&lt;/p&gt;
-
-&lt;p&gt;About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to struggle and grow together.&lt;/p&gt;
-
-&lt;h3 id=&quot;being-kept-on-track&quot;&gt;Being kept on track&lt;/h3&gt;
-
-&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task. &lt;/p&gt;
-
-&lt;p&gt;I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are much less common with another set of eyes on the code being written. &lt;/p&gt;
-
-&lt;h3 id=&quot;growth-and-challenge&quot;&gt;Growth and challenge&lt;/h3&gt;
-
-&lt;p&gt;I can say that I’m always challenged when pairing with someone (unless we’re stuck doing a menial or tedious task). I might have to explain to somebody coming onto the task that I was working on what I was doing. It might be the other way around; I might have to get myself up to speed on work that I was not involved in. I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that. &lt;/p&gt;
-
-&lt;h3 id=&quot;gelling&quot;&gt;Gelling&lt;/h3&gt;
-
-&lt;p&gt;I consider many of the people I have paired with over the years good friends. As you work together with the people you pair with, you get to know them really well and gel. I feel that a team works much better if they get along really well and trust each other.&lt;/p&gt;
+&lt;p&gt;This is the final post in a three part series. In &lt;a href=&quot;../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html&quot;&gt;part 1&lt;/a&gt; of this series, I gave an introduction to pair programming. In &lt;a href=&quot;../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html&quot;&gt;part 2&lt;/a&gt;, I discussed the benefits of pair programming. I will now talk about the challenges of pair programming.&lt;/p&gt;
 
 &lt;h2 id=&quot;challenges&quot;&gt;Challenges&lt;/h2&gt;
 
@@ -109,7 +18,7 @@ My pairing desk at eMoney&lt;/p&gt;
 
 &lt;h3 id=&quot;tasks-not-meant-for-a-pair&quot;&gt;Tasks not meant for a pair&lt;/h3&gt;
 
-&lt;p&gt;Are you making trival changes to a configuration file? Are you tweaking the position of a UI control on a web page?  Are you doing a boring, repetitive task? If you said yes to any of these, you probably don’t need another person with you on these tasks. Some tasks are awful enough with just one person doing them and there is no benefit to subjecting another developer to the work. In fact, that other developer’s time is most likely better spent working on something else.&lt;/p&gt;
+&lt;p&gt;Are you making trivial changes to a configuration file? Are you tweaking the position of a UI control on a web page?  Are you doing a boring, repetitive task? If you said yes to any of these, you probably don’t need another person with you on these tasks. Some tasks are awful enough with just one person doing them and there is no benefit to subjecting another developer to the work. In fact, that other developer’s time is most likely better spent working on something else.&lt;/p&gt;
 
 &lt;p&gt;At my old job, I worked on a WinForms app. Occasionally, we’d have to make changes to the UI. This involved using a designer in Visual Studio that didn’t *quite* show what would actually appear in the app, so we’d have to make our changes in the designer, compile, fire up the app, and go to the view to make sure the changes appeared how we intended them to appear. The cycle of tweak/compile/fire-up-app/go-to-view was several minutes. It was brutal. I paired on that task with somebody. It was totally unnecessary to have two people working on that task.&lt;/p&gt;
 
@@ -123,11 +32,11 @@ My pairing desk at eMoney&lt;/p&gt;
 
 &lt;p&gt;Sometimes you get stuck working with people you may disagree with professionally. Or even with people who are complete jerks. It happens. The best way to deal with this problem, in my experience, is to avoid it. Work with people who share your values. Work with people you enjoy working with.&lt;/p&gt;
 
-&lt;p&gt;Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Swtich to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don’t have to deal with it.&lt;/p&gt;
+&lt;p&gt;Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Switch to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don’t have to deal with it.&lt;/p&gt;
 
 &lt;p&gt;If you can’t avoid working with them, try to communicate your issues with the person in a constructive way. Retrospectives are a good venue for this. Talking to the person one-on-one works as well.&lt;/p&gt;
 
-&lt;p&gt;There was a point in time where I dreaded every third day of work (assuming the pairing rotation remained constant) because it meant pairing with someone who didn’t share my code quality values. This took away from enjoyment of my job. Fortunately, the problem solved itself and the person moved to another team. My day-to-day became much better.&lt;/p&gt;
+&lt;p&gt;There was a point in time where I dreaded every third day of work (assuming the pairing rotation remained constant) because it meant pairing with someone who didn’t share my code quality values. There was arguing about the worth of tests, whether or not to refactor code, whether or not to “just put this one quick hack in”, and a number of related topics. This took away from enjoyment of my job. Fortunately, the problem solved itself and the person moved to another team. My day-to-day became much better.&lt;/p&gt;
 
 &lt;h3 id=&quot;imposter-syndrome-ho&quot;&gt;Imposter syndrome, ho!&lt;/h3&gt;
 
@@ -143,11 +52,140 @@ My pairing desk at eMoney&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Hopefully, my experiences have given you some insight into pair programming. For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can’t be lazy. I can’t be on autopilot. I’m kept honest. I feel that this keeps me at the top of my game. It can be a little stressful and exhausting, but I think it’s for the best. When I pair with someone, we’re able to fill in each other’s gaps, resulting in code of a higher quality.&lt;/p&gt;
+&lt;p&gt;For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can’t be lazy. I can’t be on autopilot. I’m kept honest. I feel that this keeps me at the top of my game. I also get opportunities to share my knowledge with other developers. This results in a better team, a better community of developers.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, my experiences have given you some insight into pair programming. If you want to read about some of my colleagues’ thoughts on pair programming, you can check out &lt;a href=&quot;http://anthonysciamanna.com/2015/04/18/ping-pong-pair-programming.html&quot;&gt;Anthony Sciamanna’s post on Ping Pong Pair Programming&lt;/a&gt; and &lt;a href=&quot;http://dandonahue.net/2013/11/20/my-thoughts-on-pair-programming-intro.html&quot;&gt;Dan Donahue’s series of pair programming posts&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you would like to get started with pair programming, check out Avdi Grimm’s site &lt;a href=&quot;http://www.pairprogramwith.me/&quot;&gt;Pairprogramwith.me&lt;/a&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 03 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2015/08/03/My-Thoughts-And-Experiences-On-Pair-Programming.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/08/03/My-Thoughts-And-Experiences-On-Pair-Programming.html</guid>
+        <pubDate>Wed, 12 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html</guid>
+      </item>
+    
+      <item>
+        <title>My Thoughts and Experiences on Pair Programming - Benefits</title>
+        <description>&lt;h1 id=&quot;my-thoughts-and-experiences-on-pair-programming-part-2&quot;&gt;My Thoughts and Experiences on Pair Programming: Part 2&lt;/h1&gt;
+
+&lt;p&gt;In &lt;a href=&quot;../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html&quot;&gt;part 1&lt;/a&gt; of my series, I gave an introduction to pair programming and discussed setting up an environment conducive to pair programming. I’ll now talk about the benefits of pair programming.&lt;/p&gt;
+
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;/h2&gt;
+
+&lt;h3 id=&quot;no-single-point-of-failure&quot;&gt;No single point of failure&lt;/h3&gt;
+
+&lt;p&gt;As I said, there are many benefits to pair programming. For starters, because two developers are actively working on solving a problem or writing a feature, both devs will have the knowledge of the work in their heads. This results in redundancy on the team. There is no “The Guy” on the team who, should they get hit by a bus, go on vacation, or decide to quit, would end up screwing the team over (whether intentionally or unintentionally). There is no single point of failure.&lt;/p&gt;
+
+&lt;h3 id=&quot;collaboration-and-improved-design&quot;&gt;Collaboration and improved design&lt;/h3&gt;
+
+&lt;p&gt;When two brains are working on writing software, both are giving input and critique to the design of the software being written. Pairing is a great vessel for collaboration. With pairing, you get multiple perspectives of a problem.&lt;/p&gt;
+
+&lt;p&gt;Pairing is also great for experimentation. One person in the pair can propose an experimental idea to try and the other can critique and improve it. If there are feelings that the pair is going too far down a rabbit hole, the experiment can be aborted.&lt;/p&gt;
+
+&lt;h3 id=&quot;mentoring&quot;&gt;Mentoring&lt;/h3&gt;
+
+&lt;p&gt;I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it’s truly needed. When a junior and senior developer pair, it’s usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn’t stray too far off.&lt;/p&gt;
+
+&lt;p&gt;I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase. &lt;/p&gt;
+
+&lt;p&gt;At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find what we needed to change.&lt;/p&gt;
+
+&lt;p&gt;About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to explore the codebase and grow together.&lt;/p&gt;
+
+&lt;h3 id=&quot;being-kept-on-track&quot;&gt;Being kept on track&lt;/h3&gt;
+
+&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task. &lt;/p&gt;
+
+&lt;p&gt;I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are quickly found and resolved with another set of eyes on the code being written. &lt;/p&gt;
+
+&lt;h3 id=&quot;growth-and-challenge&quot;&gt;Growth and challenge&lt;/h3&gt;
+
+&lt;p&gt;I can say that I’m always challenged when pairing with someone (unless we’re stuck doing a menial or tedious task). I might have to explain work that was done on a task to a newcomer. It might be the other way around; I might have to get myself up to speed on work that I was not involved in.&lt;/p&gt;
+
+&lt;p&gt;I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that. &lt;/p&gt;
+
+&lt;h3 id=&quot;gelling&quot;&gt;Gelling&lt;/h3&gt;
+
+&lt;p&gt;I consider many of the people I have paired with over the years good friends. As you work together with the people you pair with, you get to know them really well and gel. I feel that a team works much better if they get along really well and trust each other.&lt;/p&gt;
+
+&lt;h2 id=&quot;part-3&quot;&gt;Part 3&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html&quot;&gt;part 3&lt;/a&gt; I discuss the challenges of pair programming.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html</guid>
+      </item>
+    
+      <item>
+        <title>My Thoughts and Experiences on Pair Programming - Intro</title>
+        <description>&lt;p&gt;Note: This is part one of a three part series. You can find &lt;a href=&quot;../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html&quot;&gt;part 2&lt;/a&gt; and &lt;a href=&quot;../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html&quot;&gt;part 3&lt;/a&gt; here.&lt;/p&gt;
+
+&lt;h1 id=&quot;my-thoughts-and-experiences-on-pair-programming-part-1&quot;&gt;My Thoughts and Experiences on Pair Programming: Part 1&lt;/h1&gt;
+
+&lt;p&gt;At the time of writing this post, I have about 3.5 years of experience as a professional software developer. For the majority of my career, I have worked in places that have done pair programming, or pairing. Overall, I have had positive experiences with pairing. I wish to speak about my experiences with pair programming, explaining some of the benefits and difficulties that come with the practice.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-pair-programming&quot;&gt;What is pair programming?&lt;/h2&gt;
+
+&lt;p&gt;Pair programming is when two developers actively work together on writing a piece of software at the same time. Pairing can be done with two developers sitting at the same physical location, or it can be done remotely. Pair programming yields a number of great benefits, including real-time code reviews and increased knowledge transfer.&lt;/p&gt;
+
+&lt;h3 id=&quot;pair-switching&quot;&gt;Pair switching&lt;/h3&gt;
+
+&lt;p&gt;When developers pair program, the same developers don’t stay together all the time (unless the team consists of two developers). By switching pairs, developers get to work with everybody else on the team and get exposed to other work. My experience with pair switching has been the following:&lt;/p&gt;
+
+&lt;p&gt;Devs A and B have been working on task 1 and Devs C and D have been working on task 2. The pairs have worked on their respective tasks for one pairing session, which lasts for a given period of time that is agreed upon by the team. I have had pairing sessions last for a whole day, a half day, or two hours. After a session, the pairs will switch up. Devs A and C will work on task 1 and devs B and D will work on task 2. Dev A brings Dev C up to task on the work that has been done by devs A and B. Dev D will bring Dev B up to speed on what has been done by devs C and D for task 2.&lt;/p&gt;
+
+&lt;p&gt;The devs will pair for another session. Afterward, the developer who most recently came onto the task will stay on while the other person switches off. Because Dev A was on task 1 longer than Dev C, Dev A will switch off and Dev C will bring Dev D up to speed on task 1.&lt;/p&gt;
+
+&lt;p&gt;This is just an example of how to pair switch. Sometimes the same people will end up pairing together often or certain people will gravitate toward certain tasks. I think it’s good to work with everyone on your team and get exposed to a variety of work. &lt;/p&gt;
+
+&lt;h3 id=&quot;the-driver-and-navigator-roles&quot;&gt;The driver and navigator roles&lt;/h3&gt;
+
+&lt;p&gt;While pairing, at any given time, one developer plays the role of driver. This is the person actually writing code. Their concern is with the immediate task at hand.&lt;/p&gt;
+
+&lt;p&gt;The other developer plays the role of navigator. The navigator keeps a higher level picture of the work in their head. They think about the current task as well as what has been done and what has yet to be done. During a pairing session, developers will frequently exchange these roles.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-odd-person&quot;&gt;The odd person&lt;/h3&gt;
+
+&lt;p&gt;When you have an odd number of developers on your team, there will be a person left over after devs pair up. This person is referred to the “odd person.” At one job, we didn’t allow the odd person to push any production code without someone else reviewing it. Obviously, you can’t just have a dev sitting around doing nothing. In my experience, this person usually worked on investigations or tooling for the team. In other places, the odd person was allowed to push production code as long as it was code reviewed by somebody else.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-an-environment-conducive-to-effective-pairing&quot;&gt;Setting up an environment conducive to effective pairing&lt;/h2&gt;
+
+&lt;p&gt;In order to pair effectively, developers need to have the proper environment set up. This means having both 1) a physical environment (chairs, desks, keyboards, mice, etc.) and 2) a development environment (IDEs, editors, tools, etc.) where both developers can work comfortably. &lt;/p&gt;
+
+&lt;h3 id=&quot;the-desk&quot;&gt;The desk&lt;/h3&gt;
+
+&lt;p&gt;First, let’s talk about the desk. Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other’s space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It’s the worst. &lt;/p&gt;
+
+&lt;p&gt;In my experience, the desk has a monitor, mouse, and keyboard for each developer. The desk should be large enough so that all of these things can fit comfortably. &lt;/p&gt;
+
+&lt;p&gt;Each dev having their own monitor, mouse, and keyboard allows them to easily jump in and contribute. I have heard of places where the keyboard, mouse, and monitor are shared, but I have not worked that way personally. I have also heard of places that will have the monitors face opposite directions, resulting in the developers facing each other. I hear this lends to having better conversations, but again, I don’t have any personal experience with this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../images/8-3-15/dan.jpg&quot; alt=&quot;My pairing desk at eMoney Advisor along with my coworker Dan Donahue&quot; title=&quot;My pairing desk at eMoney Advisor along with my coworker Dan Donahue&quot; /&gt;
+My pairing desk at eMoney along with my coworker &lt;a href=&quot;http://www.dandonahue.net&quot;&gt;Dan Donahue&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;machines&quot;&gt;Machines&lt;/h3&gt;
+
+&lt;p&gt;At my current job, I have &lt;em&gt;my&lt;/em&gt; machine. I log into it with &lt;em&gt;my&lt;/em&gt; credentials and I’m responsible for what happens with that machine. &lt;/p&gt;
+
+&lt;p&gt;I dislike this. It encourages thinking in terms of the individual instead of in terms of the pair. Or in terms of the team, for that matter.&lt;/p&gt;
+
+&lt;p&gt;At my previous job, I had my own network account, but my team had a set of team machines. On each machine, we created a local team account with the proper permissions to get work done. We agreed as a team on a particular setup for the machines so that no matter what machine you worked on, it was indistinguishable from any of the other machines.&lt;/p&gt;
+
+&lt;p&gt;Having machines with the same setup saves a lot of headaches because you don’t have to worry about which tools, packages, etc. are installed on a given machine. Another advantage of having team machines is that if a pair ends the day in the middle of work that is not ready to be committed, it’s easy to jump back into it the next day and not have to worry about things like if a member of the pair will be out the next day.&lt;/p&gt;
+
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;/h3&gt;
+
+&lt;p&gt;When devs pair, they’ll be using the same tools. Examples of tools are text editors, IDEs, plugins, and keyboard configurations. It’s best to come to some sort of agreement on which tools to use. I’ve been on teams that come of with working agreements for tools and it worked out well when the team members respect the working agreements.&lt;/p&gt;
+
+&lt;p&gt;Going back to the comfort motif, make sure to decide on tools that most, if not all, members of the team are comfortable using. Because I’m such a nice dude, I’m willing to concede on certain things to make the other person more comfortable. For example, I like to use the VSVim plugin for Visual Studio. I pair with people who dislike using vim, so I’ll disable the plugin when I pair with them as to not hamper their productivity. While I feel vim is great for text editing (and you should totally use it!), I can get by without it.&lt;/p&gt;
+
+&lt;h2 id=&quot;part-2&quot;&gt;Part 2&lt;/h2&gt;
+
+&lt;p&gt;In &lt;a href=&quot;../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html&quot;&gt;part 2&lt;/a&gt; I talk about the benefits of pair programming.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 10 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</guid>
       </item>
     
       <item>
@@ -901,100 +939,6 @@ ProcessMessage.send_message &quot;Why hello there!&quot;
         <pubDate>Sun, 02 Nov 2014 00:00:00 -0400</pubDate>
         <link>http://blog.chriszimmerman.net//2014/11/02/Elixir-Processes.html</link>
         <guid isPermaLink="true">http://blog.chriszimmerman.net//2014/11/02/Elixir-Processes.html</guid>
-      </item>
-    
-      <item>
-        <title>Semantic Versioning</title>
-        <description>&lt;h1 id=&quot;semantic-versioning&quot;&gt;Semantic Versioning&lt;/h1&gt;
-
-&lt;p&gt;At work, the topic of semantic versioning came up. I decided to do some research on the topic since I had not heard of the term before. &lt;/p&gt;
-
-&lt;h2 id=&quot;what-is-semantic-versioning&quot;&gt;What is semantic versioning?&lt;/h2&gt;
-
-&lt;p&gt;Semantic versioning is a convention for version-naming for your products, whether they be libraries, APIs, etc. Its purpose is to prevent difficulties in releasing new versions of your product. It may be difficult to release a new version of your product if you have to wait for new versions of your product’s dependencies to be released. You may also be reluctant to adopt new versions of packages or libraries since you might not know if a new version will break your existing code. &lt;/p&gt;
-
-&lt;p&gt;In short:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Semantic versioning allows developers to easily reason about when it is and isn’t appropriate to adopt a new version of a dependency.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;format&quot;&gt;Format&lt;/h2&gt;
-
-&lt;p&gt;For semantic versioning, your product must define a public API. The basic format for your API’s version should be as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;major.minor.patch
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For example, let’s say there is a library called Yarner, a string manipulation library. Its current version is 2.3.5. This means that the major version is 2, the minor version is 3, and the patch version is 5.&lt;/p&gt;
-
-&lt;p&gt;The significance of the numbers is as follows:  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;-major - incremented when API-breaking changes are made.
-		Minor and patch numbers are reset to zero.
--minor - incremented when non-API-breaking changes are made.
-		Patch number is reset to zero.
--patch - incremented when non-API-breaking bug fixes are made.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
-
-&lt;p&gt;I have a library called AreaCalculator which has a public method, CalculateRectangleArea. It is currently version 1.2.0. It has the following signature: &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CalculateRectangleArea(int length, int width).  
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;For whatever dumb reason, CalculateRectangleArea was calculating the area by multiplying length by itself:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;return length * length;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This was fixed and now the function correctly calculates the rectangle’s area by returning the rectangle’s length times width:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;return length * width;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Fixing this bug doesn’t break the interface of CalculateRectangleArea and it’s not a new feature, so the release containing this fix can be versioned as 1.2.1.&lt;/p&gt;
-
-&lt;h2 id=&quot;another-example&quot;&gt;Another example&lt;/h2&gt;
-
-&lt;p&gt;For my social website Stalk.me, I have provided an API v1.3.2 with which clients can find Users via the public FindPeopleNearby method. FindPeopleNearby takes a FindUserRequest object as its parameter. It has two fields, City and RangeInMiles.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//v1.3.2
-public class FindUserRequest {
-	public string City { get; set; }
-	public int RangeInMiles { get; set; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;During development, I decided to utilize state in addition to city for location since towns with the same name can be in different states. I have added a new field, State, that clients can put on their request. This doesn’t break any functionality, so I can increase the minor version, which results in the patch version resetting to zero.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//v1.4.0
-public class FindUserRequest {
-	public string City { get; set; }
-	public string State { get; set; }
-	public int RangeInMiles { get; set; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;During the next release, I realized there was a much better way to find out where a user was located: the zip code! Instead of using city and state, using the zip code is a much more efficient way of determining someone’s location. However, clients may be depending on City and State existing to find location in their clients. I’m going to be a jerk and change the contract deleting City and State. In doing this change, I break the current version, 1.4.0. I must increment the major version and reset the minor and patch versions to zero. This results in a new FindUserRequest:  &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//v2.0.0
-public class FindUserRequest {
-	public string ZipCode {get; set;}
-	public int RangeInMiles {get; set;}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;I hope these examples have illustrated how semantic versioning works and why you would want to adhere to it. The following link is how I learned about semantic versioning and is essentially what I have discussed in this blog, plus more:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://semver.org&quot;&gt;Semantic Versioning&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Thanks for reading!&lt;/p&gt;
-</description>
-        <pubDate>Thu, 04 Sep 2014 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2014/09/04/Semantic-Versioning.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2014/09/04/Semantic-Versioning.html</guid>
       </item>
     
   </channel>
