@@ -14,7 +14,9 @@ Let's talk about something not fun: equality comparison in JavaScript. In most l
 
 When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be 'truthy' or 'falsy'. For example, if you opened up a console in your browser and typed the following statement:
 
-	0 == false;
+```js
+0 == false;
+```
 
 You would get `true` as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:
 
