@@ -97,3 +97,5 @@ Feel free to leave a commment if you have an opinion on where one way would be u
 [var statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 
 [Named function expressions demystified](http://kangax.github.io/nfe/)
+
+[JavaScript, JavaScript...](https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/)
