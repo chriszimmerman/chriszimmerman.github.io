@@ -84,7 +84,7 @@ However, this will execute without error, returning true.
 
 I don't consider myself educated or experienced enough in JavaScript to say which of these methods is best for defining functions. At the very least, I would say using names with function expressions would be much better than not using names. That leaves the choice between function declarations and named function expressions.
 
-Feel free to leave a commment if you have an opinion on where one way would be used over another.
+Feel free to leave a comment if you have an opinion on where one way would be used over another.
 
 ##Resources
 
