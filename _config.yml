@@ -1,3 +1,6 @@
 name: House of Black and White
 description: My blog
 url: http://blog.chriszimmerman.net
+gems:
+    - jekyll-sitemap
+    - jekyll-gist
