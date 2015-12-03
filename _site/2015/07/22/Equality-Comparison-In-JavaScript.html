@@ -19,8 +19,6 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
-	<div class="sidebar">
-	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -36,39 +34,43 @@
 			</div>
 			<h1 id="equality-comparison-in-javascript">Equality Comparison In JavaScript</h1>
 
-<p>Let’s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn’t expect. </p>
+<p>Let’s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn’t expect.</p>
 
 <h2 id="truthy-and-falsy-values">Truthy and Falsy Values</h2>
 
 <p>When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be ‘truthy’ or ‘falsy’. For example, if you opened up a console in your browser and typed the following statement:</p>
 
-<pre><code>0 == false;
+<div class="highlighter-rouge"><pre class="highlight"><code>0 == false;
 </code></pre>
+</div>
 
-<p>You would get <code>true</code> as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:</p>
+<p>You would get <code class="highlighter-rouge">true</code> as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:</p>
 
-<pre><code>false == false;
+<div class="highlighter-rouge"><pre class="highlight"><code>false == false;
 </code></pre>
+</div>
 
 <p>which is a true statement.</p>
 
 <p>In JavaScript, the following values are falsy:</p>
 
-<pre><code>0
+<div class="highlighter-rouge"><pre class="highlight"><code>0
 '' and "" (the empty string)
 null
 undefined
 false
 NaN (not a number)
 </code></pre>
+</div>
 
 <p>Truthy values evaluate to true when coerced into booleans. Examples of truthy values are:</p>
 
-<pre><code>3
+<div class="highlighter-rouge"><pre class="highlight"><code>3
 "Borat"
 true
 { location: "Minnesota", population: 12000000 }
 </code></pre>
+</div>
 
 <h2 id="just-use--and-">Just Use === and !==</h2>
 
@@ -78,15 +80,17 @@ true
 
 <p>No good will come of this. Whenever encountering code that uses these operators, unnecessary mental energy must be expended thinking about the possibility of the gotchas that these operators bring. Instead, just use these operators:</p>
 
-<pre><code>===
+<div class="highlighter-rouge"><pre class="highlight"><code>===
 </code></pre>
+</div>
 
 <p>and</p>
 
-<pre><code>!==
+<div class="highlighter-rouge"><pre class="highlight"><code>!==
 </code></pre>
+</div>
 
-<p>These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.  </p>
+<p>These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 

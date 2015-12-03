@@ -19,8 +19,6 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
-	<div class="sidebar">
-	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -36,13 +34,13 @@
 			</div>
 			<h1 id="closures-in-javascript">Closures in JavaScript</h1>
 
-<p>In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures. </p>
+<p>In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures.</p>
 
 <p>Closures seem to be one of those concepts that people have difficulty grasping until they’re shown how simple they really are. Most people seem to agree that they grasped closures more easily when shown examples.</p>
 
 <p>Here is some code:</p>
 
-<pre><code>function race(distance) {
+<div class="highlighter-rouge"><pre class="highlight"><code>function race(distance) {
 	var totalDistance = 0;
 	var move = function() { 
 		totalDistance += distance; 
@@ -52,25 +50,27 @@
 	return move;
 }
 </code></pre>
+</div>
 
-<p>Within the function <code>race</code> I create a function called <code>move</code> and return it. In JavaScript, this is nothing special. There’s not really anything crazy going on here. A parameter is passed into <code>race</code>, there are some assignments, and there is an alert within the returned function.</p>
+<p>Within the function <code class="highlighter-rouge">race</code> I create a function called <code class="highlighter-rouge">move</code> and return it. In JavaScript, this is nothing special. There’s not really anything crazy going on here. A parameter is passed into <code class="highlighter-rouge">race</code>, there are some assignments, and there is an alert within the returned function.</p>
 
 <p>With this function available, I’ll write some more code:</p>
 
-<pre><code>var walker = race(2);
+<div class="highlighter-rouge"><pre class="highlight"><code>var walker = race(2);
 walker(); //Moved 2 for 2 total.
 walker(); //Moved 2 for 4 total.
 </code></pre>
+</div>
 
-<p>First I call race, passing in a value of 2, and assign the result to <code>walker</code>. <code>walker</code> now references a function.</p>
+<p>First I call race, passing in a value of 2, and assign the result to <code class="highlighter-rouge">walker</code>. <code class="highlighter-rouge">walker</code> now references a function.</p>
 
-<p>Within <code>race</code>, when <code>move</code> is created, it knows about the local variables within <code>race</code>. This is due to the fact that JavaScript has <a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope">lexical scoping</a> with <a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope">function scope</a>. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.</p>
+<p>Within <code class="highlighter-rouge">race</code>, when <code class="highlighter-rouge">move</code> is created, it knows about the local variables within <code class="highlighter-rouge">race</code>. This is due to the fact that JavaScript has <a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope">lexical scoping</a> with <a href="https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope">function scope</a>. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.</p>
 
-<p>At the start of <code>race</code>, <code>totalDistance</code> is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is <code>distance</code>, whose value is 2.</p>
+<p>At the start of <code class="highlighter-rouge">race</code>, <code class="highlighter-rouge">totalDistance</code> is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is <code class="highlighter-rouge">distance</code>, whose value is 2.</p>
 
-<p>When I invoke <code>walker</code> the first time, it knows that <code>totalDistance</code> is 0. After all, that was the value when the parent function returned. It adds <code>distance</code>, whose value was also 2 when the parent function terminated, to <code>totalDistance</code>, giving it a total of 2. The alert then gets called.</p>
+<p>When I invoke <code class="highlighter-rouge">walker</code> the first time, it knows that <code class="highlighter-rouge">totalDistance</code> is 0. After all, that was the value when the parent function returned. It adds <code class="highlighter-rouge">distance</code>, whose value was also 2 when the parent function terminated, to <code class="highlighter-rouge">totalDistance</code>, giving it a total of 2. The alert then gets called.</p>
 
-<p>I invoke <code>walker</code> again. <code>walker</code> still knows about the same variables as it did before. It knows that <code>distance</code> has a value of 2 and <code>totalDistance</code> also has a value of 2. <code>distance</code> is added to <code>totalDistance</code> giving <code>totalDistance</code> a value of 4. The alert is called again.</p>
+<p>I invoke <code class="highlighter-rouge">walker</code> again. <code class="highlighter-rouge">walker</code> still knows about the same variables as it did before. It knows that <code class="highlighter-rouge">distance</code> has a value of 2 and <code class="highlighter-rouge">totalDistance</code> also has a value of 2. <code class="highlighter-rouge">distance</code> is added to <code class="highlighter-rouge">totalDistance</code> giving <code class="highlighter-rouge">totalDistance</code> a value of 4. The alert is called again.</p>
 
 <h2 id="what-is-a-closure">What is a closure?</h2>
 
@@ -80,10 +80,11 @@ walker(); //Moved 2 for 4 total.
 
 <p>The way I see it, three things are needed for a closure:</p>
 
-<pre><code>1) A containing function.
+<div class="highlighter-rouge"><pre class="highlight"><code>1) A containing function.
 2) An environment (read: variables) within #1.
 3) A function returned by #1 that knows about #2.
 </code></pre>
+</div>
 
 <p>Since Mozilla refers to the containing function as the closure, I would say that the product of a closure is a function that has access to an environment from a function that is now terminated.</p>
 
@@ -91,7 +92,7 @@ walker(); //Moved 2 for 4 total.
 
 <p>I’d like to show you how closures are great for hiding information. Look at the following function:</p>
 
-<pre><code>function greeter(name) {
+<div class="highlighter-rouge"><pre class="highlight"><code>function greeter(name) {
 	var nice = function() {
 		alert("Why, hello there " + name + "!");
 	};
@@ -110,21 +111,24 @@ walker(); //Moved 2 for 4 total.
 	};
 }
 </code></pre>
+</div>
 
 <p>I’ve created a greeter module that has a few functions for performing different types of greetings. Here is an example of it in use:</p>
 
-<pre><code>var jarvis = greeter("Chris");
+<div class="highlighter-rouge"><pre class="highlight"><code>var jarvis = greeter("Chris");
 
 jarvis.nice(); //Why, hello there Chris!
 jarvis.ecstatic(); //OMG CHRIS IS HERE!
 </code></pre>
+</div>
 
-<p>Here’s the cool thing. I’ll try and call <code>capitalize</code>, also a function defined in <code>greeter</code>:</p>
+<p>Here’s the cool thing. I’ll try and call <code class="highlighter-rouge">capitalize</code>, also a function defined in <code class="highlighter-rouge">greeter</code>:</p>
 
-<pre><code>jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
+<div class="highlighter-rouge"><pre class="highlight"><code>jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
 </code></pre>
+</div>
 
-<p>You can return JavaScript objects that hold multiple functions that reference the same closure. <code>nice</code> and <code>ecstatic</code> can access <code>capitalize</code> because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding. </p>
+<p>You can return JavaScript objects that hold multiple functions that reference the same closure. <code class="highlighter-rouge">nice</code> and <code class="highlighter-rouge">ecstatic</code> can access <code class="highlighter-rouge">capitalize</code> because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 

@@ -10,13 +10,13 @@
         <title>Closures in JavaScript</title>
         <description>&lt;h1 id=&quot;closures-in-javascript&quot;&gt;Closures in JavaScript&lt;/h1&gt;
 
-&lt;p&gt;In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures. &lt;/p&gt;
+&lt;p&gt;In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures.&lt;/p&gt;
 
 &lt;p&gt;Closures seem to be one of those concepts that people have difficulty grasping until they’re shown how simple they really are. Most people seem to agree that they grasped closures more easily when shown examples.&lt;/p&gt;
 
 &lt;p&gt;Here is some code:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function race(distance) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function race(distance) {
 	var totalDistance = 0;
 	var move = function() { 
 		totalDistance += distance; 
@@ -26,25 +26,27 @@
 	return move;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Within the function &lt;code&gt;race&lt;/code&gt; I create a function called &lt;code&gt;move&lt;/code&gt; and return it. In JavaScript, this is nothing special. There’s not really anything crazy going on here. A parameter is passed into &lt;code&gt;race&lt;/code&gt;, there are some assignments, and there is an alert within the returned function.&lt;/p&gt;
+&lt;p&gt;Within the function &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt; I create a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;move&lt;/code&gt; and return it. In JavaScript, this is nothing special. There’s not really anything crazy going on here. A parameter is passed into &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, there are some assignments, and there is an alert within the returned function.&lt;/p&gt;
 
 &lt;p&gt;With this function available, I’ll write some more code:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var walker = race(2);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var walker = race(2);
 walker(); //Moved 2 for 2 total.
 walker(); //Moved 2 for 4 total.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;First I call race, passing in a value of 2, and assign the result to &lt;code&gt;walker&lt;/code&gt;. &lt;code&gt;walker&lt;/code&gt; now references a function.&lt;/p&gt;
+&lt;p&gt;First I call race, passing in a value of 2, and assign the result to &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; now references a function.&lt;/p&gt;
 
-&lt;p&gt;Within &lt;code&gt;race&lt;/code&gt;, when &lt;code&gt;move&lt;/code&gt; is created, it knows about the local variables within &lt;code&gt;race&lt;/code&gt;. This is due to the fact that JavaScript has &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope&quot;&gt;lexical scoping&lt;/a&gt; with &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope&quot;&gt;function scope&lt;/a&gt;. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.&lt;/p&gt;
+&lt;p&gt;Within &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, when &lt;code class=&quot;highlighter-rouge&quot;&gt;move&lt;/code&gt; is created, it knows about the local variables within &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;. This is due to the fact that JavaScript has &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope&quot;&gt;lexical scoping&lt;/a&gt; with &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope&quot;&gt;function scope&lt;/a&gt;. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.&lt;/p&gt;
 
-&lt;p&gt;At the start of &lt;code&gt;race&lt;/code&gt;, &lt;code&gt;totalDistance&lt;/code&gt; is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is &lt;code&gt;distance&lt;/code&gt;, whose value is 2.&lt;/p&gt;
+&lt;p&gt;At the start of &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt;, whose value is 2.&lt;/p&gt;
 
-&lt;p&gt;When I invoke &lt;code&gt;walker&lt;/code&gt; the first time, it knows that &lt;code&gt;totalDistance&lt;/code&gt; is 0. After all, that was the value when the parent function returned. It adds &lt;code&gt;distance&lt;/code&gt;, whose value was also 2 when the parent function terminated, to &lt;code&gt;totalDistance&lt;/code&gt;, giving it a total of 2. The alert then gets called.&lt;/p&gt;
+&lt;p&gt;When I invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; the first time, it knows that &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; is 0. After all, that was the value when the parent function returned. It adds &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt;, whose value was also 2 when the parent function terminated, to &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt;, giving it a total of 2. The alert then gets called.&lt;/p&gt;
 
-&lt;p&gt;I invoke &lt;code&gt;walker&lt;/code&gt; again. &lt;code&gt;walker&lt;/code&gt; still knows about the same variables as it did before. It knows that &lt;code&gt;distance&lt;/code&gt; has a value of 2 and &lt;code&gt;totalDistance&lt;/code&gt; also has a value of 2. &lt;code&gt;distance&lt;/code&gt; is added to &lt;code&gt;totalDistance&lt;/code&gt; giving &lt;code&gt;totalDistance&lt;/code&gt; a value of 4. The alert is called again.&lt;/p&gt;
+&lt;p&gt;I invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; again. &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; still knows about the same variables as it did before. It knows that &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt; has a value of 2 and &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; also has a value of 2. &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt; is added to &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; giving &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; a value of 4. The alert is called again.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-a-closure&quot;&gt;What is a closure?&lt;/h2&gt;
 
@@ -54,10 +56,11 @@ walker(); //Moved 2 for 4 total.
 
 &lt;p&gt;The way I see it, three things are needed for a closure:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1) A containing function.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) A containing function.
 2) An environment (read: variables) within #1.
 3) A function returned by #1 that knows about #2.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Since Mozilla refers to the containing function as the closure, I would say that the product of a closure is a function that has access to an environment from a function that is now terminated.&lt;/p&gt;
 
@@ -65,7 +68,7 @@ walker(); //Moved 2 for 4 total.
 
 &lt;p&gt;I’d like to show you how closures are great for hiding information. Look at the following function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function greeter(name) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function greeter(name) {
 	var nice = function() {
 		alert(&quot;Why, hello there &quot; + name + &quot;!&quot;);
 	};
@@ -84,21 +87,24 @@ walker(); //Moved 2 for 4 total.
 	};
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;I’ve created a greeter module that has a few functions for performing different types of greetings. Here is an example of it in use:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var jarvis = greeter(&quot;Chris&quot;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var jarvis = greeter(&quot;Chris&quot;);
 
 jarvis.nice(); //Why, hello there Chris!
 jarvis.ecstatic(); //OMG CHRIS IS HERE!
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Here’s the cool thing. I’ll try and call &lt;code&gt;capitalize&lt;/code&gt;, also a function defined in &lt;code&gt;greeter&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Here’s the cool thing. I’ll try and call &lt;code class=&quot;highlighter-rouge&quot;&gt;capitalize&lt;/code&gt;, also a function defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;greeter&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;You can return JavaScript objects that hold multiple functions that reference the same closure. &lt;code&gt;nice&lt;/code&gt; and &lt;code&gt;ecstatic&lt;/code&gt; can access &lt;code&gt;capitalize&lt;/code&gt; because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding. &lt;/p&gt;
+&lt;p&gt;You can return JavaScript objects that hold multiple functions that reference the same closure. &lt;code class=&quot;highlighter-rouge&quot;&gt;nice&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ecstatic&lt;/code&gt; can access &lt;code class=&quot;highlighter-rouge&quot;&gt;capitalize&lt;/code&gt; because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -137,24 +143,27 @@ jarvis.ecstatic(); //OMG CHRIS IS HERE!
 
 &lt;p&gt;#1)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function isOdd(number) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function isOdd(number) {
 	return number % 2 == 1;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#2)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var isOdd = function(number) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var isOdd = function(number) {
 	return number % 2 == 1;
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;#3)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var isOdd = function isOdd(number) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var isOdd = function isOdd(number) {
 	return number % 2 == 1;
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;What’s going on here? I’ll explain. But first, I’d like to talk about a few different features of JavaScript that will aid in understanding the differences.&lt;/p&gt;
 
@@ -164,7 +173,7 @@ jarvis.ecstatic(); //OMG CHRIS IS HERE!
 
 &lt;h2 id=&quot;function-declarations-vs-function-expressions&quot;&gt;Function declarations vs function expressions&lt;/h2&gt;
 
-&lt;p&gt;When you define a function in the manner done in example #1, you are giving the function a name. This is an example of a &lt;em&gt;function declaration.&lt;/em&gt; The function is defined at parse time, which means that the function is available within all of the scope it’s declared in. This way of defining a function also gives the function a meaningful name in the call stack when trying to debug JavaScript code. &lt;/p&gt;
+&lt;p&gt;When you define a function in the manner done in example #1, you are giving the function a name. This is an example of a &lt;em&gt;function declaration.&lt;/em&gt; The function is defined at parse time, which means that the function is available within all of the scope it’s declared in. This way of defining a function also gives the function a meaningful name in the call stack when trying to debug JavaScript code.&lt;/p&gt;
 
 &lt;p&gt;Examples #2 and #3 are examples of &lt;em&gt;function expressions&lt;/em&gt;. This means that the function is defined within an expression, usually a variable assignment expression. This results in the function being defined at run time. With function expressions, the function name is optional. However, if a name is not given to a function in a function expression, it will have no name in the stacktrace, which makes debugging difficult. Example #3 is an example of a &lt;em&gt;named function expression&lt;/em&gt;. Due to variable hoisting in JavaScript, this way of defining functions can potentially lead to a bad situation.&lt;/p&gt;
 
@@ -172,21 +181,23 @@ jarvis.ecstatic(); //OMG CHRIS IS HERE!
 
 &lt;p&gt;In JavaScript, variables are hoisted. This means that a variable can be declared anywhere within a given scope, but programs will execute as if the variable was declared right away at the top of the scope. In another language, such as C#, hoisting doesn’t exist, so the following code would be invalid:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;x = 7 + 3;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = 7 + 3;
 int x;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The C# compiler would inform you that there is an error with this code: x does not exist at the point of assigning it 7 + 3. However, a JavaScript analog such as the following code would be acceptable:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;x = 7 + 3;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = 7 + 3;
 var x;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;In JavaScript, the variable &lt;code&gt;x&lt;/code&gt; would be assigned the value 10 and everything would be fine and dandy. The idiom in JavaScript is to declare all variables intended to be used within a given scope at the top of the scope. Coming from languages without hoisting and having a habit of declaring variables as close as I can to where they are used for the first time, I find this strange. But I get the idea of letting people know what they’re going to encounter in a function.&lt;/p&gt;
+&lt;p&gt;In JavaScript, the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; would be assigned the value 10 and everything would be fine and dandy. The idiom in JavaScript is to declare all variables intended to be used within a given scope at the top of the scope. Coming from languages without hoisting and having a habit of declaring variables as close as I can to where they are used for the first time, I find this strange. But I get the idea of letting people know what they’re going to encounter in a function.&lt;/p&gt;
 
 &lt;p&gt;Going back to our examples above, here is a contrived instance where assigning the function to a variable would result in an error:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function example(){
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function example(){
 	return isOdd(7);
 
 	var isOdd = function(number) {
@@ -194,15 +205,17 @@ var x;
 	};
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;When I paste this in my browser console, I get the following error:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;TypeError: isOdd is not a function
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TypeError: isOdd is not a function
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;However, this will execute without error, returning true.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function example(){
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function example(){
 	return isOdd(7);
 
 	function isOdd(number) {
@@ -210,6 +223,7 @@ var x;
 	}
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -240,7 +254,7 @@ var x;
         <title>Breaking Down Syntactic Sugar With The Saliva Of Curiosity - The foreach Statement In C#</title>
         <description>&lt;h1 id=&quot;breaking-down-syntactic-sugar-with-the-saliva-of-curiosity---the-foreach-statement-in-c&quot;&gt;Breaking Down Syntactic Sugar With The Saliva Of Curiosity - The foreach Statement In C#&lt;/h1&gt;
 
-&lt;p&gt;A feature of C# that I frequently use to process collections is the foreach statement. foreach is just syntactic sugar for making it easier to iterate over collections. I’d like to delve a bit into what’s going on under the hood. &lt;/p&gt;
+&lt;p&gt;A feature of C# that I frequently use to process collections is the foreach statement. foreach is just syntactic sugar for making it easier to iterate over collections. I’d like to delve a bit into what’s going on under the hood.&lt;/p&gt;
 
 &lt;h2 id=&quot;syntactic-sugar&quot;&gt;Syntactic sugar&lt;/h2&gt;
 
@@ -252,7 +266,7 @@ var x;
 
 &lt;p&gt;Let’s take a look at the following method:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;	private void PrintNumbers()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	private void PrintNumbers()
 	{
 		IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
 
@@ -262,57 +276,63 @@ var x;
 		}
 	}
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;First, a list of integers is declared. This is pretty straightforward. The next line is the start of the foreach statement. The format of a foreach statement is such:&lt;/p&gt;
 
 &lt;p&gt;foreach(&lt;em&gt;type&lt;/em&gt; &lt;em&gt;element&lt;/em&gt; in &lt;em&gt;collection&lt;/em&gt;) &lt;em&gt;inner-statement&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;type&lt;/em&gt; declares the type of element being passed into the code block. Because we’re working with a list of integers, the type is int.  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;type&lt;/em&gt; declares the type of element being passed into the code block. Because we’re working with a list of integers, the type is int.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;element&lt;/em&gt; specifies the individual element that is used in the &lt;em&gt;inner-statement&lt;/em&gt;. The scope of the &lt;em&gt;element&lt;/em&gt; is only within the &lt;em&gt;inner-statement&lt;/em&gt; for the current iteration. For example, when the foreach block is executed the first time for the number 1, the variable “number” has a value of 1. The second time around, it has the value of 2. The third and last time around, it has the value of 3.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;collection&lt;/em&gt; specifies the collection being iterated over. In this case, “numbers” is being passed in as the collection. In order for the statement to be syntactically valid, the type of &lt;em&gt;collection&lt;/em&gt; must implement the IEnumerable interface OR satisfy the following criteria:&lt;/p&gt;
 
-&lt;p&gt;1) &lt;em&gt;collection&lt;/em&gt; must have a method on it with the following signature: &lt;/p&gt;
+&lt;p&gt;1) &lt;em&gt;collection&lt;/em&gt; must have a method on it with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public T GetEnumerator()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public T GetEnumerator()
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;where T is a class type, struct type, or interface type.&lt;/p&gt;
 
 &lt;p&gt;2) The type T returned by GetEnumerator() must have a method with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public bool MoveNext()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public bool MoveNext()
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;3) The type T returned by GetEnumerator() must have a property with the following signature: &lt;/p&gt;
+&lt;p&gt;3) The type T returned by GetEnumerator() must have a property with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public [type of *collection*] Current
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public [type of *collection*] Current
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;that allows the current value to be read.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;inner-statement&lt;/em&gt; is the statement (which can obviously be composed of multiple statements) that gets executed once for each element in the collection. In this case, the &lt;em&gt;inner-statement&lt;/em&gt; is:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;When this method executes, the following output will be printed to the console:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;The number is 1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The number is 1
 The number is 2
 The number is 3
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;under-the-hood&quot;&gt;Under the hood&lt;/h2&gt;
 
-&lt;p&gt;But like I said before, this is syntactic sugar. What’s really going on? &lt;/p&gt;
+&lt;p&gt;But like I said before, this is syntactic sugar. What’s really going on?&lt;/p&gt;
 
 &lt;p&gt;The compiler will perform a transformation, or expansion, on the foreach statement. Whether or not &lt;em&gt;collection&lt;/em&gt; implements IEnumerable or meets the criteria previously mentioned will determine the type of expansion that takes place. Since the example is using a collection implementing IEnumerable, I will show that expansion.&lt;/p&gt;
 
 &lt;p&gt;This is what the method looks like after the expansion takes place:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;private void PrintNumbers()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private void PrintNumbers()
 {
 	IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
 
@@ -330,10 +350,11 @@ The number is 3
 	}
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Basically, an enumerator is created that makes use of the methods on it that allow it to access each element in the collection. After the work has been done for a given element, it moves onto the next one. After all the elements have been iterated over, the enumerator is disposed of to free up memory.&lt;/p&gt;
 
-&lt;p&gt;These two code blocks effectively achieve the same result. But wouldn’t you agree that the foreach statement pre-expansion looks a lot more pleasant and clearer? &lt;/p&gt;
+&lt;p&gt;These two code blocks effectively achieve the same result. But wouldn’t you agree that the foreach statement pre-expansion looks a lot more pleasant and clearer?&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We discussed how syntactic sugar makes it easier to read a given programming language. We also looked at the foreach statement in C# as an example of syntactic sugar and what really goes on under the hood. You can read more about foreach at &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft’s website&lt;/a&gt;.&lt;/p&gt;
@@ -426,7 +447,7 @@ The number is 3
 
 &lt;p&gt;I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it’s truly needed. When a junior and senior developer pair, it’s usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn’t stray too far off.&lt;/p&gt;
 
-&lt;p&gt;I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase. &lt;/p&gt;
+&lt;p&gt;I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase.&lt;/p&gt;
 
 &lt;p&gt;At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find what we needed to change.&lt;/p&gt;
 
@@ -434,15 +455,15 @@ The number is 3
 
 &lt;h3 id=&quot;being-kept-on-track&quot;&gt;Being kept on track&lt;/h3&gt;
 
-&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task. &lt;/p&gt;
+&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task.&lt;/p&gt;
 
-&lt;p&gt;I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are quickly found and resolved with another set of eyes on the code being written. &lt;/p&gt;
+&lt;p&gt;I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are quickly found and resolved with another set of eyes on the code being written.&lt;/p&gt;
 
 &lt;h3 id=&quot;growth-and-challenge&quot;&gt;Growth and challenge&lt;/h3&gt;
 
 &lt;p&gt;I can say that I’m always challenged when pairing with someone (unless we’re stuck doing a menial or tedious task). I might have to explain work that was done on a task to a newcomer. It might be the other way around; I might have to get myself up to speed on work that I was not involved in.&lt;/p&gt;
 
-&lt;p&gt;I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that. &lt;/p&gt;
+&lt;p&gt;I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that.&lt;/p&gt;
 
 &lt;h3 id=&quot;gelling&quot;&gt;Gelling&lt;/h3&gt;
 
@@ -477,7 +498,7 @@ The number is 3
 
 &lt;p&gt;The devs will pair for another session. Afterward, the developer who most recently came onto the task will stay on while the other person switches off. Because Dev A was on task 1 longer than Dev C, Dev A will switch off and Dev C will bring Dev D up to speed on task 1.&lt;/p&gt;
 
-&lt;p&gt;This is just an example of how to pair switch. Sometimes the same people will end up pairing together often or certain people will gravitate toward certain tasks. I think it’s good to work with everyone on your team and get exposed to a variety of work. &lt;/p&gt;
+&lt;p&gt;This is just an example of how to pair switch. Sometimes the same people will end up pairing together often or certain people will gravitate toward certain tasks. I think it’s good to work with everyone on your team and get exposed to a variety of work.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-driver-and-navigator-roles&quot;&gt;The driver and navigator roles&lt;/h3&gt;
 
@@ -491,13 +512,13 @@ The number is 3
 
 &lt;h2 id=&quot;setting-up-an-environment-conducive-to-effective-pairing&quot;&gt;Setting up an environment conducive to effective pairing&lt;/h2&gt;
 
-&lt;p&gt;In order to pair effectively, developers need to have the proper environment set up. This means having both 1) a physical environment (chairs, desks, keyboards, mice, etc.) and 2) a development environment (IDEs, editors, tools, etc.) where both developers can work comfortably. &lt;/p&gt;
+&lt;p&gt;In order to pair effectively, developers need to have the proper environment set up. This means having both 1) a physical environment (chairs, desks, keyboards, mice, etc.) and 2) a development environment (IDEs, editors, tools, etc.) where both developers can work comfortably.&lt;/p&gt;
 
 &lt;h3 id=&quot;the-desk&quot;&gt;The desk&lt;/h3&gt;
 
-&lt;p&gt;First, let’s talk about the desk. Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other’s space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It’s the worst. &lt;/p&gt;
+&lt;p&gt;First, let’s talk about the desk. Physical comfort is important. The developers should be able to sit at the desk comfortably without getting in each other’s space. Wide rectangular desks work well. I have had the displeasure of pairing at L-shaped corner desks. They are horrible. One person sits comfortably in the middle of the L while the other person has to sit uncomfortably at the edge of the L at an angle to the desk. It’s the worst.&lt;/p&gt;
 
-&lt;p&gt;In my experience, the desk has a monitor, mouse, and keyboard for each developer. The desk should be large enough so that all of these things can fit comfortably. &lt;/p&gt;
+&lt;p&gt;In my experience, the desk has a monitor, mouse, and keyboard for each developer. The desk should be large enough so that all of these things can fit comfortably.&lt;/p&gt;
 
 &lt;p&gt;Each dev having their own monitor, mouse, and keyboard allows them to easily jump in and contribute. I have heard of places where the keyboard, mouse, and monitor are shared, but I have not worked that way personally. I have also heard of places that will have the monitors face opposite directions, resulting in the developers facing each other. I hear this lends to having better conversations, but again, I don’t have any personal experience with this.&lt;/p&gt;
 
@@ -506,7 +527,7 @@ My pairing desk at eMoney along with my coworker &lt;a href=&quot;http://www.dan
 
 &lt;h3 id=&quot;machines&quot;&gt;Machines&lt;/h3&gt;
 
-&lt;p&gt;At my current job, I have &lt;em&gt;my&lt;/em&gt; machine. I log into it with &lt;em&gt;my&lt;/em&gt; credentials and I’m responsible for what happens with that machine. &lt;/p&gt;
+&lt;p&gt;At my current job, I have &lt;em&gt;my&lt;/em&gt; machine. I log into it with &lt;em&gt;my&lt;/em&gt; credentials and I’m responsible for what happens with that machine.&lt;/p&gt;
 
 &lt;p&gt;I dislike this. It encourages thinking in terms of the individual instead of in terms of the pair. Or in terms of the team, for that matter.&lt;/p&gt;
 
@@ -533,39 +554,43 @@ My pairing desk at eMoney along with my coworker &lt;a href=&quot;http://www.dan
         <title>Equality Comparison In JavaScript</title>
         <description>&lt;h1 id=&quot;equality-comparison-in-javascript&quot;&gt;Equality Comparison In JavaScript&lt;/h1&gt;
 
-&lt;p&gt;Let’s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn’t expect. &lt;/p&gt;
+&lt;p&gt;Let’s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn’t expect.&lt;/p&gt;
 
 &lt;h2 id=&quot;truthy-and-falsy-values&quot;&gt;Truthy and Falsy Values&lt;/h2&gt;
 
 &lt;p&gt;When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be ‘truthy’ or ‘falsy’. For example, if you opened up a console in your browser and typed the following statement:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;0 == false;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0 == false;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;You would get &lt;code&gt;true&lt;/code&gt; as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:&lt;/p&gt;
+&lt;p&gt;You would get &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;false == false;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;false == false;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;which is a true statement.&lt;/p&gt;
 
 &lt;p&gt;In JavaScript, the following values are falsy:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;0
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0
 &#39;&#39; and &quot;&quot; (the empty string)
 null
 undefined
 false
 NaN (not a number)
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Truthy values evaluate to true when coerced into booleans. Examples of truthy values are:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;3
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3
 &quot;Borat&quot;
 true
 { location: &quot;Minnesota&quot;, population: 12000000 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;just-use--and-&quot;&gt;Just Use === and !==&lt;/h2&gt;
 
@@ -575,15 +600,17 @@ true
 
 &lt;p&gt;No good will come of this. Whenever encountering code that uses these operators, unnecessary mental energy must be expended thinking about the possibility of the gotchas that these operators bring. Instead, just use these operators:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;===
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;===
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;and&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;!==
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;!==
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.  &lt;/p&gt;
+&lt;p&gt;These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -612,31 +639,35 @@ true
 
 &lt;p&gt;call() is a function that allows you to execute a function while specifying your own context in which it will run. For example, let’s say we had the following function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function printPokemonInfo() {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function printPokemonInfo() {
 	alert(this.name + &#39; is Pokemon #&#39; + this.number + &#39; and is a &#39; + this.type + &#39; type.&#39;);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;This function will print out information about a Pokemon in an alert window. However, something is amiss.&lt;/p&gt;
 
-&lt;p&gt;The function is accessing properties off of &lt;code&gt;this&lt;/code&gt; to display the information. But no Pokemon object is being passed in. And no, this function is not part of an object that contains the properties being accessed.&lt;/p&gt;
+&lt;p&gt;The function is accessing properties off of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to display the information. But no Pokemon object is being passed in. And no, this function is not part of an object that contains the properties being accessed.&lt;/p&gt;
 
 &lt;p&gt;As it is, this function will execute with all of the accessed values being undefined, which is pretty useless.&lt;/p&gt;
 
 &lt;p&gt;Let’s also say I have the following variable declared:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var pokemon = { number: &#39;001&#39;, name: &#39;Bulbasaur&#39;, type: &#39;Grass&#39; };
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var pokemon = { number: &#39;001&#39;, name: &#39;Bulbasaur&#39;, type: &#39;Grass&#39; };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;I can make this function work by calling the call() function like so:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;printPokemonInfo.call(pokemon);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.call(pokemon);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Now I get the expected output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Why on earth would you want to do this? What practical purpose does this serve?  Why not just make the pokemon an argument of the function? I’ll explain shortly. But first, I want to also show you apply().&lt;/p&gt;
 
@@ -644,8 +675,9 @@ true
 
 &lt;p&gt;Let’s take the above example where we use call and replace call with apply:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;printPokemonInfo.apply(pokemon);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.apply(pokemon);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;We get the exact same result as before. Okay, there must be a difference between the two. Otherwise, why have two different things that do the same thing?&lt;/p&gt;
 
@@ -653,32 +685,37 @@ true
 
 &lt;p&gt;I will modify my function to demonstrate how additional arguments work for call():&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function printPokemonInfo(times, adjective) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function printPokemonInfo(times, adjective) {
 	for(var i = 0; i &amp;lt; times; i++){
 		alert(this.name + &#39; is Pokemon #&#39; + this.number + &#39; and is a &#39; + this.type + &#39; type. It is &#39; + adjective + &#39;.&#39; );
 	}
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;And I’ll make the following call:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;printPokemonInfo.call(pokemon, 3, &#39;cool&#39;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.call(pokemon, 3, &#39;cool&#39;);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Now I will get three alert dialogs that say:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;As I said before, apply() only takes an array of arguments as an additional argument. So I would have to slightly change what I’m passing in to apply():&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;printPokemonInfo.apply(pokemon, [3, &#39;cool&#39;]);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.apply(pokemon, [3, &#39;cool&#39;]);
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;I get the same result. I get three alert dialogs that say:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;practical-applications&quot;&gt;Practical Applications&lt;/h2&gt;
 
@@ -686,15 +723,16 @@ true
 
 &lt;p&gt;Let’s say I have the following constructor:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var Person = function(firstName, lastName) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var Person = function(firstName, lastName) {
 	this.firstName = firstName;
 	this.lastName = lastName;
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;This constructor for my Person object takes in two parameters, firstName and lastName. Let’s say I wanted to ‘subclass’ and reuse this constructor for objects that I want to have the same properties as Person objects. I have two ‘subclasses’, Student and Professor, that make use of the Person constructor code so I don’t have to write it again:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var Student = function(firstName, lastName, major) {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var Student = function(firstName, lastName, major) {
 	Person.call(this, firstName, lastName);
 	this.major = major;
 };
@@ -704,24 +742,28 @@ var Professor = function(firstName, lastName, department) {
 	this.department = department;
 };
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;With the following code, I get an object with a firstName and lastName property:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var joe = new Person(&#39;Joe&#39;, &#39;Smith&#39;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var joe = new Person(&#39;Joe&#39;, &#39;Smith&#39;);
 //	{ firstName: &quot;Joe&quot;, lastName: &quot;Smith&quot; }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;With the following code, I get an object with a firstName, lastName, and department property:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var doc = new Professor(&#39;Richard&#39;, &#39;Stallman&#39;, &#39;Computer Science&#39;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var doc = new Professor(&#39;Richard&#39;, &#39;Stallman&#39;, &#39;Computer Science&#39;);
 //	{ firstName: &quot;Richard&quot;, lastName: &quot;Stallman&quot;, department: &quot;Computer Science&quot; }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The Student class works similarly:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var jimmy = new Student(&#39;Jimmy&#39;, &#39;Jones&#39;, &#39;Psychology&#39;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var jimmy = new Student(&#39;Jimmy&#39;, &#39;Jones&#39;, &#39;Psychology&#39;);
 //	{ firstName: &quot;Jimmy&quot;, lastName: &quot;Jones&quot;, major: &quot;Psychology&quot; }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -740,21 +782,21 @@ var Professor = function(firstName, lastName, department) {
 
 &lt;p&gt;In Justin Campbell’s talk, he discusses the importance and benefits of learning new languages. Here’s the gist: take up a new language and implement a nontrivial-yet-not-crazily-complex project. Try to embrace the idioms of the language while implementing your project so that you expand your mind, gain new perspective, and bring what you’ve learned back into the languages you currently work in. Justin’s ‘Hello world’ of choice is a URL shortener. It’s a nontrivial project and ensures that you’ll be using a not insignificant portion of the language’s features in order to implement it.&lt;/p&gt;
 
-&lt;p&gt;I decided to try this idea and timebox learning a new language to a month. The language I chose: Python. My version of ‘Hello, world!’: a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku&quot;&gt;sudoku&lt;/a&gt; solver. With a sudoku solver, you can learn how to get user input in several ways: from a file, from them typing it in by hand, from a web form. Once you get the input, you need to parse and validate the puzzle to see if it’s already invalid. If not, you can attempt to solve it. As far as solving goes, I kept my solver simple and used a brute force algorithm to solve the puzzle. &lt;/p&gt;
+&lt;p&gt;I decided to try this idea and timebox learning a new language to a month. The language I chose: Python. My version of ‘Hello, world!’: a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku&quot;&gt;sudoku&lt;/a&gt; solver. With a sudoku solver, you can learn how to get user input in several ways: from a file, from them typing it in by hand, from a web form. Once you get the input, you need to parse and validate the puzzle to see if it’s already invalid. If not, you can attempt to solve it. As far as solving goes, I kept my solver simple and used a brute force algorithm to solve the puzzle.&lt;/p&gt;
 
 &lt;h2 id=&quot;motivation&quot;&gt;Motivation&lt;/h2&gt;
 
-&lt;p&gt;I regard Python and Ruby as the Pepsi and Coke of dynamically typed languages. They’re pretty similar, or so I’ve heard. Before taking this journey, I only knew Ruby. I have used Ruby mostly as a scripting language to help automate tasks at my previous job. Other than that, I like to work on small side projects in Ruby. I find Ruby very enjoyable to work in. &lt;/p&gt;
+&lt;p&gt;I regard Python and Ruby as the Pepsi and Coke of dynamically typed languages. They’re pretty similar, or so I’ve heard. Before taking this journey, I only knew Ruby. I have used Ruby mostly as a scripting language to help automate tasks at my previous job. Other than that, I like to work on small side projects in Ruby. I find Ruby very enjoyable to work in.&lt;/p&gt;
 
 &lt;p&gt;However, I wanted to make sure I wasn’t missing out on anything. I heard that Python had fantastic libraries like SciPy and NumPy for support in science and math-related tasks. After attending this talk, I saw this as a great opportunity to get a taste for a language without heavily investing in it.&lt;/p&gt;
 
 &lt;h2 id=&quot;projects&quot;&gt;Project(s)&lt;/h2&gt;
 
-&lt;p&gt;For my first week or so with Python, I went through a good deal of &lt;a href=&quot;https://automatetheboringstuff.com/&quot;&gt;Automating the Boring Stuff With Python&lt;/a&gt; by Al Sweigart. Because of my Ruby background, I didn’t find much in Python too unfamiliar. Going through this book got my head around fundamentals of Python like how to name variables/classes/methods and basic syntax. &lt;/p&gt;
+&lt;p&gt;For my first week or so with Python, I went through a good deal of &lt;a href=&quot;https://automatetheboringstuff.com/&quot;&gt;Automating the Boring Stuff With Python&lt;/a&gt; by Al Sweigart. Because of my Ruby background, I didn’t find much in Python too unfamiliar. Going through this book got my head around fundamentals of Python like how to name variables/classes/methods and basic syntax.&lt;/p&gt;
 
 &lt;p&gt;After getting my feet wet, I moved on to writing a sudoku solver that is (mostly) unit tested and is capable of solving 9 by 9 sudoku puzzles. In doing this, I gained some experience with using Python’s unittest library. Here is an example of a unit test written in Python:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class SudokuPuzzleSolverTest(unittest.TestCase):
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class SudokuPuzzleSolverTest(unittest.TestCase):
 
 	def test_is_valid(self):
 		puzzle = [
@@ -786,10 +828,11 @@ var Professor = function(firstName, lastName, department) {
 solver = Solver()
 self.assertTrue(solver.is_valid(puzzle))
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;In my project, I represent a sudoku puzzle as a list of lists of &lt;code&gt;Square&lt;/code&gt; objects. Here is my Square class:&lt;/p&gt;
+&lt;p&gt;In my project, I represent a sudoku puzzle as a list of lists of &lt;code class=&quot;highlighter-rouge&quot;&gt;Square&lt;/code&gt; objects. Here is my Square class:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;class Square(object):
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class Square(object):
 	def __init__(self, number, row, column, block):
 		self.number = number
 		self.row = row 
@@ -803,10 +846,11 @@ self.assertTrue(solver.is_valid(puzzle))
 	def __hash__(self):
 		return int(str(self.number) + str(self.row) + str(self.column) + str(self.block))
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;My solution has two objects: a &lt;code&gt;FileReader&lt;/code&gt; and a &lt;code&gt;Solver&lt;/code&gt;. The responsibility of the &lt;code&gt;FileReader&lt;/code&gt; object is to read the contents of a file and convert it into my representation of a sudoku puzzle. An example file looks like this:&lt;/p&gt;
+&lt;p&gt;My solution has two objects: a &lt;code class=&quot;highlighter-rouge&quot;&gt;FileReader&lt;/code&gt; and a &lt;code class=&quot;highlighter-rouge&quot;&gt;Solver&lt;/code&gt;. The responsibility of the &lt;code class=&quot;highlighter-rouge&quot;&gt;FileReader&lt;/code&gt; object is to read the contents of a file and convert it into my representation of a sudoku puzzle. An example file looks like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;_ 4 3 9 _ _ 2 _ 5
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;_ 4 3 9 _ _ 2 _ 5
 8 _ 5 _ 7 _ 6 _ _
 6 _ _ 5 _ _ 3 _ 9
 _ _ 2 _ 8 _ _ _ _
@@ -816,16 +860,17 @@ _ _ _ _ 1 _ 9 _ _
 _ _ 4 _ 2 _ 5 _ 7
 1 _ 6 _ _ 7 4 2 _
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;One method reads the file, getting a list of strings as output. Another method sanitizes that list of strings, extracts the numbers (or blanks) and converts them into sudoku &lt;code&gt;Square&lt;/code&gt; objects. &lt;/p&gt;
+&lt;p&gt;One method reads the file, getting a list of strings as output. Another method sanitizes that list of strings, extracts the numbers (or blanks) and converts them into sudoku &lt;code class=&quot;highlighter-rouge&quot;&gt;Square&lt;/code&gt; objects.&lt;/p&gt;
 
-&lt;p&gt;The responsibility of the &lt;code&gt;Solver&lt;/code&gt; class is to take that list of lists and 1) make sure that the puzzle is even solvable with the squares that are already filled in and 2) to find the solution if one can be found. As said before, I use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking&quot;&gt;brute force algorithm&lt;/a&gt; to solve the puzzle. Once the puzzle is solved, the solution is printed.&lt;/p&gt;
+&lt;p&gt;The responsibility of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Solver&lt;/code&gt; class is to take that list of lists and 1) make sure that the puzzle is even solvable with the squares that are already filled in and 2) to find the solution if one can be found. As said before, I use a &lt;a href=&quot;http://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking&quot;&gt;brute force algorithm&lt;/a&gt; to solve the puzzle. Once the puzzle is solved, the solution is printed.&lt;/p&gt;
 
 &lt;h2 id=&quot;impressions-of-python&quot;&gt;Impressions of Python&lt;/h2&gt;
 
 &lt;p&gt;As I expected, I found Python very similar to Ruby. I didn’t discover anything mind-blowing like I most likely would have if I had tried something unfamiliar, like ELM, Swift, or Haskell. I found this to be a bummer, as one of the potential benefits of learning a new programming language is having your brain expanded in different ways.&lt;/p&gt;
 
-&lt;p&gt;I like Python. But I like Ruby better. Mostly due to personal preferences, I suppose. Ruby actually has private methods. Python has no concept of privateness. I like chaining methods. I prefer &lt;code&gt;&quot;kitties&quot;.upcase.reverse.length&lt;/code&gt; over &lt;code&gt;len(&quot;kitties&quot;.upper()[::-1])&lt;/code&gt;. If I had a job where I wrote in Python, I wouldn’t be upset. But Ruby would be a much more preferable alternative. &lt;/p&gt;
+&lt;p&gt;I like Python. But I like Ruby better. Mostly due to personal preferences, I suppose. Ruby actually has private methods. Python has no concept of privateness. I like chaining methods. I prefer &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;kitties&quot;.upcase.reverse.length&lt;/code&gt; over &lt;code class=&quot;highlighter-rouge&quot;&gt;len(&quot;kitties&quot;.upper()[::-1])&lt;/code&gt;. If I had a job where I wrote in Python, I wouldn’t be upset. But Ruby would be a much more preferable alternative.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -851,13 +896,13 @@ _ _ 4 _ 2 _ 5 _ 7
 
 &lt;p&gt;Shortly after my trip to PAX East in March of this year, I started a &lt;a href=&quot;https://class.coursera.org/gameprogramming-002&quot;&gt;Coursera class&lt;/a&gt; about game programming in C#. In this class, I learned about writing C# games using Microsoft’s XNA Framework. The class was aimed at people who have never done programming before. However, I already knew the language features of C# taught in the class, so I was able to focus on learning about XNA objects and APIs, as well as game-programming-specific concepts like collision detection and calculating sprite velocities. A few of the games I created were a simple blackjack game and a game where you are a hamburger that shoots french fries at teddy bears while they bounce around and shoot mini teddy bears at you.&lt;/p&gt;
 
-&lt;p&gt;I would like to share what I learned in the course from the XNA and game development perspective. &lt;/p&gt;
+&lt;p&gt;I would like to share what I learned in the course from the XNA and game development perspective.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-xna-framework&quot;&gt;The XNA Framework&lt;/h2&gt;
 
 &lt;p&gt;Microsoft’s XNA &lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=20914&quot;&gt;XNA’s Not Acronymed&lt;/a&gt; Framework contains objects that make it relatively easy to create video games. There are objects for handling keyboard and mouse input, getting mouse state, drawing sprites on the screen, and working with sprite movement, to name a few.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;Mouse&lt;/code&gt; and &lt;code&gt;MouseState&lt;/code&gt; classes allow you to get information about mouse position and button state. The &lt;code&gt;Texture2D&lt;/code&gt; class contains information related to a grid of pixels that compose a sprite. The &lt;code&gt;Rectangle&lt;/code&gt; class allows you to access information about the rectangle that represents the sprite, such as length, width, X position, Y, position, upper left corner, and so on. The &lt;code&gt;Vector2&lt;/code&gt; object is a commonly used object that defines a vector used in game physics.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Mouse&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;MouseState&lt;/code&gt; classes allow you to get information about mouse position and button state. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Texture2D&lt;/code&gt; class contains information related to a grid of pixels that compose a sprite. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Rectangle&lt;/code&gt; class allows you to access information about the rectangle that represents the sprite, such as length, width, X position, Y, position, upper left corner, and so on. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Vector2&lt;/code&gt; object is a commonly used object that defines a vector used in game physics.&lt;/p&gt;
 
 &lt;h2 id=&quot;fundamental-game-concepts&quot;&gt;Fundamental Game Concepts&lt;/h2&gt;
 
@@ -867,16 +912,17 @@ _ _ 4 _ 2 _ 5 _ 7
 
 &lt;p&gt;For example, the game loop might look something like this:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;while(gameIsRunning){
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;while(gameIsRunning){
 	CheckForInputFromUser();
 	UpdateInternalGameState();
 	UpdateVisualsForPlayer();
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;The following code sample is from a simplified blackjack game I wrote for an assignment:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;protected override void Update(GameTime gameTime)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected override void Update(GameTime gameTime)
 {
 	MouseState mouseState = Mouse.GetState();
 	foreach(var menuButton in menuButtons){
@@ -910,10 +956,11 @@ _ _ 4 _ 2 _ 5 _ 7
 	base.Update(gameTime);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Every time this method executes (which is happening very often), it’s getting information about the mouse which is stored in &lt;code&gt;mouseState&lt;/code&gt;. This includes the X and Y position of the cursor, which button(s) are pressed, etc.&lt;/p&gt;
+&lt;p&gt;Every time this method executes (which is happening very often), it’s getting information about the mouse which is stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;mouseState&lt;/code&gt;. This includes the X and Y position of the cursor, which button(s) are pressed, etc.&lt;/p&gt;
 
-&lt;p&gt;The blackjack game was designed around a &lt;a href=&quot;http://en.wikipedia.org/wiki/Deterministic_finite_automaton&quot;&gt;DFA&lt;/a&gt;, the states of which are determined by each of the &lt;code&gt;GameState&lt;/code&gt; enum values. If the game is in either of the two states where player input is awaited (&lt;code&gt;GameState.WaitingForPlayer&lt;/code&gt; and &lt;code&gt;GameState.DisplayingHandResults&lt;/code&gt;), it’s going to call the &lt;code&gt;Update&lt;/code&gt; method on each menu button within the game, which will check if any of the buttons (such as the Hit, Stand, or Quit buttons) have been clicked. If the game is not in any of those states, it’s going to go through the switch statement and execute the appropriate code which represents the DFA transition. &lt;/p&gt;
+&lt;p&gt;The blackjack game was designed around a &lt;a href=&quot;http://en.wikipedia.org/wiki/Deterministic_finite_automaton&quot;&gt;DFA&lt;/a&gt;, the states of which are determined by each of the &lt;code class=&quot;highlighter-rouge&quot;&gt;GameState&lt;/code&gt; enum values. If the game is in either of the two states where player input is awaited (&lt;code class=&quot;highlighter-rouge&quot;&gt;GameState.WaitingForPlayer&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GameState.DisplayingHandResults&lt;/code&gt;), it’s going to call the &lt;code class=&quot;highlighter-rouge&quot;&gt;Update&lt;/code&gt; method on each menu button within the game, which will check if any of the buttons (such as the Hit, Stand, or Quit buttons) have been clicked. If the game is not in any of those states, it’s going to go through the switch statement and execute the appropriate code which represents the DFA transition.&lt;/p&gt;
 
 &lt;h3 id=&quot;sprites&quot;&gt;Sprites&lt;/h3&gt;
 
@@ -931,7 +978,7 @@ _ _ 4 _ 2 _ 5 _ 7
 
 &lt;p&gt;&lt;img src=&quot;../../../../images/4-30-15/collision.png&quot; alt=&quot;Collision detection&quot; title=&quot;Collision detection&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;In order for sprites to move, they usually have a velocity that dictates which direction they move and how fast, in terms of pixels per update cycle. By making a &lt;code&gt;Vector2&lt;/code&gt; a property of a game object, you can store information about the object’s velocity. You can pass in an X speed and a Y speed for the velocity. A positive X value indicates how many pixels to the right per update cycle you want the sprite to move. A negative X value is the same thing, except moving to the left instead of the right. A positive Y value incidates how many pixels down per update cycle you want the sprite to move, while a negative Y value is how many pixels up you want it to move. &lt;/p&gt;
+&lt;p&gt;In order for sprites to move, they usually have a velocity that dictates which direction they move and how fast, in terms of pixels per update cycle. By making a &lt;code class=&quot;highlighter-rouge&quot;&gt;Vector2&lt;/code&gt; a property of a game object, you can store information about the object’s velocity. You can pass in an X speed and a Y speed for the velocity. A positive X value indicates how many pixels to the right per update cycle you want the sprite to move. A negative X value is the same thing, except moving to the left instead of the right. A positive Y value incidates how many pixels down per update cycle you want the sprite to move, while a negative Y value is how many pixels up you want it to move.&lt;/p&gt;
 
 &lt;p&gt;In the image below, the blue square has an X speed of 4 and a Y speed of zero. It’s moving to the right at 4 pixels per cycle and it’s not moving up or down.&lt;/p&gt;
 
@@ -941,10 +988,10 @@ _ _ 4 _ 2 _ 5 _ 7
 
 &lt;p&gt;In a game where many objects appear on the screen, something must be done about those objects once they are off screen. The resources for those objects must be freed or else the game will suffer performance degredation. The computer might also run out of memory.&lt;/p&gt;
 
-&lt;p&gt;A simple way of doing this is having an &lt;code&gt;IsActive&lt;/code&gt; or &lt;code&gt;ReadyForDisposal&lt;/code&gt; property on each object and set it to the appropriate value when it’s on or off screen. When the game updates, check for any unused resources lingering around and delete them.&lt;/p&gt;
+&lt;p&gt;A simple way of doing this is having an &lt;code class=&quot;highlighter-rouge&quot;&gt;IsActive&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadyForDisposal&lt;/code&gt; property on each object and set it to the appropriate value when it’s on or off screen. When the game updates, check for any unused resources lingering around and delete them.&lt;/p&gt;
 
 &lt;h2 id=&quot;criticism&quot;&gt;Criticism&lt;/h2&gt;
-&lt;p&gt;One thing I dislike about game programming in XNA is that it seems difficult to do great OO programming. In the games I’ve done, I work out of a giant &lt;code&gt;Game&lt;/code&gt; class. I have other classes for objects in my games, but it seems like a lot of stuff exists in my &lt;code&gt;Game&lt;/code&gt; class. &lt;code&gt;Game&lt;/code&gt; has its fingers in a lot of pies with having &lt;code&gt;Initialize(), LoadContent(), UnloadContent(), Update(),&lt;/code&gt; and &lt;code&gt;Draw()&lt;/code&gt; methods. I feel like it has too much responsibility. I suppose the game needs to simultaneously update the visuals of the game and the unseen logic, but I feel like that violates the Single Responsibility Principle because I see those two tings as two different responsibilities. &lt;/p&gt;
+&lt;p&gt;One thing I dislike about game programming in XNA is that it seems difficult to do great OO programming. In the games I’ve done, I work out of a giant &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; class. I have other classes for objects in my games, but it seems like a lot of stuff exists in my &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; class. &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; has its fingers in a lot of pies with having &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize(), LoadContent(), UnloadContent(), Update(),&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Draw()&lt;/code&gt; methods. I feel like it has too much responsibility. I suppose the game needs to simultaneously update the visuals of the game and the unseen logic, but I feel like that violates the Single Responsibility Principle because I see those two tings as two different responsibilities.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
@@ -956,8 +1003,8 @@ _ _ 4 _ 2 _ 5 _ 7
 &lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=20914&quot;&gt;Microsoft XNA&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 30 Apr 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C%23-With-XNA.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C%23-With-XNA.html</guid>
+        <link>http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C-With-XNA.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C-With-XNA.html</guid>
       </item>
     
   </channel>

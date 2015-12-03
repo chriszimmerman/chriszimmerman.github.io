@@ -19,8 +19,6 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
-	<div class="sidebar">
-	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -42,31 +40,35 @@
 
 <p>call() is a function that allows you to execute a function while specifying your own context in which it will run. For example, let’s say we had the following function:</p>
 
-<pre><code>function printPokemonInfo() {
+<div class="highlighter-rouge"><pre class="highlight"><code>function printPokemonInfo() {
 	alert(this.name + ' is Pokemon #' + this.number + ' and is a ' + this.type + ' type.');
 }
 </code></pre>
+</div>
 
 <p>This function will print out information about a Pokemon in an alert window. However, something is amiss.</p>
 
-<p>The function is accessing properties off of <code>this</code> to display the information. But no Pokemon object is being passed in. And no, this function is not part of an object that contains the properties being accessed.</p>
+<p>The function is accessing properties off of <code class="highlighter-rouge">this</code> to display the information. But no Pokemon object is being passed in. And no, this function is not part of an object that contains the properties being accessed.</p>
 
 <p>As it is, this function will execute with all of the accessed values being undefined, which is pretty useless.</p>
 
 <p>Let’s also say I have the following variable declared:</p>
 
-<pre><code>var pokemon = { number: '001', name: 'Bulbasaur', type: 'Grass' };
+<div class="highlighter-rouge"><pre class="highlight"><code>var pokemon = { number: '001', name: 'Bulbasaur', type: 'Grass' };
 </code></pre>
+</div>
 
 <p>I can make this function work by calling the call() function like so:</p>
 
-<pre><code>printPokemonInfo.call(pokemon);
+<div class="highlighter-rouge"><pre class="highlight"><code>printPokemonInfo.call(pokemon);
 </code></pre>
+</div>
 
 <p>Now I get the expected output:</p>
 
-<pre><code>Bulbasaur is Pokemon #001 and is a Grass type.
+<div class="highlighter-rouge"><pre class="highlight"><code>Bulbasaur is Pokemon #001 and is a Grass type.
 </code></pre>
+</div>
 
 <p>Why on earth would you want to do this? What practical purpose does this serve?  Why not just make the pokemon an argument of the function? I’ll explain shortly. But first, I want to also show you apply().</p>
 
@@ -74,8 +76,9 @@
 
 <p>Let’s take the above example where we use call and replace call with apply:</p>
 
-<pre><code>printPokemonInfo.apply(pokemon);
+<div class="highlighter-rouge"><pre class="highlight"><code>printPokemonInfo.apply(pokemon);
 </code></pre>
+</div>
 
 <p>We get the exact same result as before. Okay, there must be a difference between the two. Otherwise, why have two different things that do the same thing?</p>
 
@@ -83,32 +86,37 @@
 
 <p>I will modify my function to demonstrate how additional arguments work for call():</p>
 
-<pre><code>function printPokemonInfo(times, adjective) {
+<div class="highlighter-rouge"><pre class="highlight"><code>function printPokemonInfo(times, adjective) {
 	for(var i = 0; i &lt; times; i++){
 		alert(this.name + ' is Pokemon #' + this.number + ' and is a ' + this.type + ' type. It is ' + adjective + '.' );
 	}
 }
 </code></pre>
+</div>
 
 <p>And I’ll make the following call:</p>
 
-<pre><code>printPokemonInfo.call(pokemon, 3, 'cool');
+<div class="highlighter-rouge"><pre class="highlight"><code>printPokemonInfo.call(pokemon, 3, 'cool');
 </code></pre>
+</div>
 
 <p>Now I will get three alert dialogs that say:</p>
 
-<pre><code>Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
+<div class="highlighter-rouge"><pre class="highlight"><code>Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
 </code></pre>
+</div>
 
 <p>As I said before, apply() only takes an array of arguments as an additional argument. So I would have to slightly change what I’m passing in to apply():</p>
 
-<pre><code>printPokemonInfo.apply(pokemon, [3, 'cool']);
+<div class="highlighter-rouge"><pre class="highlight"><code>printPokemonInfo.apply(pokemon, [3, 'cool']);
 </code></pre>
+</div>
 
 <p>I get the same result. I get three alert dialogs that say:</p>
 
-<pre><code>Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
+<div class="highlighter-rouge"><pre class="highlight"><code>Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
 </code></pre>
+</div>
 
 <h2 id="practical-applications">Practical Applications</h2>
 
@@ -116,15 +124,16 @@
 
 <p>Let’s say I have the following constructor:</p>
 
-<pre><code>var Person = function(firstName, lastName) {
+<div class="highlighter-rouge"><pre class="highlight"><code>var Person = function(firstName, lastName) {
 	this.firstName = firstName;
 	this.lastName = lastName;
 };
 </code></pre>
+</div>
 
 <p>This constructor for my Person object takes in two parameters, firstName and lastName. Let’s say I wanted to ‘subclass’ and reuse this constructor for objects that I want to have the same properties as Person objects. I have two ‘subclasses’, Student and Professor, that make use of the Person constructor code so I don’t have to write it again:</p>
 
-<pre><code>var Student = function(firstName, lastName, major) {
+<div class="highlighter-rouge"><pre class="highlight"><code>var Student = function(firstName, lastName, major) {
 	Person.call(this, firstName, lastName);
 	this.major = major;
 };
@@ -134,24 +143,28 @@ var Professor = function(firstName, lastName, department) {
 	this.department = department;
 };
 </code></pre>
+</div>
 
 <p>With the following code, I get an object with a firstName and lastName property:</p>
 
-<pre><code>var joe = new Person('Joe', 'Smith');
+<div class="highlighter-rouge"><pre class="highlight"><code>var joe = new Person('Joe', 'Smith');
 //	{ firstName: "Joe", lastName: "Smith" }
 </code></pre>
+</div>
 
 <p>With the following code, I get an object with a firstName, lastName, and department property:</p>
 
-<pre><code>var doc = new Professor('Richard', 'Stallman', 'Computer Science');
+<div class="highlighter-rouge"><pre class="highlight"><code>var doc = new Professor('Richard', 'Stallman', 'Computer Science');
 //	{ firstName: "Richard", lastName: "Stallman", department: "Computer Science" }
 </code></pre>
+</div>
 
 <p>The Student class works similarly:</p>
 
-<pre><code>var jimmy = new Student('Jimmy', 'Jones', 'Psychology');
+<div class="highlighter-rouge"><pre class="highlight"><code>var jimmy = new Student('Jimmy', 'Jones', 'Psychology');
 //	{ firstName: "Jimmy", lastName: "Jones", major: "Psychology" }
 </code></pre>
+</div>
 
 <h2 id="conclusion">Conclusion</h2>
 

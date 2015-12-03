@@ -19,8 +19,6 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
-	<div class="sidebar">
-	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -40,22 +38,24 @@
 
 <p>You can make a new process in Elixir by using the spawn function:</p>
 
-<pre><code>spawn(module, :function_name, [optional_arguments])
+<div class="highlighter-rouge"><pre class="highlight"><code>spawn(module, :function_name, [optional_arguments])
 </code></pre>
+</div>
 
-<p>The spawn function takes a module and a function from said module, as well as a list of optional arguments to pass to the function. Spawn returns a process identifier, or pid. A pid consists of three numbers which are used to identify a process. If you type <code>self</code> into iex, you’ll find that iex itself runs as an elixir process.</p>
+<p>The spawn function takes a module and a function from said module, as well as a list of optional arguments to pass to the function. Spawn returns a process identifier, or pid. A pid consists of three numbers which are used to identify a process. If you type <code class="highlighter-rouge">self</code> into iex, you’ll find that iex itself runs as an elixir process.</p>
 
-<pre><code>iex(1)&gt; self
+<div class="highlighter-rouge"><pre class="highlight"><code>iex(1)&gt; self
 #PID&lt;0.53.0&gt;
 </code></pre>
+</div>
 
-<p>Processes need a way to communicate with each other in order to do anything meaningful. In Elixir, processes achieve this with messages. Processes send messages with data to other processes that receive those messages and handle the data accordingly. </p>
+<p>Processes need a way to communicate with each other in order to do anything meaningful. In Elixir, processes achieve this with messages. Processes send messages with data to other processes that receive those messages and handle the data accordingly.</p>
 
 <p>Here is a simple example:</p>
 
 <p>proctut.exs</p>
 
-<pre><code>defmodule ProcessMessage do
+<div class="highlighter-rouge"><pre class="highlight"><code>defmodule ProcessMessage do
 	def send_message msg do
 		destination_pid = spawn(ProcessMessage, :get_message, [])
 		IO.puts "#{inspect(self)} here." 
@@ -75,6 +75,7 @@ end
 
 ProcessMessage.send_message "Why hello there!"
 </code></pre>
+</div>
 
 <p>The send_message function takes in a string which will get sent to a process it creates. The created process will run the get_message function, which just waits until it receives a message. It prints the pid of the process that sent the message as well as the message itself. It then terminates.</p>
 

@@ -19,8 +19,6 @@
 		<link href='http://blog.chriszimmerman.net/feed.xml' rel='alternate' type='application/atom+xml'>
   </head>
   <body>
-	<div class="sidebar">
-	</div>
 	<div class="wrapper">
 		<section>
 			<div id="title">
@@ -40,39 +38,39 @@
 
 <h1 id="introduction">Introduction</h1>
 
-<p>Elixir is a functional programming language created by José Valim in 2012. Elixir runs on the Erlang Virtual Machine, BEAM. This allows Elixir to take advantage of Erlang’s awesome concurrency capabilities. </p>
+<p>Elixir is a functional programming language created by José Valim in 2012. Elixir runs on the Erlang Virtual Machine, BEAM. This allows Elixir to take advantage of Erlang’s awesome concurrency capabilities.</p>
 
 <h1 id="language-goals">Language goals</h1>
 <p>When José started creating Elixir, he had three goals in mind: compatibility, productivity, and extensibility.</p>
 
 <h3 id="compatibility">Compatibility</h3>
-<p>In order to take advantage of Erlang’s features such as its concurrency model and libraries, Elixir strives to stay compatible with the underlying Erlang VM. This allows Elixir code to compile to Erlang byte code without a performance degredation. </p>
+<p>In order to take advantage of Erlang’s features such as its concurrency model and libraries, Elixir strives to stay compatible with the underlying Erlang VM. This allows Elixir code to compile to Erlang byte code without a performance degredation.</p>
 
 <h3 id="productivity">Productivity</h3>
 
 <p>The core of the Elixir language is very small. This allows a lot of the language to be written in itself, making it a homoiconic language. Many of the language’s constructs have been written using macros. This allows developers to easily extend the language using their own macros for their own purposes, making it easy to build things like DSLs.</p>
 
-<p>Elixir’s syntax is a combination of Ruby and Erlang. This makes sense since José was on the core Rails team. Some people say that Elixir improves upon Erlang’s “weird” syntax. I have virtually no experience in writing Erlang code, so I don’t have an informed opinion on that. Elixir’s syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable for programming. I get things done in Ruby so this is a plus for me. </p>
+<p>Elixir’s syntax is a combination of Ruby and Erlang. This makes sense since José was on the core Rails team. Some people say that Elixir improves upon Erlang’s “weird” syntax. I have virtually no experience in writing Erlang code, so I don’t have an informed opinion on that. Elixir’s syntax reminds me a lot of Ruby. I personally find Ruby very enjoyable for programming. I get things done in Ruby so this is a plus for me.</p>
 
 <h3 id="extensibility">Extensibility</h3>
 
-<p>In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.   </p>
+<p>In my opinion, the extensibility and productivity goals go hand-in-hand. The core Elixir language is very small. This makes it easy to extend the language for specific needs, which lends to getting things done.</p>
 
 <h1 id="obtaining-elixir">Obtaining Elixir</h1>
 
-<p>If you want to mess around with some of the code examples you’ll see in a bit, you can grab the latest release of Elixir from <a href="http://elixir-lang.org/">elixir-lang.org</a>. You can probably also get it from the package manager of your choice. </p>
+<p>If you want to mess around with some of the code examples you’ll see in a bit, you can grab the latest release of Elixir from <a href="http://elixir-lang.org/">elixir-lang.org</a>. You can probably also get it from the package manager of your choice.</p>
 
 <h1 id="iex">iex</h1>
 
-<p>iex (or Interactive Elixir) is Elixir’s repl. If you have Elixir installed, you can start iex by typing the command <code>iex</code>.</p>
+<p>iex (or Interactive Elixir) is Elixir’s repl. If you have Elixir installed, you can start iex by typing the command <code class="highlighter-rouge">iex</code>.</p>
 
-<p>iex has many useful helper functions. The most useful one is probably the help function <code>h</code> which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, <code>h Enum.map</code> gets you the following output:</p>
+<p>iex has many useful helper functions. The most useful one is probably the help function <code class="highlighter-rouge">h</code> which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, <code class="highlighter-rouge">h Enum.map</code> gets you the following output:</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=help.txt"> </script>
 
-<p>Another commonly used helper function is for compiling files: <code>c</code>. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: <code>c "primes.ex"</code> </p>
+<p>Another commonly used helper function is for compiling files: <code class="highlighter-rouge">c</code>. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: <code class="highlighter-rouge">c "primes.ex"</code></p>
 
 <h1 id="lets-take-a-look-at-some-code">Let’s take a look at some code</h1>
 
@@ -88,7 +86,7 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness.exs"> </script>
 
-<p>An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named <code>Coolness</code> that contains the function <code>coolness</code>. </p>
+<p>An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named <code class="highlighter-rouge">Coolness</code> that contains the function <code class="highlighter-rouge">coolness</code>.</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
@@ -106,21 +104,21 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs"> </script>
 
-<p>Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, <code>MyMath.square</code> is identified by <code>MyMath.square/1</code> and <code>MyMath.add</code> is identified by <code>MyMath.add/2</code>.</p>
+<p>Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, <code class="highlighter-rouge">MyMath.square</code> is identified by <code class="highlighter-rouge">MyMath.square/1</code> and <code class="highlighter-rouge">MyMath.add</code> is identified by <code class="highlighter-rouge">MyMath.add/2</code>.</p>
 
 <h1 id="macros">Macros</h1>
 
-<p>Elixir has support for macros. With a small core language, it’s very easy to extend the language for one’s own specific purposes via macros. One benefit of macros is that it’s easy to create a custom domain specific language. </p>
+<p>Elixir has support for macros. With a small core language, it’s very easy to extend the language for one’s own specific purposes via macros. One benefit of macros is that it’s easy to create a custom domain specific language.</p>
 
-<p>The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In Ruby, there is a keyword, <code>unless</code> that allows one to write conditionals that will execute if the statement in the <code>unless</code> clause is not true. Basically, think of it as an ‘if not’ statement.</p>
+<p>The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In Ruby, there is a keyword, <code class="highlighter-rouge">unless</code> that allows one to write conditionals that will execute if the statement in the <code class="highlighter-rouge">unless</code> clause is not true. Basically, think of it as an ‘if not’ statement.</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs"> </script>
 
-<p>What’s going on here? The <code>do_this_if_false</code> and <code>do_this_if_true</code> variables hold the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros. </p>
+<p>What’s going on here? The <code class="highlighter-rouge">do_this_if_false</code> and <code class="highlighter-rouge">do_this_if_true</code> variables hold the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros.</p>
 
-<p>The <code>quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code>unquote</code> is a function that will evaluate the code passed into it. In this example, the condition that’s evaluated to determine which clause to execute will be passed into <code>unquote</code> since that condition actually needs to be evaluated to find out whether it’s true or false. Since <code>false</code> and <code>nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code>do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code>do_this_if_true</code> variable gets executed and returned. </p>
+<p>The <code class="highlighter-rouge">quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code class="highlighter-rouge">unquote</code> is a function that will evaluate the code passed into it. In this example, the condition that’s evaluated to determine which clause to execute will be passed into <code class="highlighter-rouge">unquote</code> since that condition actually needs to be evaluated to find out whether it’s true or false. Since <code class="highlighter-rouge">false</code> and <code class="highlighter-rouge">nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code class="highlighter-rouge">do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code class="highlighter-rouge">do_this_if_true</code> variable gets executed and returned.</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
@@ -128,13 +126,13 @@
 
 <h1 id="concurrency-and-why-you-should-care-about-it">Concurrency (and why you should care about it)</h1>
 
-<p>Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more beneficial. Single-threaded programming just ain’t gonna cut it anymore.  In the paper <a href="https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf">The Free Lunch Is Over</a>, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with. </p>
+<p>Why care about concurrency? As computer hardware goes down the route of adding more cores to processors, multicore processing is becoming much more beneficial. Single-threaded programming just ain’t gonna cut it anymore.  In the paper <a href="https://www.cs.utexas.edu/~lin/cs380p/Free_Lunch.pdf">The Free Lunch Is Over</a>, this topic is elaborated. In languages like C# and Java, concurrency can be very painful to work with.</p>
 
 <p>On the other hand, Elixir makes concurrency quite painless. It’s very easy to start up multiple processes to do their own work. Elixir takes advantage of Erlang’s <a href="http://en.wikipedia.org/wiki/Actor_model">actor model</a> implementation. In the actor model, each actor (in this case, an actor is an Elixir process) does its own work that only it knows about. Actors communicate with each other via messages.</p>
 
 <h1 id="processes">Processes</h1>
 
-<p>As said before, processes are how Elixir implements concurrency. I wrote <a href="http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html">an earlier post on processes</a> which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the <code>self</code> keyword. The <code>spawn/1</code> and <code>spawn/3</code> functions are used to create processes that will execute the functions passed into them.  </p>
+<p>As said before, processes are how Elixir implements concurrency. I wrote <a href="http://blog.chriszimmerman.net/2014/11/02/Elixir-Processes.html">an earlier post on processes</a> which I’ll recap. Each process has its own process ID (or pid) which is used in interprocess communication. A process can reference its own PID with the <code class="highlighter-rouge">self</code> keyword. The <code class="highlighter-rouge">spawn/1</code> and <code class="highlighter-rouge">spawn/3</code> functions are used to create processes that will execute the functions passed into them.</p>
 
 <p>Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I got something!” when it receives a message.</p>
 
@@ -148,15 +146,15 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process2.txt"> </script>
 
-<p>I sent a message just containing a string, “what’s up?”, to the address of the process stored in pid. That process received the message and executed its lambda function. </p>
+<p>I sent a message just containing a string, “what’s up?”, to the address of the process stored in pid. That process received the message and executed its lambda function.</p>
 
-<p>The <code>receive do</code> block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:</p>
+<p>The <code class="highlighter-rouge">receive do</code> block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt"> </script>
 
-<p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. For starters, we’ll put it in a module. We now have something like this: </p>
+<p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. For starters, we’ll put it in a module. We now have something like this:</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
@@ -176,19 +174,19 @@
 
 <h1 id="mix">Mix</h1>
 
-<p>Mix is a lovely little tool to aid you in managing your projects in Elixir. Mix comes with Elixir. By using the <code>mix new [project name]</code> command, you can create an empty Elixir project with an organized structure. If I create a new project called foo, it produces the following:</p>
+<p>Mix is a lovely little tool to aid you in managing your projects in Elixir. Mix comes with Elixir. By using the <code class="highlighter-rouge">mix new [project name]</code> command, you can create an empty Elixir project with an organized structure. If I create a new project called foo, it produces the following:</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix.txt"> </script>
 
-<p>This creates some files that are found in most GitHub projects, such as the <code>README</code> and <code>gitignore</code> files. A <code>lib</code> directory was created. This is where you put your source files. Test files go in the <code>test</code> directory. Config files are stored in <code>config</code>.</p>
+<p>This creates some files that are found in most GitHub projects, such as the <code class="highlighter-rouge">README</code> and <code class="highlighter-rouge">gitignore</code> files. A <code class="highlighter-rouge">lib</code> directory was created. This is where you put your source files. Test files go in the <code class="highlighter-rouge">test</code> directory. Config files are stored in <code class="highlighter-rouge">config</code>.</p>
 
-<p>The interesting file here is <code>mix.exs</code>. In your mix file, you can define dependences that your project has, somewhat like a gemfile in Ruby projects. Running the command <code>mix deps.get</code> will fetch your dependencies for your project. For a further list of <code>mix</code> commands, just type <code>mix -h</code>.</p>
+<p>The interesting file here is <code class="highlighter-rouge">mix.exs</code>. In your mix file, you can define dependences that your project has, somewhat like a gemfile in Ruby projects. Running the command <code class="highlighter-rouge">mix deps.get</code> will fetch your dependencies for your project. For a further list of <code class="highlighter-rouge">mix</code> commands, just type <code class="highlighter-rouge">mix -h</code>.</p>
 
 <h1 id="testing-framework---exunit">Testing framework - ExUnit</h1>
 
-<p>ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there’s not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true. </p>
+<p>ExUnit is the testing framework included with Elixir. At the time of this writing, it is pretty green still, so there’s not a lot to look at. You can write basic test cases making use of the assert macro, asserting that given expressions are true.</p>
 
 <p>Let’s say I’m writing a CSV to HTML converter. I want to test that my function that converts a CSV row to an HTML table row is correct. I might have something like this:</p>
 
@@ -196,7 +194,7 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=converter_test.exs"> </script>
 
-<p>I can then run <code>mix test</code>:</p>
+<p>I can then run <code class="highlighter-rouge">mix test</code>:</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
@@ -208,7 +206,7 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row.exs"> </script>
 
-<p>I’m going to split the CSV using a comma delimiter to get each piece of data. I’ll the use a map function that will wrap each piece of cell data in &lt;td&gt; tags. I make use of Elixir’s string interpolation to do this. Enum.join merges the strings together. I then finish up by wrapping that string in &lt;tr&gt; tags. </p>
+<p>I’m going to split the CSV using a comma delimiter to get each piece of data. I’ll the use a map function that will wrap each piece of cell data in &lt;td&gt; tags. I make use of Elixir’s string interpolation to do this. Enum.join merges the strings together. I then finish up by wrapping that string in &lt;tr&gt; tags.</p>
 
 <p>Does it work?</p>
 
@@ -216,7 +214,7 @@
 </pre></noscript>
 <script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test2.txt"> </script>
 
-<p>Sweet. It works! Before going on, I would like to digress a little and tell you about Elixir’s pipe operator, <code>|&gt;</code>. I’m going to write the code differently in order to make my test pass.</p>
+<p>Sweet. It works! Before going on, I would like to digress a little and tell you about Elixir’s pipe operator, <code class="highlighter-rouge">|&gt;</code>. I’m going to write the code differently in order to make my test pass.</p>
 
 <noscript><pre>400: Invalid request
 </pre></noscript>
@@ -232,7 +230,7 @@
 
 <h1 id="references">References</h1>
 
-<p>On my Elixir journey, I have read <a href="https://pragprog.com/book/elixir/programming-elixir">Programming Elixir by Dave Thomas</a>. If you’re the type to pick up a book on a subject to learn about it, I highly suggest this book. I like the format of the book. He’ll teach you an aspect of Elixir and then give you exercises to complete using the knowledge you just learned. </p>
+<p>On my Elixir journey, I have read <a href="https://pragprog.com/book/elixir/programming-elixir">Programming Elixir by Dave Thomas</a>. If you’re the type to pick up a book on a subject to learn about it, I highly suggest this book. I like the format of the book. He’ll teach you an aspect of Elixir and then give you exercises to complete using the knowledge you just learned.</p>
 
 <p><a href="http://elixir-lang.org">Elixir-lang.org</a></p>
 
