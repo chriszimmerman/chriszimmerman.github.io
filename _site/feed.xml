@@ -7,6 +7,86 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Lessons Learned from Sandi Metz&#39;s Practical Object-Oriented Design In Ruby</title>
+        <description>&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;At work, our reading group has been reading Practical Object-Oriented Design In Ruby. At the point of writing this blog post, we are about halfway through the book. Sandi’s book has a number of valuable insights and provides interesting perspectices on OO design. I’d like to share some of what I’ve learned in the course of reading the book.&lt;/p&gt;
+
+&lt;h2 id=&quot;designing-for-changeability&quot;&gt;Designing for changeability&lt;/h2&gt;
+
+&lt;p&gt;Your software WILL change. This is an inevitability.&lt;/p&gt;
+
+&lt;p&gt;What’s not inevitable is knowing what the actual changes will be. Some folks predict what changes will be required in the future and design their applications in anticipation for these future, not-yet-determined changes. However, there is no guarantee that these changes will actually have to be implemented.&lt;/p&gt;
+
+&lt;p&gt;OO design isn’t about predicting the future. It’s about putting your application in a position where it can easily accomodate future change, regardless of what that change is.&lt;/p&gt;
+
+&lt;p&gt;To put it in Sandi’s words: “Design is more the art of preserving changeablility than it is the act of achieving perfection.”&lt;/p&gt;
+
+&lt;p&gt;I’ve never thought about design this way. I now take this into account when designing software.&lt;/p&gt;
+
+&lt;h2 id=&quot;code-thats-easy-to-change&quot;&gt;Code that’s easy to change&lt;/h2&gt;
+
+&lt;p&gt;The idea that code should be easy to change is a no-brainer. Sandi gives criteria for code that’s easy to change:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) Changes have no unexpected side effects
+2) Small changes in requirements require correspondingly small changes in code
+3) Existing code is easy to reuse
+4) The easiest way to make a change is to add code that in itself is easy to change
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ending up being significantly more effort because of the existing code.&lt;/p&gt;
+
+&lt;p&gt;In order for code to meet these criteria, Sandi suggests that code has the following qualities:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code relies upon it
+Reasonable - The cost of any change should be proportional to the benefitis the change achieves
+Usable - Existing code should be usable in new and unexpected contexts
+Exemplary -  The code itself should encourage those who change it to perpetuate these qualities
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I believe a lot of people already think this makes sense, but it’s great that Sandi has put it into words.&lt;/p&gt;
+
+&lt;h2 id=&quot;managing-dependencies&quot;&gt;Managing dependencies&lt;/h2&gt;
+
+&lt;p&gt;Sandi devotes a chapter in her book to managing dependencies. Dependencies are needed in an application. Objects need to know about each other to some extent in order to communicate. However, knowing too much can lead to tight coupling.&lt;/p&gt;
+
+&lt;p&gt;An object has a dependency when it knows:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) The name of another class
+2) The name of method on an object other than itself
+3) The arguments that a method needs
+4) The order of those arguments
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When objects are tightly coupled, they tend to act like one entity. When you use one object, you use them all. The same goes for testing. Consequently, when a change needs to be made to one object, a change usually needs to be made in the other objects. Going back to the criteria of easy to change code, a small change in requirements can result in many changes being made in the code. Tightly coupled code is also hard to be reused in multiple contexts.&lt;/p&gt;
+
+&lt;p&gt;There are techniques to write loosely coupled code: dependency injection, dependency isolation, and removal of argument order dependences.&lt;/p&gt;
+
+&lt;p&gt;write loosely coupled code to fix this -&amp;gt; 
+	dependency injection
+	isolate dependences -&amp;gt; isolate instance creation, isolate vulnerable external messages,
+	remove argument order dependencies  -&amp;gt; explicitly define defaults
+	choose dependency direction -&amp;gt; recognize concretions and abstractions, avoid dependent-laden classes, find dependencies that matter&lt;/p&gt;
+
+&lt;h2 id=&quot;thinking-about-applications-in-terms-of-messaging&quot;&gt;Thinking about applications in terms of messaging&lt;/h2&gt;
+
+&lt;p&gt;Sandi provides a unique perspective on how objects in an application interact with one another. Instead of thinking about objects calling methods on other objects, think about it like objects sending each other &lt;em&gt;messages&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/ref=sr_1_sc_1?ie=UTF8&amp;amp;qid=1450447653&amp;amp;sr=8-1-spell&amp;amp;keywords=practical+oo+design+in+ruby&quot;&gt;Practical Object-Oriented Design in Ruby: An Agile Primer&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Dec 2015 00:00:00 -0500</pubDate>
+        <link>http://blog.chriszimmerman.net//2015/12/21/Poodr.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/12/21/Poodr.html</guid>
+      </item>
+    
+      <item>
         <title>Closures in JavaScript</title>
         <description>&lt;h1 id=&quot;closures-in-javascript&quot;&gt;Closures in JavaScript&lt;/h1&gt;
 
@@ -886,125 +966,6 @@ _ _ 4 _ 2 _ 5 _ 7
         <pubDate>Sun, 31 May 2015 00:00:00 -0400</pubDate>
         <link>http://blog.chriszimmerman.net//2015/05/31/A-Month-With-Python.html</link>
         <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/05/31/A-Month-With-Python.html</guid>
-      </item>
-    
-      <item>
-        <title>Game Programming C# With XNA</title>
-        <description>&lt;h1 id=&quot;game-programming-in-c-with-xna&quot;&gt;Game Programming in C# With XNA&lt;/h1&gt;
-
-&lt;p&gt;Every year for the past few years, I’ve been going to PAX East, an annual video game convention in Boston. Every time, I get inspired to make video games, but never actually act on that inspiration. I don’t know if it’s due to A) a lack of original ideas, B) poor artistic skill, C) laziness, or D) all of the above.&lt;/p&gt;
-
-&lt;p&gt;Shortly after my trip to PAX East in March of this year, I started a &lt;a href=&quot;https://class.coursera.org/gameprogramming-002&quot;&gt;Coursera class&lt;/a&gt; about game programming in C#. In this class, I learned about writing C# games using Microsoft’s XNA Framework. The class was aimed at people who have never done programming before. However, I already knew the language features of C# taught in the class, so I was able to focus on learning about XNA objects and APIs, as well as game-programming-specific concepts like collision detection and calculating sprite velocities. A few of the games I created were a simple blackjack game and a game where you are a hamburger that shoots french fries at teddy bears while they bounce around and shoot mini teddy bears at you.&lt;/p&gt;
-
-&lt;p&gt;I would like to share what I learned in the course from the XNA and game development perspective.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-xna-framework&quot;&gt;The XNA Framework&lt;/h2&gt;
-
-&lt;p&gt;Microsoft’s XNA &lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=20914&quot;&gt;XNA’s Not Acronymed&lt;/a&gt; Framework contains objects that make it relatively easy to create video games. There are objects for handling keyboard and mouse input, getting mouse state, drawing sprites on the screen, and working with sprite movement, to name a few.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Mouse&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;MouseState&lt;/code&gt; classes allow you to get information about mouse position and button state. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Texture2D&lt;/code&gt; class contains information related to a grid of pixels that compose a sprite. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Rectangle&lt;/code&gt; class allows you to access information about the rectangle that represents the sprite, such as length, width, X position, Y, position, upper left corner, and so on. The &lt;code class=&quot;highlighter-rouge&quot;&gt;Vector2&lt;/code&gt; object is a commonly used object that defines a vector used in game physics.&lt;/p&gt;
-
-&lt;h2 id=&quot;fundamental-game-concepts&quot;&gt;Fundamental Game Concepts&lt;/h2&gt;
-
-&lt;h3 id=&quot;the-game-loop&quot;&gt;The Game Loop&lt;/h3&gt;
-
-&lt;p&gt;One of the most fundamental concepts in game programming is the game loop. The game loop constantly runs, checking for user input and updating the environment. For example, the game loop may have code to draw a bullet sprite from a spaceship when the left mouse button is pressed. There may be code to check for when a bullet sprite comes into contact with an alien sprite and play an explosion animation when that occurs. The game loop repeats indefinitely until the game is terminated.&lt;/p&gt;
-
-&lt;p&gt;For example, the game loop might look something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;while(gameIsRunning){
-	CheckForInputFromUser();
-	UpdateInternalGameState();
-	UpdateVisualsForPlayer();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The following code sample is from a simplified blackjack game I wrote for an assignment:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;protected override void Update(GameTime gameTime)
-{
-	MouseState mouseState = Mouse.GetState();
-	foreach(var menuButton in menuButtons){
-		if(currentState == GameState.WaitingForPlayer || currentState == GameState.DisplayingHandResults){
-			menuButton.Update(mouseState);
-		}
-	}
-
-	switch(currentState){
-		case GameState.PlayerHitting:
-			PlayerHit();
-			break;
-		case GameState.WaitingForDealer:
-			DealerTurn();
-			break;
-		case GameState.DealerHitting:
-			DealerHit();
-			break;
-		case GameState.CheckingHandOver:
-			CheckHandOver();
-			break;
-		case GameState.DisplayingHandResults:
-			break;
-		case GameState.Exiting:
-			Exit();
-			break;
-		default:
-			break;
-	}
-
-	base.Update(gameTime);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Every time this method executes (which is happening very often), it’s getting information about the mouse which is stored in &lt;code class=&quot;highlighter-rouge&quot;&gt;mouseState&lt;/code&gt;. This includes the X and Y position of the cursor, which button(s) are pressed, etc.&lt;/p&gt;
-
-&lt;p&gt;The blackjack game was designed around a &lt;a href=&quot;http://en.wikipedia.org/wiki/Deterministic_finite_automaton&quot;&gt;DFA&lt;/a&gt;, the states of which are determined by each of the &lt;code class=&quot;highlighter-rouge&quot;&gt;GameState&lt;/code&gt; enum values. If the game is in either of the two states where player input is awaited (&lt;code class=&quot;highlighter-rouge&quot;&gt;GameState.WaitingForPlayer&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GameState.DisplayingHandResults&lt;/code&gt;), it’s going to call the &lt;code class=&quot;highlighter-rouge&quot;&gt;Update&lt;/code&gt; method on each menu button within the game, which will check if any of the buttons (such as the Hit, Stand, or Quit buttons) have been clicked. If the game is not in any of those states, it’s going to go through the switch statement and execute the appropriate code which represents the DFA transition.&lt;/p&gt;
-
-&lt;h3 id=&quot;sprites&quot;&gt;Sprites&lt;/h3&gt;
-
-&lt;p&gt;In 2D game programming, all objects in the world are displayed as sprites. Player characters, enemies the player fights, items the player gets, and other objects and entities in the world are displayed as sprites. Sprites are rectangles of varying sizes that have images placed on them.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../images/4-30-15/explosion.png&quot; alt=&quot;Explosion spritesheet&quot; title=&quot;An explosion spritesheet&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;An explosion spritesheet containing the sprites for an animation. Taken from Dr. Tim “Dr. T” Chamillard’s course Beginning Game Programming With C#&lt;/p&gt;
-
-&lt;p&gt;Sprites have a length and width, as well as a position. The position is usually the upper left corner of the sprite, but in some situations, the center point of the sprite is used.&lt;/p&gt;
-
-&lt;h3 id=&quot;collision-detection&quot;&gt;Collision Detection&lt;/h3&gt;
-
-&lt;p&gt;In order for games to be interesting, things need to happen when sprites interact with each other. Collision detection is a term used to describe when the game checks for when sprites intersect each other and what to do when that happens. In Super Mario Bros, if Mario walks into a goomba, he shrinks if he’s big or he dies if he’s small. However, if he jumps on top of the goomba, he’ll bounce back up and get points. The goomba will also be dead.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../images/4-30-15/collision.png&quot; alt=&quot;Collision detection&quot; title=&quot;Collision detection&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In order for sprites to move, they usually have a velocity that dictates which direction they move and how fast, in terms of pixels per update cycle. By making a &lt;code class=&quot;highlighter-rouge&quot;&gt;Vector2&lt;/code&gt; a property of a game object, you can store information about the object’s velocity. You can pass in an X speed and a Y speed for the velocity. A positive X value indicates how many pixels to the right per update cycle you want the sprite to move. A negative X value is the same thing, except moving to the left instead of the right. A positive Y value incidates how many pixels down per update cycle you want the sprite to move, while a negative Y value is how many pixels up you want it to move.&lt;/p&gt;
-
-&lt;p&gt;In the image below, the blue square has an X speed of 4 and a Y speed of zero. It’s moving to the right at 4 pixels per cycle and it’s not moving up or down.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../images/4-30-15/vectors.png&quot; alt=&quot;Sprite velocity&quot; title=&quot;Sprite velocity&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;removing-unused-resources&quot;&gt;Removing Unused Resources&lt;/h3&gt;
-
-&lt;p&gt;In a game where many objects appear on the screen, something must be done about those objects once they are off screen. The resources for those objects must be freed or else the game will suffer performance degredation. The computer might also run out of memory.&lt;/p&gt;
-
-&lt;p&gt;A simple way of doing this is having an &lt;code class=&quot;highlighter-rouge&quot;&gt;IsActive&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;ReadyForDisposal&lt;/code&gt; property on each object and set it to the appropriate value when it’s on or off screen. When the game updates, check for any unused resources lingering around and delete them.&lt;/p&gt;
-
-&lt;h2 id=&quot;criticism&quot;&gt;Criticism&lt;/h2&gt;
-&lt;p&gt;One thing I dislike about game programming in XNA is that it seems difficult to do great OO programming. In the games I’ve done, I work out of a giant &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; class. I have other classes for objects in my games, but it seems like a lot of stuff exists in my &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; class. &lt;code class=&quot;highlighter-rouge&quot;&gt;Game&lt;/code&gt; has its fingers in a lot of pies with having &lt;code class=&quot;highlighter-rouge&quot;&gt;Initialize(), LoadContent(), UnloadContent(), Update(),&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Draw()&lt;/code&gt; methods. I feel like it has too much responsibility. I suppose the game needs to simultaneously update the visuals of the game and the unseen logic, but I feel like that violates the Single Responsibility Principle because I see those two tings as two different responsibilities.&lt;/p&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;I have talked about some basic 2D game development concepts, as well as some of the XNA Framework’s API. Using the knowledge I’ve learned from the course, I’ve been able to make a few simple games that are fun to play. If you’ve ever wanted to make a video game, I encourage checking out this course. Get out there and have some fun!&lt;/p&gt;
-
-&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://class.coursera.org/gameprogramming-002&quot;&gt;Coursera - Game Programming in C#&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=20914&quot;&gt;Microsoft XNA&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 30 Apr 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C-With-XNA.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/04/30/Game-Programming-In-C-With-XNA.html</guid>
       </item>
     
   </channel>
