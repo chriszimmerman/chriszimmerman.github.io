@@ -37,11 +37,11 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ending up being significantly more effort because the existing code was not easy to change.&lt;/p&gt;
+&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ended up being significantly more effort because the existing code was not easy to change.&lt;/p&gt;
 
 &lt;p&gt;In order for code to meet these criteria, Sandi suggests that code has the following qualities:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code relies upon it
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code that relies upon it
 Reasonable - The cost of any change should be proportional to the benefits the change achieves
 Usable - Existing code should be usable in new and unexpected contexts
 Exemplary -  The code itself should encourage those who change it to perpetuate these qualities
@@ -67,13 +67,13 @@ Exemplary -  The code itself should encourage those who change it to perpetuate 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;When objects are tightly coupled, they tend to act like one entity. When you use one object, you use them all. The same goes for testing. Consequently, when a change needs to be made to one object, a change usually needs to be made in the other objects. Going back to the criteria of easy to change code, a small change in requirements can result in many changes being made in the code. Tightly coupled code is also hard to be reused in multiple contexts.&lt;/p&gt;
+&lt;p&gt;When objects are tightly coupled, they tend to act like one entity. When you use one object, you use them all. The same goes for testing. Consequently, when a change needs to be made to one object, a change usually needs to be made in the other objects. Going back to the criteria of easy to change code, a small change in requirements can result in many changes being made in tightly coupled code. Tightly coupled code is also hard to be reused in multiple contexts.&lt;/p&gt;
 
 &lt;p&gt;There are techniques to write loosely coupled code such as dependency injection and dependency isolation.&lt;/p&gt;
 
 &lt;h3 id=&quot;dependency-injection&quot;&gt;Dependency injection&lt;/h3&gt;
 
-&lt;p&gt;When an object’s dependencies are injected, the object knows less about them. Instead of knowing about concrete class names AND method names, an object can just know about the method names that it sends messages to. In a statically typed language like C#, the object will still have to know about interfaces containing the methods it sends message to, but this is a lot more flexible than knowing about a concrete type.&lt;/p&gt;
+&lt;p&gt;When an object’s dependencies are injected, the object knows less about them. Instead of knowing about concrete class names AND method names, an object can just know about the method names that it sends messages to. In a statically typed language like C#, the object will still have to know about interfaces containing the methods it sends message to, but this is a lot more flexible than knowing about concrete types.&lt;/p&gt;
 
 &lt;h3 id=&quot;dependency-isolation&quot;&gt;Dependency isolation&lt;/h3&gt;
 
