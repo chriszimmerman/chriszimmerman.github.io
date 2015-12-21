@@ -7,10 +7,12 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Lessons Learned from Sandi Metz&#39;s Practical Object-Oriented Design In Ruby</title>
-        <description>&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+        <title>Lessons Learned From Sandi Metz&#39;s Practical Object-Oriented Design In Ruby (The First Half)</title>
+        <description>&lt;h1 id=&quot;lessons-learned-from-sandi-metzs-practical-object-oriented-design-in-ruby-the-first-half&quot;&gt;Lessons Learned From Sandi Metz’s Practical Object-Oriented Design In Ruby (The First Half)&lt;/h1&gt;
 
-&lt;p&gt;At work, our reading group has been reading Practical Object-Oriented Design In Ruby. At the point of writing this blog post, we are about halfway through the book. Sandi’s book has a number of valuable insights and provides interesting perspectices on OO design. I’d like to share some of what I’ve learned in the course of reading the book.&lt;/p&gt;
+&lt;p&gt;At work, our reading group has been reading Practical Object-Oriented Design In Ruby by Sandi Metz. At the point of writing this blog post, we are about halfway through the book. Sandi’s book has a number of valuable insights and provides interesting perspectives on OO design. I’d like to share some of what I’ve learned in the course of reading the book.&lt;/p&gt;
+
+&lt;p&gt;I’d like to note that even though this book has “ruby” in the title and uses ruby code samples, the knowledge in this book can be applicable to many OO programming languages.&lt;/p&gt;
 
 &lt;h2 id=&quot;designing-for-changeability&quot;&gt;Designing for changeability&lt;/h2&gt;
 
@@ -18,15 +20,15 @@
 
 &lt;p&gt;What’s not inevitable is knowing what the actual changes will be. Some folks predict what changes will be required in the future and design their applications in anticipation for these future, not-yet-determined changes. However, there is no guarantee that these changes will actually have to be implemented.&lt;/p&gt;
 
-&lt;p&gt;OO design isn’t about predicting the future. It’s about putting your application in a position where it can easily accomodate future change, regardless of what that change is.&lt;/p&gt;
+&lt;p&gt;OO design isn’t about predicting the future. It’s about putting your application in a position where it can easily accommodate future change, regardless of what that change is.&lt;/p&gt;
 
-&lt;p&gt;To put it in Sandi’s words: “Design is more the art of preserving changeablility than it is the act of achieving perfection.”&lt;/p&gt;
+&lt;p&gt;To put it in Sandi’s words: “Design is more the art of preserving changeability than it is the act of achieving perfection.”&lt;/p&gt;
 
 &lt;p&gt;I’ve never thought about design this way. I now take this into account when designing software.&lt;/p&gt;
 
 &lt;h2 id=&quot;code-thats-easy-to-change&quot;&gt;Code that’s easy to change&lt;/h2&gt;
 
-&lt;p&gt;The idea that code should be easy to change is a no-brainer. Sandi gives criteria for code that’s easy to change:&lt;/p&gt;
+&lt;p&gt;The idea that code should be easy to change is a no-brainer. “Easy to change” is a broad term, though. Sandi gives criteria for code that’s easy to change:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) Changes have no unexpected side effects
 2) Small changes in requirements require correspondingly small changes in code
@@ -35,12 +37,12 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ending up being significantly more effort because of the existing code.&lt;/p&gt;
+&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ending up being significantly more effort because the existing code was not easy to change.&lt;/p&gt;
 
 &lt;p&gt;In order for code to meet these criteria, Sandi suggests that code has the following qualities:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code relies upon it
-Reasonable - The cost of any change should be proportional to the benefitis the change achieves
+Reasonable - The cost of any change should be proportional to the benefits the change achieves
 Usable - Existing code should be usable in new and unexpected contexts
 Exemplary -  The code itself should encourage those who change it to perpetuate these qualities
 &lt;/code&gt;&lt;/pre&gt;
@@ -48,34 +50,50 @@ Exemplary -  The code itself should encourage those who change it to perpetuate 
 
 &lt;p&gt;I believe a lot of people already think this makes sense, but it’s great that Sandi has put it into words.&lt;/p&gt;
 
+&lt;h2 id=&quot;thinking-about-applications-in-terms-of-messaging&quot;&gt;Thinking about applications in terms of messaging&lt;/h2&gt;
+
+&lt;p&gt;Sandi provides a unique perspective on how objects in an application interact with one another. Instead of thinking about objects calling methods on other objects, think about it like objects sending each other &lt;em&gt;messages&lt;/em&gt;.&lt;/p&gt;
+
 &lt;h2 id=&quot;managing-dependencies&quot;&gt;Managing dependencies&lt;/h2&gt;
 
-&lt;p&gt;Sandi devotes a chapter in her book to managing dependencies. Dependencies are needed in an application. Objects need to know about each other to some extent in order to communicate. However, knowing too much can lead to tight coupling.&lt;/p&gt;
+&lt;p&gt;Sandi devotes a chapter in her book to managing dependencies. Dependencies are needed in an application. Objects need to know about each other to some extent in order to communicate. However, objects knowing too much about each other can lead to tight coupling between objects.&lt;/p&gt;
 
 &lt;p&gt;An object has a dependency when it knows:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) The name of another class
-2) The name of method on an object other than itself
-3) The arguments that a method needs
+2) The name of a message an object intends to send to someone other than itself
+3) The arguments that a message needs
 4) The order of those arguments
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;When objects are tightly coupled, they tend to act like one entity. When you use one object, you use them all. The same goes for testing. Consequently, when a change needs to be made to one object, a change usually needs to be made in the other objects. Going back to the criteria of easy to change code, a small change in requirements can result in many changes being made in the code. Tightly coupled code is also hard to be reused in multiple contexts.&lt;/p&gt;
 
-&lt;p&gt;There are techniques to write loosely coupled code: dependency injection, dependency isolation, and removal of argument order dependences.&lt;/p&gt;
+&lt;p&gt;There are techniques to write loosely coupled code such as dependency injection and dependency isolation.&lt;/p&gt;
 
-&lt;p&gt;write loosely coupled code to fix this -&amp;gt; 
-	dependency injection
-	isolate dependences -&amp;gt; isolate instance creation, isolate vulnerable external messages,
-	remove argument order dependencies  -&amp;gt; explicitly define defaults
-	choose dependency direction -&amp;gt; recognize concretions and abstractions, avoid dependent-laden classes, find dependencies that matter&lt;/p&gt;
+&lt;h3 id=&quot;dependency-injection&quot;&gt;Dependency injection&lt;/h3&gt;
 
-&lt;h2 id=&quot;thinking-about-applications-in-terms-of-messaging&quot;&gt;Thinking about applications in terms of messaging&lt;/h2&gt;
+&lt;p&gt;When an object’s dependencies are injected, the object knows less about them. Instead of knowing about concrete class names AND method names, an object can just know about the method names that it sends messages to. In a statically typed language like C#, the object will still have to know about interfaces containing the methods it sends message to, but this is a lot more flexible than knowing about a concrete type.&lt;/p&gt;
 
-&lt;p&gt;Sandi provides a unique perspective on how objects in an application interact with one another. Instead of thinking about objects calling methods on other objects, think about it like objects sending each other &lt;em&gt;messages&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;dependency-isolation&quot;&gt;Dependency isolation&lt;/h3&gt;
+
+&lt;p&gt;Sometimes, it may not be possible to perform dependency injection. The next best thing you can do is tightly restrict when dependencies are created and how they are referenced. If you are able to isolate the creation of a dependency into one place, you expose the dependency, making it easier to work with. You also make it easier to refactor code in the future. When you isolate the sending of messages to other objects by wrapping them in wrapper methods, should those dependencies change, side effects are limited to those methods.&lt;/p&gt;
+
+&lt;h2 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h2&gt;
+
+&lt;p&gt;Going back to the messages metaphor, objects pass messages to each other. Messages being passed between objects represent the lifeblood of the application. Objects pass messages to each other via their interfaces. Sandi devotes a chapter to creating flexible interfaces.&lt;/p&gt;
+
+&lt;h3 id=&quot;asking-for-what-instead-of-telling-how&quot;&gt;Asking for “what” instead of telling “how”&lt;/h3&gt;
+
+&lt;p&gt;Sandi makes use of a great metaphor for interfaces. Imagine a restaurant with customers, waiters, and kitchen staff. The customer says to the waiter, “I want spaghetti.” The waiter gives the spaghetti order to the kitchen staff. They prepare the spaghetti and put in on a plate for the waiter to bring back to the customer.&lt;/p&gt;
+
+&lt;p&gt;At each point in the process, there is an interface where one entity communicates with another. The customer knows to ask the waiter for an item from the menu. The waiter knows to place an order for spaghetti for the kitchen staff. The kitchen staff knows to leave a plate of prepared spaghetti for the waiter to pick up and serve to the customer. Each entity knows what they want and they know who to ask for it. And they don’t care how the other entities get that thing to them. The customer doesn’t (and shouldn’t) care that the kitchen staff boils the pasta for 14 minutes instead of 12, or that the sous chef made the sauce instead of the head chef. Also, the customers themselves shouldn’t be in the kitchen stirring the sauce.&lt;/p&gt;
+
+&lt;p&gt;If an object knows &lt;em&gt;what&lt;/em&gt; to ask for, it relies on less. It knows to ask another object for what it wants and trusts that it will receive it. If an object is dictating to another object &lt;em&gt;how&lt;/em&gt; to give it what it wants, it knows more that it should about that other object (and possibly other objects THAT object knows). This goes back to tight coupling. It’s better for an object to ask “what” instead of tell “how.” This will make the objects more loosely coupled.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;There’s a lot from the book that I didn’t mention here because I don’t feel like basically plagiarizing the whole book, so I suggest you pick it up and read it for yourself. It changes the way you think about different aspects of OO design. Like I said, we’re only halfway through reading the book and I’ve picked up a lot of great knowledge. Sandi has a way with words and is able to intelligently and concisely communicate her ideas about OO design.&lt;/p&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
