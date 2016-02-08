@@ -7,6 +7,54 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Release With Less Stress</title>
+        <description>&lt;h1 id=&quot;release-with-less-stress&quot;&gt;Release With Less Stress&lt;/h1&gt;
+
+&lt;p&gt;I’ve worked in places where software releases can be an event ridden with stress and anxiety. The cause of this stress comes from several sources, such as pressure to meet a release date, or an issue creeping up in production that was not caught during testing. I’d like to share with you a few steps that you can take to ensure that your release process is less stressful and not such a big deal.&lt;/p&gt;
+
+&lt;h2 id=&quot;automate-your-release-process&quot;&gt;Automate your release process!!&lt;/h2&gt;
+
+&lt;p&gt;The first thing you should do is &lt;strong&gt;automate as much of your release process as possible.&lt;/strong&gt; Every manual step in your release process is an opportunity for somebody to fuck it up. I have been this person on at least one occasion and it’s not a great feeling to be the one who messed up a release.&lt;/p&gt;
+
+&lt;h3 id=&quot;less-documentation&quot;&gt;Less documentation&lt;/h3&gt;
+
+&lt;p&gt;The more automation there is in the release process, the less documentation needs to exist so people know what to do for the release. In an ideal world, documentation for a release consists of one step (“Step one: push the “Release” button!”).&lt;/p&gt;
+
+&lt;p&gt;The problem with documentation is that it can go out of date. A teammate of mine who headed our team’s release followed the release checklist to a T, only to be chastised for doing a step that was no longer necessary. But the release checklist wasn’t updated by the people who modified the release process.&lt;/p&gt;
+
+&lt;h3 id=&quot;reduction-of-handoff-between-groups&quot;&gt;Reduction of handoff between groups&lt;/h3&gt;
+
+&lt;p&gt;When a release process has a lot of manual steps, there are usually a number of people involved with the process. These people can belong to groups like Dev, QA, and Ops. Steps in the release process may dictate that one group has to hand something off to another. For example, Dev might have to hand their release candidate over to Ops so they can install it on the production servers (this should be automated!). This is an example of where things can go wrong. The wrong deployables could be given to Ops, for instance.&lt;/p&gt;
+
+&lt;p&gt;Waiting for a group to do their part involves waiting for them to communicate that they have done their part. If a group does not communicate how things are going on their end, it can be frustrating. I’ve waited for Ops to do their part for over an hour, only to have them say “I see an error” in the Slack channel, with no further follow up. “I see an error” is very vague. What kind of error? Is it something that I, a developer, need to investigate? Communication breakdown between groups can be frustrating.&lt;/p&gt;
+
+&lt;p&gt;Automate your release process, folks. &lt;a href=&quot;http://smile.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912&quot;&gt;Continuous Delivery&lt;/a&gt; is a great resource for those who want to do this.&lt;/p&gt;
+
+&lt;h2 id=&quot;release-smaller-pieces-more-often&quot;&gt;Release smaller pieces more often&lt;/h2&gt;
+
+&lt;p&gt;Releasing a large chunk of functionality can be nerve wracking. Especially if you’re trying to do so close to a release date that you ABSOLUTELY MUST HIT™. With the clock ticking, people are more prone to getting stressed out and making mistakes, both in writing the software and in releasing the software. However, if you release smaller pieces of software more often, you’ll make it easier to idenfity issues and make it possible to get feedback from the work you’ve already done. Some companies like Etsy are able to &lt;a href=&quot;https://youtu.be/JR-ccCTmMKY&quot;&gt;release multiple times a day!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;smaller-problem-search-space&quot;&gt;Smaller problem search space&lt;/h3&gt;
+
+&lt;p&gt;Releasing smaller pieces of software more often provides a number of benefits. For one, the problem space of new produciton issues caused by a new release is much smaller. Your latest release caused some production issues, but you’re not sure of the exact cause? Sifting through two weeks of new work is a lot easier than sifting through 6 months of new work. Sifting through half a day of work is much easier than two weeks worth of new work. :)&lt;/p&gt;
+
+&lt;h3 id=&quot;shipping-earlier&quot;&gt;Shipping earlier&lt;/h3&gt;
+
+&lt;p&gt;Releasing smaller pieces more often gives you the option to let your customers check out what you’ve done so far and provide feedback. If you don’t want to show your customers what you’re doing, you have the option to perform “dark” releases. This can be done by putting code for new features behind a feature flag. The flag is set to false by default until you want to “turn the feature on.” At that point, you flip the flag from false to true and the new functionality is visible. At some point, you probably want to get rid of the feature flag altogether (delete any &lt;code class=&quot;highlighter-rouge&quot;&gt;if(FeatureFlag) then {//blah}&lt;/code&gt; statements) and have the code as a normal part of your codebase.&lt;/p&gt;
+
+&lt;p&gt;Releasing pieces earlier also makes releasing not that big of a deal. Did something go wrong with the release? No big deal. Just rollback, fix what was wrong, and try again tomorrow. Speaking of rollbacks, it should be trivial to go back to the last ‘good’ state of your application. You should be able to rollback the application and be able to do so in a short amount of time.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;By automating your release process, you remove from it the element of human error. By releasing your software often in smaller pieces, your releases become much more manageable and less of a daunting event. These two courses of action will result in you not getting so stressed out about your releases.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 07 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://blog.chriszimmerman.net//2016/02/07/Releases.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2016/02/07/Releases.html</guid>
+      </item>
+    
+      <item>
         <title>Riffing About Stand-ups</title>
         <description>&lt;h1 id=&quot;riffing-about-stand-ups&quot;&gt;Riffing About Stand-ups&lt;/h1&gt;
 
@@ -758,151 +806,6 @@ true
         <pubDate>Wed, 22 Jul 2015 00:00:00 -0400</pubDate>
         <link>http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</link>
         <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</guid>
-      </item>
-    
-      <item>
-        <title>Javascript - call() and apply()</title>
-        <description>&lt;h1 id=&quot;javascript---call-and-apply&quot;&gt;Javascript - call() and apply()&lt;/h1&gt;
-
-&lt;p&gt;When I first encountered the call() and apply() functions in Javascript, I had difficulty wrapping my head around how they worked. I also wasn’t really sure what practical purpose they served. I’m going to explain how these two functions work and what they are used for.&lt;/p&gt;
-
-&lt;h2 id=&quot;call&quot;&gt;call()&lt;/h2&gt;
-
-&lt;p&gt;call() is a function that allows you to execute a function while specifying your own context in which it will run. For example, let’s say we had the following function:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function printPokemonInfo() {
-	alert(this.name + &#39; is Pokemon #&#39; + this.number + &#39; and is a &#39; + this.type + &#39; type.&#39;);
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This function will print out information about a Pokemon in an alert window. However, something is amiss.&lt;/p&gt;
-
-&lt;p&gt;The function is accessing properties off of &lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt; to display the information. But no Pokemon object is being passed in. And no, this function is not part of an object that contains the properties being accessed.&lt;/p&gt;
-
-&lt;p&gt;As it is, this function will execute with all of the accessed values being undefined, which is pretty useless.&lt;/p&gt;
-
-&lt;p&gt;Let’s also say I have the following variable declared:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var pokemon = { number: &#39;001&#39;, name: &#39;Bulbasaur&#39;, type: &#39;Grass&#39; };
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I can make this function work by calling the call() function like so:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.call(pokemon);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now I get the expected output:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Why on earth would you want to do this? What practical purpose does this serve?  Why not just make the pokemon an argument of the function? I’ll explain shortly. But first, I want to also show you apply().&lt;/p&gt;
-
-&lt;h2 id=&quot;apply&quot;&gt;apply()&lt;/h2&gt;
-
-&lt;p&gt;Let’s take the above example where we use call and replace call with apply:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.apply(pokemon);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;We get the exact same result as before. Okay, there must be a difference between the two. Otherwise, why have two different things that do the same thing?&lt;/p&gt;
-
-&lt;p&gt;Both call() and apply() take additional arguments that are optional. call() takes a list of optional arguments to pass into the function, whereas apply() takes a single array of arguments to pass in.&lt;/p&gt;
-
-&lt;p&gt;I will modify my function to demonstrate how additional arguments work for call():&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function printPokemonInfo(times, adjective) {
-	for(var i = 0; i &amp;lt; times; i++){
-		alert(this.name + &#39; is Pokemon #&#39; + this.number + &#39; and is a &#39; + this.type + &#39; type. It is &#39; + adjective + &#39;.&#39; );
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;And I’ll make the following call:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.call(pokemon, 3, &#39;cool&#39;);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now I will get three alert dialogs that say:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;As I said before, apply() only takes an array of arguments as an additional argument. So I would have to slightly change what I’m passing in to apply():&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;printPokemonInfo.apply(pokemon, [3, &#39;cool&#39;]);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;I get the same result. I get three alert dialogs that say:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;practical-applications&quot;&gt;Practical Applications&lt;/h2&gt;
-
-&lt;p&gt;A great practical purpose of using call() and apply() is to make use of faking subclassing in JavaScript. Although JavaScript is a prototype-based language and not a classical one, you can still perform a facsimile of inheritance by using call() or apply().&lt;/p&gt;
-
-&lt;p&gt;Let’s say I have the following constructor:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var Person = function(firstName, lastName) {
-	this.firstName = firstName;
-	this.lastName = lastName;
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This constructor for my Person object takes in two parameters, firstName and lastName. Let’s say I wanted to ‘subclass’ and reuse this constructor for objects that I want to have the same properties as Person objects. I have two ‘subclasses’, Student and Professor, that make use of the Person constructor code so I don’t have to write it again:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var Student = function(firstName, lastName, major) {
-	Person.call(this, firstName, lastName);
-	this.major = major;
-};
-
-var Professor = function(firstName, lastName, department) {
-	Person.apply(this, [firstName, lastName]);
-	this.department = department;
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With the following code, I get an object with a firstName and lastName property:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var joe = new Person(&#39;Joe&#39;, &#39;Smith&#39;);
-//	{ firstName: &quot;Joe&quot;, lastName: &quot;Smith&quot; }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;With the following code, I get an object with a firstName, lastName, and department property:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var doc = new Professor(&#39;Richard&#39;, &#39;Stallman&#39;, &#39;Computer Science&#39;);
-//	{ firstName: &quot;Richard&quot;, lastName: &quot;Stallman&quot;, department: &quot;Computer Science&quot; }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The Student class works similarly:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var jimmy = new Student(&#39;Jimmy&#39;, &#39;Jones&#39;, &#39;Psychology&#39;);
-//	{ firstName: &quot;Jimmy&quot;, lastName: &quot;Jones&quot;, major: &quot;Psychology&quot; }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;The call() and apply() functions allow you to specify a context for a given function, along with any parameters needed for that function. These functions provide a great way to emulate subclassing in JavaScript.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jun 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2015/06/21/Call-And-Apply.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/06/21/Call-And-Apply.html</guid>
       </item>
     
   </channel>

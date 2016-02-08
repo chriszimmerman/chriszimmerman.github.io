@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://blog.chriszimmerman.net/2016/02/07/Releases.html</loc>
+    <lastmod>2016-02-07T00:00:00-05:00</lastmod>
+  </url>
+  <url>
     <loc>http://blog.chriszimmerman.net/2016/01/20/standups.html</loc>
     <lastmod>2016-01-20T00:00:00-05:00</lastmod>
   </url>
@@ -121,6 +125,9 @@
   <url>
     <loc>http://blog.chriszimmerman.net/tag/agile/</loc>
   </url>
+  <url>
+    <loc>http://blog.chriszimmerman.net/tag/continuous-delivery/</loc>
+  </url>
     <url>
       <loc>http://blog.chriszimmerman.net/2014/09/04/Semantic-Versioning.html</loc>
     </url>
@@ -168,5 +175,8 @@
     </url>
     <url>
       <loc>http://blog.chriszimmerman.net/2016/01/20/standups.html</loc>
+    </url>
+    <url>
+      <loc>http://blog.chriszimmerman.net/2016/02/07/Releases.html</loc>
     </url>
 </urlset>

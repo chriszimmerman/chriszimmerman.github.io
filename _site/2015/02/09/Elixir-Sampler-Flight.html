@@ -66,7 +66,9 @@
 
 <p>iex has many useful helper functions. The most useful one is probably the help function <code class="highlighter-rouge">h</code> which will give you a list of iex functions along with a description of what they do. You can also pass module names and their functions to see their documentation. For example, <code class="highlighter-rouge">h Enum.map</code> gets you the following output:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=help.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=help.txt"> </script>
 
 <p>Another commonly used helper function is for compiling files: <code class="highlighter-rouge">c</code>. You can pass in the name of an elixir script file (.ex or .exs) that you want to compile into BEAM bytecode: <code class="highlighter-rouge">c "primes.ex"</code></p>
 
@@ -74,23 +76,33 @@
 
 <p>Elixir has variables:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=variables.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=variables.exs"> </script>
 
 <p>One thing that’s different about Elixir from most languages is that the = operator is NOT the assignment operator. It’s a match operator. Elixir makes use of pattern matching. Pattern matching is used in things such as conditional clauses and extracting values from complex data types. Here is an example of a case clause.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness.exs"> </script>
 
 <p>An aside: one little weird thing about Elixir is that if you have named functions that aren’t lambdas, they must be contained within a module. Here I have a module named <code class="highlighter-rouge">Coolness</code> that contains the function <code class="highlighter-rouge">coolness</code>.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness_output.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=coolness_output.txt"> </script>
 
 <p>Pattern matching can also be used to extract values from data structures such as tuples. I can use variables on the left side of the match operator to grab values from something on the right side.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=pattern_matching_destructuring.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=pattern_matching_destructuring.txt"> </script>
 
 <p>In Elixir, functions can be assigned to variables. These are known as lambdas. Lambdas are invoked by placing the . operator after the lambda name and before the parentheses.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=lambdas_and_functions.exs"> </script>
 
 <p>Elixir and Erlang functions are identified by their arity, that is, the number of parameters the function takes. For example, <code class="highlighter-rouge">MyMath.square</code> is identified by <code class="highlighter-rouge">MyMath.square/1</code> and <code class="highlighter-rouge">MyMath.add</code> is identified by <code class="highlighter-rouge">MyMath.add/2</code>.</p>
 
@@ -100,13 +112,17 @@
 
 <p>The following example is the hello world of macros, as well as the extent of my knowledge of writing macros: unless. In Ruby, there is a keyword, <code class="highlighter-rouge">unless</code> that allows one to write conditionals that will execute if the statement in the <code class="highlighter-rouge">unless</code> clause is not true. Basically, think of it as an ‘if not’ statement.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_example.exs"> </script>
 
 <p>What’s going on here? The <code class="highlighter-rouge">do_this_if_false</code> and <code class="highlighter-rouge">do_this_if_true</code> variables hold the code that should be executed for each respective clause. Here’s where things get weird for those not familiar with macros.</p>
 
 <p>The <code class="highlighter-rouge">quote</code> function takes a block of code and stores it as its internal representation in Elixir, a nested tuple, without evaluating it. <code class="highlighter-rouge">unquote</code> is a function that will evaluate the code passed into it. In this example, the condition that’s evaluated to determine which clause to execute will be passed into <code class="highlighter-rouge">unquote</code> since that condition actually needs to be evaluated to find out whether it’s true or false. Since <code class="highlighter-rouge">false</code> and <code class="highlighter-rouge">nil</code> are ‘falsy’ values in Elixir, if the condition evaluates to either, the code in the <code class="highlighter-rouge">do_this_if_false</code> variable gets executed and returned. Otherwise, the code in the <code class="highlighter-rouge">do_this_if_true</code> variable gets executed and returned.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_output.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=macro_output.txt"> </script>
 
 <h1 id="concurrency-and-why-you-should-care-about-it">Concurrency (and why you should care about it)</h1>
 
@@ -120,35 +136,49 @@
 
 <p>Let’s see some examples. I’m going to open up iex and type my Elixir code there. First of all, I’m going to start a process that listens for a message and will print “I got something!” when it receives a message.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process1.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process1.txt"> </script>
 
 <p>The spawn function returns the pid of the process that’s created. With this, we know where to send our messages.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process2.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process2.txt"> </script>
 
 <p>I sent a message just containing a string, “what’s up?”, to the address of the process stored in pid. That process received the message and executed its lambda function.</p>
 
 <p>The <code class="highlighter-rouge">receive do</code> block makes a process block until it receives a message. Upon receiving a message, it will execute the code in the receive do block then terminate. If I try sending a message to that process again, this is the result I get:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process3.txt"> </script>
 
 <p>Because the process executed the receive do block, it completed execution of the lambda and terminated afterward. In many cases, you want a process to keep listening for messages. If we want to do this, we’re going to have to write our function differently. For starters, we’ll put it in a module. We now have something like this:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message1.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message1.exs"> </script>
 
 <p>Next, let’s just tweak it a little bit:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message2.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=message2.exs"> </script>
 
 <p>Now the function will recursively call itself after processing a message. This ensures that the process lives on to handle more messages.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process4.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=process4.txt"> </script>
 
 <h1 id="mix">Mix</h1>
 
 <p>Mix is a lovely little tool to aid you in managing your projects in Elixir. Mix comes with Elixir. By using the <code class="highlighter-rouge">mix new [project name]</code> command, you can create an empty Elixir project with an organized structure. If I create a new project called foo, it produces the following:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix.txt"> </script>
 
 <p>This creates some files that are found in most GitHub projects, such as the <code class="highlighter-rouge">README</code> and <code class="highlighter-rouge">gitignore</code> files. A <code class="highlighter-rouge">lib</code> directory was created. This is where you put your source files. Test files go in the <code class="highlighter-rouge">test</code> directory. Config files are stored in <code class="highlighter-rouge">config</code>.</p>
 
@@ -160,25 +190,35 @@
 
 <p>Let’s say I’m writing a CSV to HTML converter. I want to test that my function that converts a CSV row to an HTML table row is correct. I might have something like this:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=converter_test.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=converter_test.exs"> </script>
 
 <p>I can then run <code class="highlighter-rouge">mix test</code>:</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test1.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test1.txt"> </script>
 
 <p>Because I haven’t written the function yet, it’s obviously going to fail. I’ll write the function now.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row.exs"> </script>
 
 <p>I’m going to split the CSV using a comma delimiter to get each piece of data. I’ll the use a map function that will wrap each piece of cell data in &lt;td&gt; tags. I make use of Elixir’s string interpolation to do this. Enum.join merges the strings together. I then finish up by wrapping that string in &lt;tr&gt; tags.</p>
 
 <p>Does it work?</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test2.txt"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=mix_test2.txt"> </script>
 
 <p>Sweet. It works! Before going on, I would like to digress a little and tell you about Elixir’s pipe operator, <code class="highlighter-rouge">|&gt;</code>. I’m going to write the code differently in order to make my test pass.</p>
 
-<p>true<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row2.exs"> </script></p>
+<noscript><pre>400: Invalid request
+</pre></noscript>
+<script src="https://gist.github.com/f2a31e4dac4b35773f9b.js?file=convert_row2.exs"> </script>
 
 <p>Essentially, the pipe operator allows you to take the result of the previous expression and use it as the first argument for the next function that gets called. I split my CSV row up with my comma delimiter as before. With the pipe operator, I can just specify what function I want to apply to my collection with map. Elixir knows I want to use data as the first parameter, the collection to map. That mapped collection then gets passed into Enum.join. That joined string then gets passed into my lambda that wraps &lt;tr&gt; tags around my row. Pretty next, huh?</p>
 
