@@ -7,6 +7,74 @@
     <atom:link href="http://blog.chriszimmerman.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>The Dreyfus Model and &quot;It depends&quot;</title>
+        <description>&lt;h1&gt;The Dreyfus Model and &amp;quot;It depends&amp;quot;&lt;/h1&gt;
+
+&lt;p&gt;As a software developer, I&amp;#39;ve noticed that experienced developers will often start the answer a question directed at them with &amp;quot;It depends.&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;Should I use inheritance or composition?&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;quot;It depends. Usually composition is better, but it&amp;#39;s not always the best solution. If you have a stable, common abstraction and it&amp;#39;s easy to extend the base class, inheritance may be better than composition.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;quot;If I want to learn programming, which language should I start out with?&amp;quot;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;quot;It depends. Do you want to make web applications? You should start with HTML, JavaScript, and CSS. Do you want to make mobile applications? Look at Swift or Java. Do you want to do data science? Try a language like R or Julia.&amp;quot;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This may seem obvious but I believe, especially after reading about the Dreyfus model, this habit of saying &amp;quot;It depends&amp;quot; when faced with a particular situation comes from gaining significant experience in software development.&lt;/p&gt;
+
+&lt;h2&gt;Dreyfus model&lt;/h2&gt;
+
+&lt;p&gt;I recently read about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition&quot;&gt;Dreyfus model of skill acquisition&lt;/a&gt; in the book &lt;a href=&quot;http://smile.amazon.com/Pragmatic-Thinking-Learning-Refactor-Programmers/dp/1934356050&quot;&gt;Pragmatic Thinking and Learning&lt;/a&gt; by Andy Hunt. It models how one goes about attaining and mastering skills. In the model, there are five stages of skill acquisition:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;1) Novice
+2) Advanced beginner
+3) Competent
+4) Proficient
+5) Expert
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s look at each of the stages:&lt;/p&gt;
+
+&lt;h3&gt;Novice&lt;/h3&gt;
+
+&lt;p&gt;Novices usually are more concerned with accomplishing a task than learning. They just want to get something done. They also don&amp;#39;t have much or any prior experience to help them; they don&amp;#39;t have any knowledge they can make use of in order to know that &amp;quot;When X happens, do Y.&amp;quot; This means that when they make a mistake, it can be very troublesome. Because of this, novices need to follow &lt;em&gt;recipes,&lt;/em&gt; sets of context-free rules.&lt;/p&gt;
+
+&lt;p&gt;A good example of this is when grandma, who isn&amp;#39;t very good with computers, asks you for help. Grandma says, &amp;quot;My computer is so slow!&amp;quot; You might tell her to restart the computer, which solves the problem. Grandma, who is a novice at computer usage, doesn&amp;#39;t know that her computer is slow because she has 15 applications open and that closing some of those programs to free up resources would solve the problem. To her, she just knows &amp;quot;restarting computer = problem solved&amp;quot;.&lt;/p&gt;
+
+&lt;p&gt;But what if the context changes? Maybe grandma has a dial-up connection and is trying to go to www.mygrannybakery.com, which has a lot of images on the their main page. This results in a large amount of data going over her 56k connection, appearing slow to grandma. Well, restarting the computer worked the last time the computer was slow, so why wouldn&amp;#39;t it here? This is an example of where strictly following recipes fails because the context changes. Following these rules will help only to a certain extent.&lt;/p&gt;
+
+&lt;h3&gt;Advanced beginner&lt;/h3&gt;
+
+&lt;p&gt;Advanced beginners can start to do some tasks on their own without the aid of recipes, but they still have difficulty troubleshooting when unexpected problems occur. They have more experience than a novice to make use of, but the experience needs to be recent and similar to a problem they&amp;#39;re facing now in order to make use of it effectively. They still don&amp;#39;t have a holistic (big picture) understanding of things.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in reading more about this stage, I highly recommend Erik Dietrich&amp;#39;s &lt;a href=&quot;http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/&quot;&gt;series of articles on this subject&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Competent&lt;/h3&gt;
+
+&lt;p&gt;Competents are able to troubleshoot on their own, figuring out problems they&amp;#39;ve never seen before. They still have difficulty with which details to focus on when solving a problem, which can be solved with more experience, but they&amp;#39;re able to mentor novices and don&amp;#39;t need a lot of hand-holding from experts. &lt;/p&gt;
+
+&lt;h3&gt;Proficient&lt;/h3&gt;
+
+&lt;p&gt;At the proficient stage, practitioners are able to do a very important skill: self-correct bad behavior. They can self-reflect and analyze how to do better next time. They&amp;#39;re also able to learn from the experience of others. Proficients also understand the big picture. &lt;/p&gt;
+
+&lt;p&gt;In my opinion, this is the point where developers start to say &amp;quot;It depends&amp;quot; when asked how to solve a particular problem. This is because, at this stage, practitioners are able to understand and apply maxims: proverbial, fundamental truths that can be applied to the current situation. Maxims are different from recipes in that they are not universal, they need to be applied within a certain context.&lt;/p&gt;
+
+&lt;p&gt;For example, look at the maxim &amp;quot;remove duplication in your code.&amp;quot; A novice may interpret this as a recipe and remove ALL duplication in their code. This may lead to some bad abstractions, as discussed in &lt;a href=&quot;http://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction&quot;&gt;this article by Sandi Metz&lt;/a&gt;. Because the proficient has experience, they&amp;#39;re able to to see how a given maxim will work out in a given context. In context A, removing duplication will make the code more readable with no negative side effects whereas in context B, removing duplication will form a bad abstraction that others coming into the code will see and possibly build upon further.&lt;/p&gt;
+
+&lt;h3&gt;Expert&lt;/h3&gt;
+
+&lt;p&gt;Experts are primary sources of knowledge in a given field. They&amp;#39;re always looking for ways to improve. They have a lot of experience they can make use of to make the right decisions in the right context. Because of their vast experience, they know how to distinguish important details from irrelevant ones, if even on a subconscious level. A decision to do something can &amp;quot;feel right&amp;quot; even if the expert cannot explain why. This can be due to a combination of past experiences subconsciously influencing their way of thinking.&lt;/p&gt;
+
+&lt;h2&gt;It depends&lt;/h2&gt;
+
+&lt;p&gt;So yeah, the general theme here seems to be that as you gain experience, you can look at past experiences and apply those to the current problems you&amp;#39;re facing. As you learn more, you&amp;#39;re able to troubleshoot problems on your own and take given actions in given contexts.&lt;/p&gt;
+
+&lt;p&gt;What should you do in a given situation? It depends.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 27 Feb 2016 00:00:00 -0500</pubDate>
+        <link>http://blog.chriszimmerman.net//2016/02/27/dreyfus.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net//2016/02/27/dreyfus.html</guid>
+      </item>
+    
+      <item>
         <title>Release With Less Stress</title>
         <description>&lt;h1&gt;Release With Less Stress&lt;/h1&gt;
 
@@ -652,67 +720,6 @@ My pairing desk at eMoney along with my coworker &lt;a href=&quot;http://www.dan
         <pubDate>Mon, 10 Aug 2015 00:00:00 -0400</pubDate>
         <link>http://blog.chriszimmerman.net//2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</link>
         <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</guid>
-      </item>
-    
-      <item>
-        <title>Equality Comparison In JavaScript</title>
-        <description>&lt;h1&gt;Equality Comparison In JavaScript&lt;/h1&gt;
-
-&lt;p&gt;Let&amp;#39;s talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn&amp;#39;t expect. &lt;/p&gt;
-
-&lt;h2&gt;Truthy and Falsy Values&lt;/h2&gt;
-
-&lt;p&gt;When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be &amp;#39;truthy&amp;#39; or &amp;#39;falsy&amp;#39;. For example, if you opened up a console in your browser and typed the following statement:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;0 == false;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;You would get &lt;code&gt;true&lt;/code&gt; as a result. In JavaScript, the number 0 is a falsy value. Falsy values evaluate to false when treated as boolean values. After the type coercion, we have the following statement:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;false == false;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;which is a true statement.&lt;/p&gt;
-
-&lt;p&gt;In JavaScript, the following values are falsy:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;0
-&#39;&#39; and &quot;&quot; (the empty string)
-null
-undefined
-false
-NaN (not a number)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Truthy values evaluate to true when coerced into booleans. Examples of truthy values are:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;3
-&quot;Borat&quot;
-true
-{ location: &quot;Minnesota&quot;, population: 12000000 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;Just Use === and !==&lt;/h2&gt;
-
-&lt;p&gt;I probably should have said this right off the bat:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Don&amp;#39;t ever use the == and != operators when writing JavaScript code.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;No good will come of this. Whenever encountering code that uses these operators, unnecessary mental energy must be expended thinking about the possibility of the gotchas that these operators bring. Instead, just use these operators:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;===
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;and&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;!==
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.  &lt;/p&gt;
-
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;In JavaScript, use === and !== for comparision. Your brain (and other brains!) will thank you.&lt;/p&gt;
-
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/359494/does-it-matter-which-equals-operator-vs-i-use-in-javascript-comparisons&quot;&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators&quot;&gt;Comparison Operators&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness&quot;&gt;Comparison and Sameness&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 22 Jul 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net//2015/07/22/Equality-Comparison-In-JavaScript.html</guid>
       </item>
     
   </channel>
