@@ -9,8 +9,6 @@ tags:
 - Video Games
 ---
 
-#Game Programming in C# With XNA
-
 Every year for the past few years, I've been going to PAX East, an annual video game convention in Boston. Every time, I get inspired to make video games, but never actually act on that inspiration. I don't know if it's due to A) a lack of original ideas, B) poor artistic skill, C) laziness, or D) all of the above.
 
 Shortly after my trip to PAX East in March of this year, I started a [Coursera class](https://class.coursera.org/gameprogramming-002) about game programming in C#. In this class, I learned about writing C# games using Microsoft's XNA Framework. The class was aimed at people who have never done programming before. However, I already knew the language features of C# taught in the class, so I was able to focus on learning about XNA objects and APIs, as well as game-programming-specific concepts like collision detection and calculating sprite velocities. A few of the games I created were a simple blackjack game and a game where you are a hamburger that shoots french fries at teddy bears while they bounce around and shoot mini teddy bears at you.

@@ -6,9 +6,6 @@ tags:
 - process 
 ---
 
-Retrospectives - A Tool for Team Improvement
-=====================
-
 One way of improving a software development team is to regularly hold retrospectives (or 'retros' for short). A retrospective is an exercise where a team sets aside a timeboxed amount of time (typically one hour) and looks back on previous times, discussing what went well, what problems could have been avoided, and what could have been done better. Retrospectives are an opportunity to identify and discuss problems, as well as introduce ideas to make the team better. Retrospectives work best when performed in consistent intervals, whether it be every week, every month, or every project.
 
 #Who Should Attend the Retro?

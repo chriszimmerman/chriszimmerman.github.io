@@ -6,8 +6,6 @@ tags:
 - javascript
 ---
 
-#Closures in JavaScript
-
 In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures. 
 
 Closures seem to be one of those concepts that people have difficulty grasping until they're shown how simple they really are. Most people seem to agree that they grasped closures more easily when shown examples.

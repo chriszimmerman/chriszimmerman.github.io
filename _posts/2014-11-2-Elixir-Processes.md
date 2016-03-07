@@ -7,9 +7,6 @@ tags:
 - code
 ---
 
-Processes In Elixir
-===================
-
 Elixir makes use to the Erlang VM to create and manage many processes. Concurrency is easy and inexpensive in Elixir.
 
 You can make a new process in Elixir by using the spawn function:

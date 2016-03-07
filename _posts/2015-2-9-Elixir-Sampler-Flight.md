@@ -7,9 +7,6 @@ tags:
 - code
 ---
 
-Elixir Sampler Flight
-=====================
-
 Over the past few months, I've been messing around with the Elixir programming language. As far as functional languages go, I have yet to find one that I can stick to. Elixir has been my latest FP adventure. I'd like to give you a sampling of the Elixir language along with some of its features and tools.
 
 

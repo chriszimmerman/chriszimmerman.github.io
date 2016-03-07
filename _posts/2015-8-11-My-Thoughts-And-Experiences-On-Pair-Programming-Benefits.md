@@ -7,8 +7,6 @@ tags:
 - methodology
 ---
 
-#My Thoughts and Experiences on Pair Programming: Part 2
-
 In [part 1](../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html) of my series, I gave an introduction to pair programming and discussed setting up an environment conducive to pair programming. I'll now talk about the benefits of pair programming.
 
 ##Benefits

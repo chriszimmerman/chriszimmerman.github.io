@@ -9,8 +9,6 @@ tags:
 
 Note: This is part one of a three part series. You can find [part 2](../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html) and [part 3](../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html) here.
 
-#My Thoughts and Experiences on Pair Programming: Part 1
-
 At the time of writing this post, I have about 3.5 years of experience as a professional software developer. For the majority of my career, I have worked in places that have done pair programming, or pairing. Overall, I have had positive experiences with pairing. I wish to speak about my experiences with pair programming, explaining some of the benefits and difficulties that come with the practice.
 
 ##What is pair programming?

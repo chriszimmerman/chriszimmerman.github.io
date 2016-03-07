@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Thoughts and Experiences on Pair Programming - Benefits &#8211; House of Black and White</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="I post about my thoughts and experiences with software.">
+    <meta name="robots" content="all">
+    <meta name="author" content="Chris Zimmerman">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for House of Black and White" href="/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css?201603061904" type="text/css">
+
+    <!-- Fonts -->
+    
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+    
+
+    <!-- MathJax -->
+    
+
+    <!-- Verifications -->
+    
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="My Thoughts and Experiences on Pair Programming - Benefits">
+    <meta property="og:description" content="I post about my thoughts and experiences with software.">
+    <meta property="og:url" content="http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/">
+    <meta property="og:site_name" content="House of Black and White">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="My Thoughts and Experiences on Pair Programming - Benefits" />
+    <meta name="twitter:description" content="I post about my thoughts and experiences with software." />
+    <meta name="twitter:url" content="http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+
+    
+    <script type="text/javascript">
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+       ga('create', 'UA-69251773-1', 'auto');
+       ga('send', 'pageview');
+    </script>
+    
+</head>
+
+<body class="site animated fade-in-down">
+  
+	
+
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://blog.chriszimmerman.net" class="site-title">House of Black and White</a>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1>My Thoughts and Experiences on Pair Programming - Benefits</h1>
+  <span class="post-meta">Aug 11, 2015</span><br>
+  
+  <span class="post-meta small">
+  
+    4 minute read
+  
+  </span>
+</div>
+
+<article class="post-content">
+  <p>In <a href="../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html">part 1</a> of my series, I gave an introduction to pair programming and discussed setting up an environment conducive to pair programming. I’ll now talk about the benefits of pair programming.</p>
+
+<h2 id="benefits">Benefits</h2>
+
+<h3 id="no-single-point-of-failure">No single point of failure</h3>
+
+<p>As I said, there are many benefits to pair programming. For starters, because two developers are actively working on solving a problem or writing a feature, both devs will have the knowledge of the work in their heads. This results in redundancy on the team. There is no “The Guy” on the team who, should they get hit by a bus, go on vacation, or decide to quit, would end up screwing the team over (whether intentionally or unintentionally). There is no single point of failure.</p>
+
+<h3 id="collaboration-and-improved-design">Collaboration and improved design</h3>
+
+<p>When two brains are working on writing software, both are giving input and critique to the design of the software being written. Pairing is a great vessel for collaboration. With pairing, you get multiple perspectives of a problem.</p>
+
+<p>Pairing is also great for experimentation. One person in the pair can propose an experimental idea to try and the other can critique and improve it. If there are feelings that the pair is going too far down a rabbit hole, the experiment can be aborted.</p>
+
+<h3 id="mentoring">Mentoring</h3>
+
+<p>I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it’s truly needed. When a junior and senior developer pair, it’s usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn’t stray too far off.</p>
+
+<p>I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase.</p>
+
+<p>At my first job, I was not only new to the codebase, but new to professional software development altogether. All of the other devs on the team had experience and had worked in the codebase for some time. When I paired, the other dev usually knew right where to go to do work for a given problem. I just went along because it would have slowed us down if I had taken the time to muck through the codebase to find what we needed to change.</p>
+
+<p>About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to explore the codebase and grow together.</p>
+
+<h3 id="being-kept-on-track">Being kept on track</h3>
+
+<p>Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task.</p>
+
+<p>I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are quickly found and resolved with another set of eyes on the code being written.</p>
+
+<h3 id="growth-and-challenge">Growth and challenge</h3>
+
+<p>I can say that I’m always challenged when pairing with someone (unless we’re stuck doing a menial or tedious task). I might have to explain work that was done on a task to a newcomer. It might be the other way around; I might have to get myself up to speed on work that I was not involved in.</p>
+
+<p>I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that.</p>
+
+<h3 id="gelling">Gelling</h3>
+
+<p>I consider many of the people I have paired with over the years good friends. As you work together with the people you pair with, you get to know them really well and gel. I feel that a team works much better if they get along really well and trust each other.</p>
+
+<h2 id="part-3">Part 3</h2>
+
+<p>In <a href="../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html">part 3</a> I discuss the challenges of pair programming.</p>
+
+</article>
+
+
+
+
+  <div class="py2 post-footer">
+  <img src="/images/me.jpeg" alt="Chris Zimmerman" class="avatar" />
+  <p>
+    <a href="http://chriszimmerman.net">Chris Zimmerman</a> is a software developer from Philadelphia, PA.
+  </p>
+</div>
+
+
+
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+    var disqus_shortname  = 'houseofblackandwhite';
+    var disqus_identifier = '/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits';
+    var disqus_title      = 'My Thoughts and Experiences on Pair Programming - Benefits';
+
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/2016/02/27/dreyfus/" class="post-link">
+        <h4 class="post-title">The Dreyfus Model and "It depends"</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2016/02/07/Releases/" class="post-link">
+        <h4 class="post-title">Release With Less Stress</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2016/01/20/standups/" class="post-link">
+        <h4 class="post-title">Riffing About Stand-ups</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/12/21/Poodr/" class="post-link">
+        <h4 class="post-title">Lessons Learned From Sandi Metz's Practical Object-Oriented Design In Ruby (The First Half)</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/11/28/Closures-in-JavaScript/" class="post-link">
+        <h4 class="post-title">Closures in JavaScript</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/10/25/Functions-In-JavaScript/" class="post-link">
+        <h4 class="post-title">Functions In JavaScript</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/09/30/ForEach/" class="post-link">
+        <h4 class="post-title">Breaking Down Syntactic Sugar With The Saliva Of Curiosity - The foreach Statement In C#</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges/" class="post-link">
+        <h4 class="post-title">My Thoughts and Experiences on Pair Programming - Challenges</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro/" class="post-link">
+        <h4 class="post-title">My Thoughts and Experiences on Pair Programming - Intro</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/07/22/Equality-Comparison-In-JavaScript/" class="post-link">
+        <h4 class="post-title">Equality Comparison In JavaScript</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="center">
+  <div class="measure">
+    <small>
+      Theme by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+      The source code for this blog can be found at <a href="https://github.com/chriszimmerman/chriszimmerman.github.io">Github</a>.
+    </small>
+  </div>
+</footer>
+
+</body>
+</html>

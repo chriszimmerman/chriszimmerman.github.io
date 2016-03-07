@@ -6,8 +6,6 @@ tags:
 - javascript
 ---
 
-#Javascript - call() and apply()
-
 When I first encountered the call() and apply() functions in Javascript, I had difficulty wrapping my head around how they worked. I also wasn't really sure what practical purpose they served. I'm going to explain how these two functions work and what they are used for.
 
 ##call()

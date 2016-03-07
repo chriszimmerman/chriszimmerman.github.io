@@ -7,8 +7,6 @@ tags:
 - Languages 
 ---
 
-#A Month With Python
-
 Recently, I attended an exceptional philly.rb meetup where two talks were presented. One was on [civic hacking](http://www.slideshare.net/WilliamJeffries1/civic-hacking-on-rails) and one was on [language exploration](http://lanyrd.com/2015/mwrc/sdkmkc/#link-cbfhz). The talk on language exploration, titled "Make up your own 'Hello, world!'", inspired me to take a short-to-medium-term look into a new language.
 
 In Justin Campbell's talk, he discusses the importance and benefits of learning new languages. Here's the gist: take up a new language and implement a nontrivial-yet-not-crazily-complex project. Try to embrace the idioms of the language while implementing your project so that you expand your mind, gain new perspective, and bring what you've learned back into the languages you currently work in. Justin's 'Hello world' of choice is a URL shortener. It's a nontrivial project and ensures that you'll be using a not insignificant portion of the language's features in order to implement it.

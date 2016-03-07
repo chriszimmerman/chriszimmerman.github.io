@@ -6,8 +6,6 @@ tags:
 - javascript
 ---
 
-#Functions In Javascript 
-
 At my job, I usually work on our C# backend, but I occasionally get to do some work in JavaScript. Not having nearly as much JavaScript experience as C# experience, I encounter things I don't quite understand.
 
 One such thing is the number of ways in which a function can be declared. Here are several examples of ways I see functions written in JavaScript:

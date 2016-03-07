@@ -7,8 +7,6 @@ tags:
 - methodology
 ---
 
-#My Thoughts and Experiences on Pair Programming: Part 3
-
 This is the final post in a three part series. In [part 1](../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html) of this series, I gave an introduction to pair programming. In [part 2](../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html), I discussed the benefits of pair programming. I will now talk about the challenges of pair programming.
 
 ##Challenges

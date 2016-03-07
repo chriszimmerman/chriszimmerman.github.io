@@ -6,8 +6,6 @@ tags:
 - javascript
 ---
 
-#Equality Comparison In JavaScript
-
 Let's talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn't expect. 
 
 ##Truthy and Falsy Values
