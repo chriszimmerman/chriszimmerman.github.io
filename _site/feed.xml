@@ -70,8 +70,8 @@
 &lt;p&gt;What should you do in a given situation? It depends.&lt;/p&gt;
 </description>
         <pubDate>Sat, 27 Feb 2016 00:00:00 -0500</pubDate>
-        <link>http://blog.chriszimmerman.net/2016/02/27/dreyfus/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/02/27/dreyfus/</guid>
+        <link>http://blog.chriszimmerman.net/2016/02/27/dreyfus.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/02/27/dreyfus.html</guid>
       </item>
     
       <item>
@@ -115,8 +115,8 @@
 &lt;p&gt;By automating your release process, you remove from it the element of human error. By releasing your software often in smaller pieces, your releases become much more manageable and less of a daunting event. These two courses of action will result in you not getting so stressed out about your releases.&lt;/p&gt;
 </description>
         <pubDate>Sun, 07 Feb 2016 00:00:00 -0500</pubDate>
-        <link>http://blog.chriszimmerman.net/2016/02/07/Releases/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/02/07/Releases/</guid>
+        <link>http://blog.chriszimmerman.net/2016/02/07/Releases.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/02/07/Releases.html</guid>
       </item>
     
       <item>
@@ -145,8 +145,8 @@
 &lt;p&gt;Feel free to share your stand-up experiences.&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 Jan 2016 00:00:00 -0500</pubDate>
-        <link>http://blog.chriszimmerman.net/2016/01/20/standups/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/01/20/standups/</guid>
+        <link>http://blog.chriszimmerman.net/2016/01/20/standups.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2016/01/20/standups.html</guid>
       </item>
     
       <item>
@@ -238,8 +238,8 @@ Exemplary -  The code itself should encourage those who change it to perpetuate 
 &lt;p&gt;&lt;a href=&quot;http://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/ref=sr_1_sc_1?ie=UTF8&amp;amp;qid=1450447653&amp;amp;sr=8-1-spell&amp;amp;keywords=practical+oo+design+in+ruby&quot;&gt;Practical Object-Oriented Design in Ruby: An Agile Primer&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 21 Dec 2015 00:00:00 -0500</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/12/21/Poodr/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/12/21/Poodr/</guid>
+        <link>http://blog.chriszimmerman.net/2015/12/21/Poodr.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/12/21/Poodr.html</guid>
       </item>
     
       <item>
@@ -357,8 +357,8 @@ jarvis.ecstatic(); //OMG CHRIS IS HERE!
 &lt;p&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures&quot;&gt;Closures - Mozilla&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 28 Nov 2015 00:00:00 -0500</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/11/28/Closures-in-JavaScript/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/11/28/Closures-in-JavaScript/</guid>
+        <link>http://blog.chriszimmerman.net/2015/11/28/Closures-in-JavaScript.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/11/28/Closures-in-JavaScript.html</guid>
       </item>
     
       <item>
@@ -464,8 +464,8 @@ var x;
 &lt;p&gt;&lt;a href=&quot;https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/&quot;&gt;JavaScript, JavaScript...&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 25 Oct 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/10/25/Functions-In-JavaScript/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/10/25/Functions-In-JavaScript/</guid>
+        <link>http://blog.chriszimmerman.net/2015/10/25/Functions-In-JavaScript.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/10/25/Functions-In-JavaScript.html</guid>
       </item>
     
       <item>
@@ -574,8 +574,8 @@ The number is 3
 &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft&#39;s documentation on the foreach statement&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Sep 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/09/30/ForEach/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/09/30/ForEach/</guid>
+        <link>http://blog.chriszimmerman.net/2015/09/30/ForEach.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/09/30/ForEach.html</guid>
       </item>
     
       <item>
@@ -629,8 +629,8 @@ The number is 3
 &lt;p&gt;If you would like to get started with pair programming, check out Avdi Grimm&#39;s site &lt;a href=&quot;http://www.pairprogramwith.me/&quot;&gt;Pairprogramwith.me&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 12 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges/</guid>
+        <link>http://blog.chriszimmerman.net/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html</guid>
       </item>
     
       <item>
@@ -680,8 +680,8 @@ The number is 3
 &lt;p&gt;In &lt;a href=&quot;../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html&quot;&gt;part 3&lt;/a&gt; I discuss the challenges of pair programming.&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/</guid>
+        <link>http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html</guid>
       </item>
     
       <item>
@@ -750,8 +750,8 @@ My pairing desk at eMoney along with my coworker &lt;a href=&quot;http://www.dan
 &lt;p&gt;In &lt;a href=&quot;../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html&quot;&gt;part 2&lt;/a&gt; I talk about the benefits of pair programming.&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Aug 2015 00:00:00 -0400</pubDate>
-        <link>http://blog.chriszimmerman.net/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro/</link>
-        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro/</guid>
+        <link>http://blog.chriszimmerman.net/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</link>
+        <guid isPermaLink="true">http://blog.chriszimmerman.net/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html</guid>
       </item>
     
   </channel>

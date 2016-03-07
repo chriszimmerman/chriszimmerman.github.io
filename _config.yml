@@ -6,6 +6,7 @@ baseurl:     ""
 url:         "http://blog.chriszimmerman.net"
 date_format: "%b %-d, %Y"
 
+
 # Google services
 google_verification:
 # Use either direct GA implementation or set up GTM account
@@ -99,7 +100,7 @@ text:
 markdown:     rdiscount
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
+permalink:    date
 paginate:     4
 sass:
   compressed: true
