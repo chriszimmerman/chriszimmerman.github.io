@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://blog.chriszimmerman.net/2017/03/28/Why-Dont-You-Get-A-Job.html</loc>
-<lastmod>2017-03-28T00:00:00-04:00</lastmod>
-</url>
-<url>
 <loc>http://blog.chriszimmerman.net/2016/02/27/dreyfus.html</loc>
 <lastmod>2016-02-27T00:00:00-05:00</lastmod>
 </url>
@@ -81,5 +77,17 @@
 </url>
 <url>
 <loc>http://blog.chriszimmerman.net/</loc>
+</url>
+<url>
+<loc>http://blog.chriszimmerman.net/page2/</loc>
+</url>
+<url>
+<loc>http://blog.chriszimmerman.net/page3/</loc>
+</url>
+<url>
+<loc>http://blog.chriszimmerman.net/page4/</loc>
+</url>
+<url>
+<loc>http://blog.chriszimmerman.net/page5/</loc>
 </url>
 </urlset>
