@@ -13,7 +13,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for House of Black and White" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201711251604" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?201711251637" type="text/css">
 
     <!-- Fonts -->
     
@@ -106,37 +106,38 @@
 </div>
 
 <article class="post-content">
-  <p>In the .NET environment, the process of compiling source code into output files is called <em>building</em>. Two common ways of building are via an IDE, such as the Visual Studio IDE (or the recent Rider IDE from JetBrains), and via the command line using <code>devenv.exe</code>.</p>
+  <p>In the .NET environment, the process of compiling source code into output files is called <em>building</em>. Two common ways of building are via an IDE, such as the Visual Studio IDE (or the recent Rider IDE from JetBrains), and via the command line using <code class="highlighter-rouge">devenv.exe</code>.</p>
 
-<p>If you build via an IDE, you'll notice that there are three options under the Build menu: Build, Rebuild, and Clean.</p>
+<p>If you build via an IDE, you’ll notice that there are three options under the Build menu: Build, Rebuild, and Clean.</p>
 
-<p><img src="../../../images/11-25-17/build.png" title="Visual Studio build options" alt="Visual Studio build options" /></p>
+<p><img src="../../../images/11-25-17/build.png" alt="Visual Studio build options" title="Visual Studio build options" /></p>
 
-<p>They're pretty straightforward, but have some subtle differences between them.</p>
+<p>They’re pretty straightforward, but have some subtle differences between them.</p>
 
-<h2>Build</h2>
+<h2 id="build">Build</h2>
 
 <p>Build will compile files have changed since the last build. It will only do this for projects that contain files that have changed since the last build. Like I said, pretty straightforward.</p>
 
-<h2>Clean</h2>
+<h2 id="clean">Clean</h2>
 
 <p>Clean deletes intermediate and output files (e.g. .exe and .dll files), regardless of whether source code files have changed or not.</p>
 
-<h2>Rebuild</h2>
+<h2 id="rebuild">Rebuild</h2>
 
 <p>Rebuild is essentially a Clean and then a Build. It deletes existing output files and performs a build, regardless if source code files have changed or not.</p>
 
-<p>There's a subtle difference between Rebuild vs. doing a Clean and then a build. Doing a Clean then a Build cleans all projects at once and then builds all projects at once, whereas doing a Rebuild will clean then build each project <em>one project at a time</em>. I can't think of any circumstances off the top of my head where this would be an issue, but it's an interesting note.</p>
+<p>There’s a subtle difference between Rebuild vs. doing a Clean and then a build. Doing a Clean then a Build cleans all projects at once and then builds all projects at once, whereas doing a Rebuild will clean then build each project <em>one project at a time</em>. I can’t think of any circumstances off the top of my head where this would be an issue, but it’s an interesting note.</p>
 
-<h2>When to do what</h2>
+<h2 id="when-to-do-what">When to do what</h2>
 
-<p>In most cases, doing a Build should be sufficient. If you have a solution with a large project that takes a long time to build, you certainly wouldn't want to rebuild it every time if you're not making changes to it. If you're only making changes to smaller projects that build quicker, Build will be smart and only handle those projects.</p>
+<p>In most cases, doing a Build should be sufficient. If you have a solution with a large project that takes a long time to build, you certainly wouldn’t want to rebuild it every time if you’re not making changes to it. If you’re only making changes to smaller projects that build quicker, Build will be smart and only handle those projects.</p>
 
-<h2>Resources</h2>
+<h2 id="resources">Resources</h2>
 
 <p><a href="https://msdn.microsoft.com/en-us/library/5tdasz7h.aspx">Building and Cleaning Projects and Solutions in Visual Studio</a></p>
 
 <p><a href="https://msdn.microsoft.com/en-us/library/b20w810z.aspx">Devenv.exe (MSDN documentation)</a></p>
+
 
 </article>
 

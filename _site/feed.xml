@@ -8,37 +8,38 @@
     
       <item>
         <title>Build, Clean, and Rebuild in Visual Studio</title>
-        <description>&lt;p&gt;In the .NET environment, the process of compiling source code into output files is called &lt;em&gt;building&lt;/em&gt;. Two common ways of building are via an IDE, such as the Visual Studio IDE (or the recent Rider IDE from JetBrains), and via the command line using &lt;code&gt;devenv.exe&lt;/code&gt;.&lt;/p&gt;
+        <description>&lt;p&gt;In the .NET environment, the process of compiling source code into output files is called &lt;em&gt;building&lt;/em&gt;. Two common ways of building are via an IDE, such as the Visual Studio IDE (or the recent Rider IDE from JetBrains), and via the command line using &lt;code class=&quot;highlighter-rouge&quot;&gt;devenv.exe&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you build via an IDE, you'll notice that there are three options under the Build menu: Build, Rebuild, and Clean.&lt;/p&gt;
+&lt;p&gt;If you build via an IDE, you’ll notice that there are three options under the Build menu: Build, Rebuild, and Clean.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../../images/11-25-17/build.png&quot; title=&quot;Visual Studio build options&quot; alt=&quot;Visual Studio build options&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/11-25-17/build.png&quot; alt=&quot;Visual Studio build options&quot; title=&quot;Visual Studio build options&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;They're pretty straightforward, but have some subtle differences between them.&lt;/p&gt;
+&lt;p&gt;They’re pretty straightforward, but have some subtle differences between them.&lt;/p&gt;
 
-&lt;h2&gt;Build&lt;/h2&gt;
+&lt;h2 id=&quot;build&quot;&gt;Build&lt;/h2&gt;
 
 &lt;p&gt;Build will compile files have changed since the last build. It will only do this for projects that contain files that have changed since the last build. Like I said, pretty straightforward.&lt;/p&gt;
 
-&lt;h2&gt;Clean&lt;/h2&gt;
+&lt;h2 id=&quot;clean&quot;&gt;Clean&lt;/h2&gt;
 
 &lt;p&gt;Clean deletes intermediate and output files (e.g. .exe and .dll files), regardless of whether source code files have changed or not.&lt;/p&gt;
 
-&lt;h2&gt;Rebuild&lt;/h2&gt;
+&lt;h2 id=&quot;rebuild&quot;&gt;Rebuild&lt;/h2&gt;
 
 &lt;p&gt;Rebuild is essentially a Clean and then a Build. It deletes existing output files and performs a build, regardless if source code files have changed or not.&lt;/p&gt;
 
-&lt;p&gt;There's a subtle difference between Rebuild vs. doing a Clean and then a build. Doing a Clean then a Build cleans all projects at once and then builds all projects at once, whereas doing a Rebuild will clean then build each project &lt;em&gt;one project at a time&lt;/em&gt;. I can't think of any circumstances off the top of my head where this would be an issue, but it's an interesting note.&lt;/p&gt;
+&lt;p&gt;There’s a subtle difference between Rebuild vs. doing a Clean and then a build. Doing a Clean then a Build cleans all projects at once and then builds all projects at once, whereas doing a Rebuild will clean then build each project &lt;em&gt;one project at a time&lt;/em&gt;. I can’t think of any circumstances off the top of my head where this would be an issue, but it’s an interesting note.&lt;/p&gt;
 
-&lt;h2&gt;When to do what&lt;/h2&gt;
+&lt;h2 id=&quot;when-to-do-what&quot;&gt;When to do what&lt;/h2&gt;
 
-&lt;p&gt;In most cases, doing a Build should be sufficient. If you have a solution with a large project that takes a long time to build, you certainly wouldn't want to rebuild it every time if you're not making changes to it. If you're only making changes to smaller projects that build quicker, Build will be smart and only handle those projects.&lt;/p&gt;
+&lt;p&gt;In most cases, doing a Build should be sufficient. If you have a solution with a large project that takes a long time to build, you certainly wouldn’t want to rebuild it every time if you’re not making changes to it. If you’re only making changes to smaller projects that build quicker, Build will be smart and only handle those projects.&lt;/p&gt;
 
-&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/5tdasz7h.aspx&quot;&gt;Building and Cleaning Projects and Solutions in Visual Studio&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/b20w810z.aspx&quot;&gt;Devenv.exe (MSDN documentation)&lt;/a&gt;&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 25 Nov 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2017/11/25/Build-Clean-Rebuild.html</link>
@@ -47,66 +48,67 @@
     
       <item>
         <title>The Dreyfus Model and &quot;It depends&quot;</title>
-        <description>&lt;p&gt;As a software developer, I've noticed that experienced developers will often start the answer a question directed at them with &quot;It depends.&quot;&lt;/p&gt;
+        <description>&lt;p&gt;As a software developer, I’ve noticed that experienced developers will often start the answer a question directed at them with “It depends.”&lt;/p&gt;
 
-&lt;p&gt;&quot;Should I use inheritance or composition?&quot;&lt;/p&gt;
+&lt;p&gt;“Should I use inheritance or composition?”&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&quot;It depends. Usually composition is better, but it's not always the best solution. If you have a stable, common abstraction and it's easy to extend the base class, inheritance may be better than composition.&quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“It depends. Usually composition is better, but it’s not always the best solution. If you have a stable, common abstraction and it’s easy to extend the base class, inheritance may be better than composition.”&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&quot;If I want to learn programming, which language should I start out with?&quot;&lt;/p&gt;
+&lt;p&gt;“If I want to learn programming, which language should I start out with?”&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;&quot;It depends. Do you want to make web applications? You should start with HTML, JavaScript, and CSS. Do you want to make mobile applications? Look at Swift or Java. Do you want to do data science? Try a language like R or Julia.&quot;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;“It depends. Do you want to make web applications? You should start with HTML, JavaScript, and CSS. Do you want to make mobile applications? Look at Swift or Java. Do you want to do data science? Try a language like R or Julia.”&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;This may seem obvious but I believe, especially after reading about the Dreyfus model, this habit of saying &quot;It depends&quot; when faced with a particular situation comes from gaining significant experience in software development.&lt;/p&gt;
+&lt;p&gt;This may seem obvious but I believe, especially after reading about the Dreyfus model, this habit of saying “It depends” when faced with a particular situation comes from gaining significant experience in software development.&lt;/p&gt;
 
-&lt;h2&gt;Dreyfus model&lt;/h2&gt;
+&lt;h2 id=&quot;dreyfus-model&quot;&gt;Dreyfus model&lt;/h2&gt;
 
 &lt;p&gt;I recently read about the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dreyfus_model_of_skill_acquisition&quot;&gt;Dreyfus model of skill acquisition&lt;/a&gt; in the book &lt;a href=&quot;http://smile.amazon.com/Pragmatic-Thinking-Learning-Refactor-Programmers/dp/1934356050&quot;&gt;Pragmatic Thinking and Learning&lt;/a&gt; by Andy Hunt. It models how one goes about attaining and mastering skills. In the model, there are five stages of skill acquisition:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1) Novice
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) Novice
 2) Advanced beginner
 3) Competent
 4) Proficient
 5) Expert
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Let's look at each of the stages:&lt;/p&gt;
+&lt;p&gt;Let’s look at each of the stages:&lt;/p&gt;
 
-&lt;h3&gt;Novice&lt;/h3&gt;
+&lt;h3 id=&quot;novice&quot;&gt;Novice&lt;/h3&gt;
 
-&lt;p&gt;Novices usually are more concerned with accomplishing a task than learning. They just want to get something done. They also don't have much or any prior experience to help them; they don't have any knowledge they can make use of in order to know that &quot;When X happens, do Y.&quot; This means that when they make a mistake, it can be very troublesome. Because of this, novices need to follow &lt;em&gt;recipes,&lt;/em&gt; sets of context-free rules.&lt;/p&gt;
+&lt;p&gt;Novices usually are more concerned with accomplishing a task than learning. They just want to get something done. They also don’t have much or any prior experience to help them; they don’t have any knowledge they can make use of in order to know that “When X happens, do Y.” This means that when they make a mistake, it can be very troublesome. Because of this, novices need to follow &lt;em&gt;recipes,&lt;/em&gt; sets of context-free rules.&lt;/p&gt;
 
-&lt;p&gt;A good example of this is when grandma, who isn't very good with computers, asks you for help. Grandma says, &quot;My computer is so slow!&quot; You might tell her to restart the computer, which solves the problem. Grandma, who is a novice at computer usage, doesn't know that her computer is slow because she has 15 applications open and that closing some of those programs to free up resources would solve the problem. To her, she just knows &quot;restarting computer = problem solved&quot;.&lt;/p&gt;
+&lt;p&gt;A good example of this is when grandma, who isn’t very good with computers, asks you for help. Grandma says, “My computer is so slow!” You might tell her to restart the computer, which solves the problem. Grandma, who is a novice at computer usage, doesn’t know that her computer is slow because she has 15 applications open and that closing some of those programs to free up resources would solve the problem. To her, she just knows “restarting computer = problem solved”.&lt;/p&gt;
 
-&lt;p&gt;But what if the context changes? Maybe grandma has a dial-up connection and is trying to go to www.mygrannybakery.com, which has a lot of images on the their main page. This results in a large amount of data going over her 56k connection, appearing slow to grandma. Well, restarting the computer worked the last time the computer was slow, so why wouldn't it here? This is an example of where strictly following recipes fails because the context changes. Following these rules will help only to a certain extent.&lt;/p&gt;
+&lt;p&gt;But what if the context changes? Maybe grandma has a dial-up connection and is trying to go to www.mygrannybakery.com, which has a lot of images on the their main page. This results in a large amount of data going over her 56k connection, appearing slow to grandma. Well, restarting the computer worked the last time the computer was slow, so why wouldn’t it here? This is an example of where strictly following recipes fails because the context changes. Following these rules will help only to a certain extent.&lt;/p&gt;
 
-&lt;h3&gt;Advanced beginner&lt;/h3&gt;
+&lt;h3 id=&quot;advanced-beginner&quot;&gt;Advanced beginner&lt;/h3&gt;
 
-&lt;p&gt;Advanced beginners can start to do some tasks on their own without the aid of recipes, but they still have difficulty troubleshooting when unexpected problems occur. They have more experience than a novice to make use of, but the experience needs to be recent and similar to a problem they're facing now in order to make use of it effectively. They still don't have a holistic (big picture) understanding of things.&lt;/p&gt;
+&lt;p&gt;Advanced beginners can start to do some tasks on their own without the aid of recipes, but they still have difficulty troubleshooting when unexpected problems occur. They have more experience than a novice to make use of, but the experience needs to be recent and similar to a problem they’re facing now in order to make use of it effectively. They still don’t have a holistic (big picture) understanding of things.&lt;/p&gt;
 
-&lt;p&gt;If you are interested in reading more about this stage, I highly recommend Erik Dietrich's &lt;a href=&quot;http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/&quot;&gt;series of articles on this subject&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you are interested in reading more about this stage, I highly recommend Erik Dietrich’s &lt;a href=&quot;http://www.daedtech.com/how-developers-stop-learning-rise-of-the-expert-beginner/&quot;&gt;series of articles on this subject&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3&gt;Competent&lt;/h3&gt;
+&lt;h3 id=&quot;competent&quot;&gt;Competent&lt;/h3&gt;
 
-&lt;p&gt;Competents are able to troubleshoot on their own, figuring out problems they've never seen before. They still have difficulty with which details to focus on when solving a problem, which can be solved with more experience, but they're able to mentor novices and don't need a lot of hand-holding from experts.&lt;/p&gt;
+&lt;p&gt;Competents are able to troubleshoot on their own, figuring out problems they’ve never seen before. They still have difficulty with which details to focus on when solving a problem, which can be solved with more experience, but they’re able to mentor novices and don’t need a lot of hand-holding from experts.&lt;/p&gt;
 
-&lt;h3&gt;Proficient&lt;/h3&gt;
+&lt;h3 id=&quot;proficient&quot;&gt;Proficient&lt;/h3&gt;
 
-&lt;p&gt;At the proficient stage, practitioners are able to do a very important skill: self-correct bad behavior. They can self-reflect and analyze how to do better next time. They're also able to learn from the experience of others. Proficients also understand the big picture.&lt;/p&gt;
+&lt;p&gt;At the proficient stage, practitioners are able to do a very important skill: self-correct bad behavior. They can self-reflect and analyze how to do better next time. They’re also able to learn from the experience of others. Proficients also understand the big picture.&lt;/p&gt;
 
-&lt;p&gt;In my opinion, this is the point where developers start to say &quot;It depends&quot; when asked how to solve a particular problem. This is because, at this stage, practitioners are able to understand and apply maxims: proverbial, fundamental truths that can be applied to the current situation. Maxims are different from recipes in that they are not universal, they need to be applied within a certain context.&lt;/p&gt;
+&lt;p&gt;In my opinion, this is the point where developers start to say “It depends” when asked how to solve a particular problem. This is because, at this stage, practitioners are able to understand and apply maxims: proverbial, fundamental truths that can be applied to the current situation. Maxims are different from recipes in that they are not universal, they need to be applied within a certain context.&lt;/p&gt;
 
-&lt;p&gt;For example, look at the maxim &quot;remove duplication in your code.&quot; A novice may interpret this as a recipe and remove ALL duplication in their code. This may lead to some bad abstractions, as discussed in &lt;a href=&quot;http://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction&quot;&gt;this article by Sandi Metz&lt;/a&gt;. Because the proficient has experience, they're able to to see how a given maxim will work out in a given context. In context A, removing duplication will make the code more readable with no negative side effects whereas in context B, removing duplication will form a bad abstraction that others coming into the code will see and possibly build upon further.&lt;/p&gt;
+&lt;p&gt;For example, look at the maxim “remove duplication in your code.” A novice may interpret this as a recipe and remove ALL duplication in their code. This may lead to some bad abstractions, as discussed in &lt;a href=&quot;http://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction&quot;&gt;this article by Sandi Metz&lt;/a&gt;. Because the proficient has experience, they’re able to to see how a given maxim will work out in a given context. In context A, removing duplication will make the code more readable with no negative side effects whereas in context B, removing duplication will form a bad abstraction that others coming into the code will see and possibly build upon further.&lt;/p&gt;
 
-&lt;h3&gt;Expert&lt;/h3&gt;
+&lt;h3 id=&quot;expert&quot;&gt;Expert&lt;/h3&gt;
 
-&lt;p&gt;Experts are primary sources of knowledge in a given field. They're always looking for ways to improve. They have a lot of experience they can make use of to make the right decisions in the right context. Because of their vast experience, they know how to distinguish important details from irrelevant ones, if even on a subconscious level. A decision to do something can &quot;feel right&quot; even if the expert cannot explain why. This can be due to a combination of past experiences subconsciously influencing their way of thinking.&lt;/p&gt;
+&lt;p&gt;Experts are primary sources of knowledge in a given field. They’re always looking for ways to improve. They have a lot of experience they can make use of to make the right decisions in the right context. Because of their vast experience, they know how to distinguish important details from irrelevant ones, if even on a subconscious level. A decision to do something can “feel right” even if the expert cannot explain why. This can be due to a combination of past experiences subconsciously influencing their way of thinking.&lt;/p&gt;
 
-&lt;h2&gt;It depends&lt;/h2&gt;
+&lt;h2 id=&quot;it-depends&quot;&gt;It depends&lt;/h2&gt;
 
-&lt;p&gt;So yeah, the general theme here seems to be that as you gain experience, you can look at past experiences and apply those to the current problems you're facing. As you learn more, you're able to troubleshoot problems on your own and take given actions in given contexts.&lt;/p&gt;
+&lt;p&gt;So yeah, the general theme here seems to be that as you gain experience, you can look at past experiences and apply those to the current problems you’re facing. As you learn more, you’re able to troubleshoot problems on your own and take given actions in given contexts.&lt;/p&gt;
 
 &lt;p&gt;What should you do in a given situation? It depends.&lt;/p&gt;
+
 </description>
         <pubDate>Sat, 27 Feb 2016 00:00:00 -0500</pubDate>
         <link>http://localhost:4000/2016/02/27/dreyfus.html</link>
@@ -115,41 +117,41 @@
     
       <item>
         <title>Release With Less Stress</title>
-        <description>&lt;p&gt;I've worked in places where software releases can be an event ridden with stress and anxiety. The cause of this stress comes from several sources, such as pressure to meet a release date, or an issue creeping up in production that was not caught during testing. I'd like to share with you a few steps that you can take to ensure that your release process is less stressful and not such a big deal.&lt;/p&gt;
+        <description>&lt;p&gt;I’ve worked in places where software releases can be an event ridden with stress and anxiety. The cause of this stress comes from several sources, such as pressure to meet a release date, or an issue creeping up in production that was not caught during testing. I’d like to share with you a few steps that you can take to ensure that your release process is less stressful and not such a big deal.&lt;/p&gt;
 
-&lt;h2&gt;Automate your release process!!&lt;/h2&gt;
+&lt;h2 id=&quot;automate-your-release-process&quot;&gt;Automate your release process!!&lt;/h2&gt;
 
-&lt;p&gt;The first thing you should do is &lt;strong&gt;automate as much of your release process as possible.&lt;/strong&gt; Every manual step in your release process is an opportunity for somebody to mess it up. I have been this person on at least one occasion and it's not a great feeling to be the one who messed up a release.&lt;/p&gt;
+&lt;p&gt;The first thing you should do is &lt;strong&gt;automate as much of your release process as possible.&lt;/strong&gt; Every manual step in your release process is an opportunity for somebody to mess it up. I have been this person on at least one occasion and it’s not a great feeling to be the one who messed up a release.&lt;/p&gt;
 
-&lt;h3&gt;Less documentation&lt;/h3&gt;
+&lt;h3 id=&quot;less-documentation&quot;&gt;Less documentation&lt;/h3&gt;
 
-&lt;p&gt;The more automation there is in the release process, the less documentation needs to exist so people know what to do for the release. In an ideal world, documentation for a release consists of one step (&quot;Step one: push the &quot;Release&quot; button!&quot;).&lt;/p&gt;
+&lt;p&gt;The more automation there is in the release process, the less documentation needs to exist so people know what to do for the release. In an ideal world, documentation for a release consists of one step (“Step one: push the “Release” button!”).&lt;/p&gt;
 
-&lt;p&gt;The problem with documentation is that it can go out of date. A teammate of mine who headed our team's release followed the release checklist to a T, only to be chastised for doing a step that was no longer necessary. But the release checklist wasn't updated by the people who modified the release process.&lt;/p&gt;
+&lt;p&gt;The problem with documentation is that it can go out of date. A teammate of mine who headed our team’s release followed the release checklist to a T, only to be chastised for doing a step that was no longer necessary. But the release checklist wasn’t updated by the people who modified the release process.&lt;/p&gt;
 
-&lt;h3&gt;Reduction of handoff between groups&lt;/h3&gt;
+&lt;h3 id=&quot;reduction-of-handoff-between-groups&quot;&gt;Reduction of handoff between groups&lt;/h3&gt;
 
 &lt;p&gt;When a release process has a lot of manual steps, there are usually a number of people involved with the process. These people can belong to groups like Dev, QA, and Ops. Steps in the release process may dictate that one group has to hand something off to another. For example, Dev might have to hand their release candidate over to Ops so they can install it on the production servers (this should be automated!). This is an example of where things can go wrong. The wrong deployables could be given to Ops, for instance.&lt;/p&gt;
 
-&lt;p&gt;Waiting for a group to do their part involves waiting for them to communicate that they have done their part. If a group does not communicate how things are going on their end, it can be frustrating. I've waited for Ops to do their part for over an hour, only to have them say &quot;I see an error&quot; in the Slack channel, with no further follow up. &quot;I see an error&quot; is very vague. What kind of error? Is it something that I, a developer, need to investigate? Communication breakdown between groups can be frustrating.&lt;/p&gt;
+&lt;p&gt;Waiting for a group to do their part involves waiting for them to communicate that they have done their part. If a group does not communicate how things are going on their end, it can be frustrating. I’ve waited for Ops to do their part for over an hour, only to have them say “I see an error” in the Slack channel, with no further follow up. “I see an error” is very vague. What kind of error? Is it something that I, a developer, need to investigate? Communication breakdown between groups can be frustrating.&lt;/p&gt;
 
 &lt;p&gt;Automate your release process, folks. &lt;a href=&quot;http://smile.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912&quot;&gt;Continuous Delivery&lt;/a&gt; is a great resource for those who want to do this.&lt;/p&gt;
 
-&lt;h2&gt;Release smaller pieces more often&lt;/h2&gt;
+&lt;h2 id=&quot;release-smaller-pieces-more-often&quot;&gt;Release smaller pieces more often&lt;/h2&gt;
 
-&lt;p&gt;Releasing a large chunk of functionality can be nerve wracking. Especially if you're trying to do so close to a release date that you ABSOLUTELY MUST HIT™. With the clock ticking, people are more prone to getting stressed out and making mistakes, both in writing the software and in releasing the software. However, if you release smaller pieces of software more often, you'll make it easier to idenfity issues and make it possible to get feedback from the work you've already done. Some companies like Etsy are able to &lt;a href=&quot;https://youtu.be/JR-ccCTmMKY&quot;&gt;release multiple times a day!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Releasing a large chunk of functionality can be nerve wracking. Especially if you’re trying to do so close to a release date that you ABSOLUTELY MUST HIT™. With the clock ticking, people are more prone to getting stressed out and making mistakes, both in writing the software and in releasing the software. However, if you release smaller pieces of software more often, you’ll make it easier to idenfity issues and make it possible to get feedback from the work you’ve already done. Some companies like Etsy are able to &lt;a href=&quot;https://youtu.be/JR-ccCTmMKY&quot;&gt;release multiple times a day!&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;Smaller problem search space&lt;/h3&gt;
+&lt;h3 id=&quot;smaller-problem-search-space&quot;&gt;Smaller problem search space&lt;/h3&gt;
 
-&lt;p&gt;Releasing smaller pieces of software more often provides a number of benefits. For one, the problem space of new produciton issues caused by a new release is much smaller. Your latest release caused some production issues, but you're not sure of the exact cause? Sifting through two weeks of new work is a lot easier than sifting through 6 months of new work. Sifting through half a day of work is much easier than two weeks worth of new work. :)&lt;/p&gt;
+&lt;p&gt;Releasing smaller pieces of software more often provides a number of benefits. For one, the problem space of new produciton issues caused by a new release is much smaller. Your latest release caused some production issues, but you’re not sure of the exact cause? Sifting through two weeks of new work is a lot easier than sifting through 6 months of new work. Sifting through half a day of work is much easier than two weeks worth of new work. :)&lt;/p&gt;
 
-&lt;h3&gt;Shipping earlier&lt;/h3&gt;
+&lt;h3 id=&quot;shipping-earlier&quot;&gt;Shipping earlier&lt;/h3&gt;
 
-&lt;p&gt;Releasing smaller pieces more often gives you the option to let your customers check out what you've done so far and provide feedback. If you don't want to show your customers what you're doing, you have the option to perform &quot;dark&quot; releases. This can be done by putting code for new features behind a feature flag. The flag is set to false by default until you want to &quot;turn the feature on.&quot; At that point, you flip the flag from false to true and the new functionality is visible. At some point, you probably want to get rid of the feature flag altogether (delete any &lt;code&gt;if(FeatureFlag) then {//blah}&lt;/code&gt; statements) and have the code as a normal part of your codebase.&lt;/p&gt;
+&lt;p&gt;Releasing smaller pieces more often gives you the option to let your customers check out what you’ve done so far and provide feedback. If you don’t want to show your customers what you’re doing, you have the option to perform “dark” releases. This can be done by putting code for new features behind a feature flag. The flag is set to false by default until you want to “turn the feature on.” At that point, you flip the flag from false to true and the new functionality is visible. At some point, you probably want to get rid of the feature flag altogether (delete any &lt;code class=&quot;highlighter-rouge&quot;&gt;if(FeatureFlag) then {//blah}&lt;/code&gt; statements) and have the code as a normal part of your codebase.&lt;/p&gt;
 
-&lt;p&gt;Releasing pieces earlier also makes releasing not that big of a deal. Did something go wrong with the release? No big deal. Just rollback, fix what was wrong, and try again tomorrow. Speaking of rollbacks, it should be trivial to go back to the last 'good' state of your application. You should be able to rollback the application and be able to do so in a short amount of time.&lt;/p&gt;
+&lt;p&gt;Releasing pieces earlier also makes releasing not that big of a deal. Did something go wrong with the release? No big deal. Just rollback, fix what was wrong, and try again tomorrow. Speaking of rollbacks, it should be trivial to go back to the last ‘good’ state of your application. You should be able to rollback the application and be able to do so in a short amount of time.&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;By automating your release process, you remove from it the element of human error. By releasing your software often in smaller pieces, your releases become much more manageable and less of a daunting event. These two courses of action will result in you not getting so stressed out about your releases.&lt;/p&gt;
 </description>
@@ -160,26 +162,26 @@
     
       <item>
         <title>Riffing About Stand-ups</title>
-        <description>&lt;p&gt;I recently had an experience where my team's stand-ups were taking almost &lt;em&gt;half an hour&lt;/em&gt; to do. They should never go on that long. Thankfully, several people noticed, spoke up about it, and we as a team took steps to resolve the issue. This made me think about stand-ups. I figured, why not write a blog post about my stand-up thoughts and experiences?&lt;/p&gt;
+        <description>&lt;p&gt;I recently had an experience where my team’s stand-ups were taking almost &lt;em&gt;half an hour&lt;/em&gt; to do. They should never go on that long. Thankfully, several people noticed, spoke up about it, and we as a team took steps to resolve the issue. This made me think about stand-ups. I figured, why not write a blog post about my stand-up thoughts and experiences?&lt;/p&gt;
 
-&lt;p&gt;For most of my programming career, I have participated in stand-up meetings, or stand-ups. Stand-ups serve as a way for members of a team to update the rest of the team on what they are doing &lt;strong&gt;in a concise manner&lt;/strong&gt;. People stand in a circle, going around and saying what they did. Some people participate in a formalization of this process, referred to as &quot;daily scrums&quot;, taken from the Scrum agile methodology. In Jim Shore's &lt;em&gt;The Art of Agile Development&lt;/em&gt; he explains that participants in a daily scrum answer three questions:&lt;/p&gt;
+&lt;p&gt;For most of my programming career, I have participated in stand-up meetings, or stand-ups. Stand-ups serve as a way for members of a team to update the rest of the team on what they are doing &lt;strong&gt;in a concise manner&lt;/strong&gt;. People stand in a circle, going around and saying what they did. Some people participate in a formalization of this process, referred to as “daily scrums”, taken from the Scrum agile methodology. In Jim Shore’s &lt;em&gt;The Art of Agile Development&lt;/em&gt; he explains that participants in a daily scrum answer three questions:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1. What did I do yesterday?
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. What did I do yesterday?
 2. What will I do today?
 3. What problems are preventing me from making progress?
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Stand-ups don't have to be a once-a-day deal. I have worked in places where we had two stand-ups a day: one in the morning at a designated time and one right after lunch. I've also worked in places where we had one stand-up in the late morning once all of the team members arrived in the office. I've even worked on a team where we had four 2-hour pairing sessions per day and had a stand-up before each pairing session. It's all about doing what works for you and your team.&lt;/p&gt;
+&lt;p&gt;Stand-ups don’t have to be a once-a-day deal. I have worked in places where we had two stand-ups a day: one in the morning at a designated time and one right after lunch. I’ve also worked in places where we had one stand-up in the late morning once all of the team members arrived in the office. I’ve even worked on a team where we had four 2-hour pairing sessions per day and had a stand-up before each pairing session. It’s all about doing what works for you and your team.&lt;/p&gt;
 
-&lt;p&gt;An arbitrary member of the team gives their status update first. Then go around in a circle (clockwise, or counterclockwise, it doesn't matter) and have each other member of the team give their update. I've worked on teams where the developers give their updates first, then QA and business. I don't like this idea because I think it suggests that somehow devs are more important than QA and business. I don't believe that at all.&lt;/p&gt;
+&lt;p&gt;An arbitrary member of the team gives their status update first. Then go around in a circle (clockwise, or counterclockwise, it doesn’t matter) and have each other member of the team give their update. I’ve worked on teams where the developers give their updates first, then QA and business. I don’t like this idea because I think it suggests that somehow devs are more important than QA and business. I don’t believe that at all.&lt;/p&gt;
 
-&lt;p&gt;It's very important that all members of the team &lt;em&gt;stand up&lt;/em&gt; during the stand-up. This discourages stand-ups from going on for too long. If people have to stand for a long time, they get tired and want people to wrap it up.&lt;/p&gt;
+&lt;p&gt;It’s very important that all members of the team &lt;em&gt;stand up&lt;/em&gt; during the stand-up. This discourages stand-ups from going on for too long. If people have to stand for a long time, they get tired and want people to wrap it up.&lt;/p&gt;
 
-&lt;p&gt;It's also important that stand-ups are brief. They should consicsely deliver information to the rest of the time and no more. Jim Shore suggests about 30 seconds per person for giving their update. 10 minutes for the whole team is a good max time to shoot for. They really shouldn't go longer than that. They should not feel like meetings, except that everyone is standing. Personally, I like to keep a &quot;work diary&quot; where I enter the work I've done, along with any challenges or triumps I've experienced. This helps me remember what information to deliver during a stand-up.&lt;/p&gt;
+&lt;p&gt;It’s also important that stand-ups are brief. They should consicsely deliver information to the rest of the time and no more. Jim Shore suggests about 30 seconds per person for giving their update. 10 minutes for the whole team is a good max time to shoot for. They really shouldn’t go longer than that. They should not feel like meetings, except that everyone is standing. Personally, I like to keep a “work diary” where I enter the work I’ve done, along with any challenges or triumps I’ve experienced. This helps me remember what information to deliver during a stand-up.&lt;/p&gt;
 
-&lt;p&gt;Try to keep non-stand-up-related chitchat before a stand-up to a minimum. While I do think it's great for team members to shoot the shit with each other (I think this promotes jelling, which is terrific for a team), it increases the time length of the stand-up, taking away from it's briefness.&lt;/p&gt;
+&lt;p&gt;Try to keep non-stand-up-related chitchat before a stand-up to a minimum. While I do think it’s great for team members to shoot the shit with each other (I think this promotes jelling, which is terrific for a team), it increases the time length of the stand-up, taking away from it’s briefness.&lt;/p&gt;
 
-&lt;p&gt;There are times when managers of different sorts attend a stand-up. If they tend to have long announcements, it's important that they go last. That way, members of the team can decide if the information is important to them and stay, or if it's not and get to work.&lt;/p&gt;
+&lt;p&gt;There are times when managers of different sorts attend a stand-up. If they tend to have long announcements, it’s important that they go last. That way, members of the team can decide if the information is important to them and stay, or if it’s not and get to work.&lt;/p&gt;
 
 &lt;p&gt;Feel free to share your stand-up experiences.&lt;/p&gt;
 </description>
@@ -190,89 +192,89 @@
     
       <item>
         <title>Lessons Learned From Sandi Metz's Practical Object-Oriented Design In Ruby (The First Half)</title>
-        <description>&lt;p&gt;At work, our reading group has been reading Practical Object-Oriented Design In Ruby by Sandi Metz. At the point of writing this blog post, we are about halfway through the book. Sandi's book has a number of valuable insights and provides interesting perspectives on OO design. I'd like to share some of what I've learned in the course of reading the book.&lt;/p&gt;
+        <description>&lt;p&gt;At work, our reading group has been reading Practical Object-Oriented Design In Ruby by Sandi Metz. At the point of writing this blog post, we are about halfway through the book. Sandi’s book has a number of valuable insights and provides interesting perspectives on OO design. I’d like to share some of what I’ve learned in the course of reading the book.&lt;/p&gt;
 
-&lt;p&gt;I'd like to note that even though this book has &quot;ruby&quot; in the title and uses ruby code samples, the knowledge in this book can be applicable to many OO programming languages.&lt;/p&gt;
+&lt;p&gt;I’d like to note that even though this book has “ruby” in the title and uses ruby code samples, the knowledge in this book can be applicable to many OO programming languages.&lt;/p&gt;
 
-&lt;h2&gt;Designing for changeability&lt;/h2&gt;
+&lt;h2 id=&quot;designing-for-changeability&quot;&gt;Designing for changeability&lt;/h2&gt;
 
 &lt;p&gt;Your software WILL change. This is an inevitability.&lt;/p&gt;
 
-&lt;p&gt;What's not inevitable is knowing what the actual changes will be. Some folks predict what changes will be required in the future and design their applications in anticipation for these future, not-yet-determined changes. However, there is no guarantee that these changes will actually have to be implemented.&lt;/p&gt;
+&lt;p&gt;What’s not inevitable is knowing what the actual changes will be. Some folks predict what changes will be required in the future and design their applications in anticipation for these future, not-yet-determined changes. However, there is no guarantee that these changes will actually have to be implemented.&lt;/p&gt;
 
-&lt;p&gt;OO design isn't about predicting the future. It's about putting your application in a position where it can easily accommodate future change, regardless of what that change is.&lt;/p&gt;
+&lt;p&gt;OO design isn’t about predicting the future. It’s about putting your application in a position where it can easily accommodate future change, regardless of what that change is.&lt;/p&gt;
 
-&lt;p&gt;To put it in Sandi's words: &quot;Design is more the art of preserving changeability than it is the act of achieving perfection.&quot;&lt;/p&gt;
+&lt;p&gt;To put it in Sandi’s words: “Design is more the art of preserving changeability than it is the act of achieving perfection.”&lt;/p&gt;
 
-&lt;p&gt;I've never thought about design this way. I now take this into account when designing software.&lt;/p&gt;
+&lt;p&gt;I’ve never thought about design this way. I now take this into account when designing software.&lt;/p&gt;
 
-&lt;h2&gt;Code that's easy to change&lt;/h2&gt;
+&lt;h2 id=&quot;code-thats-easy-to-change&quot;&gt;Code that’s easy to change&lt;/h2&gt;
 
-&lt;p&gt;The idea that code should be easy to change is a no-brainer. &quot;Easy to change&quot; is a broad term, though. Sandi gives criteria for code that's easy to change:&lt;/p&gt;
+&lt;p&gt;The idea that code should be easy to change is a no-brainer. “Easy to change” is a broad term, though. Sandi gives criteria for code that’s easy to change:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1) Changes have no unexpected side effects
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) Changes have no unexpected side effects
 2) Small changes in requirements require correspondingly small changes in code
 3) Existing code is easy to reuse
 4) The easiest way to make a change is to add code that in itself is easy to change
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I've worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I've also had experiences where business folks wanted a &quot;small feature change&quot; that &quot;should only be a one line change&quot; that ended up being significantly more effort because the existing code was not easy to change.&lt;/p&gt;
+&lt;p&gt;These criteria resonated with me, particularly 1 and 2. I’ve worked in code where I had to be very diligent about investigating what side effects would be caused by code I changed, which placed a heavy mental load on my brain. I’ve also had experiences where business folks wanted a “small feature change” that “should only be a one line change” that ended up being significantly more effort because the existing code was not easy to change.&lt;/p&gt;
 
 &lt;p&gt;In order for code to meet these criteria, Sandi suggests that code has the following qualities:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code that relies upon it
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Transparent - The consequences of change should be obvious in the code that is changing and in distant code that relies upon it
 Reasonable - The cost of any change should be proportional to the benefits the change achieves
 Usable - Existing code should be usable in new and unexpected contexts
 Exemplary -  The code itself should encourage those who change it to perpetuate these qualities
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I believe a lot of people already think this makes sense, but it's great that Sandi has put it into words.&lt;/p&gt;
+&lt;p&gt;I believe a lot of people already think this makes sense, but it’s great that Sandi has put it into words.&lt;/p&gt;
 
-&lt;h2&gt;Thinking about applications in terms of messaging&lt;/h2&gt;
+&lt;h2 id=&quot;thinking-about-applications-in-terms-of-messaging&quot;&gt;Thinking about applications in terms of messaging&lt;/h2&gt;
 
 &lt;p&gt;Sandi provides a unique perspective on how objects in an application interact with one another. Instead of thinking about objects calling methods on other objects, think about it like objects sending each other &lt;em&gt;messages&lt;/em&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Managing dependencies&lt;/h2&gt;
+&lt;h2 id=&quot;managing-dependencies&quot;&gt;Managing dependencies&lt;/h2&gt;
 
 &lt;p&gt;Sandi devotes a chapter in her book to managing dependencies. Dependencies are needed in an application. Objects need to know about each other to some extent in order to communicate. However, objects knowing too much about each other can lead to tight coupling between objects.&lt;/p&gt;
 
 &lt;p&gt;An object has a dependency when it knows:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1) The name of another class
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) The name of another class
 2) The name of a message an object intends to send to someone other than itself
 3) The arguments that a message needs
 4) The order of those arguments
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When objects are tightly coupled, they tend to act like one entity. When you use one object, you use them all. The same goes for testing. Consequently, when a change needs to be made to one object, a change usually needs to be made in the other objects. Going back to the criteria of easy to change code, a small change in requirements can result in many changes being made in tightly coupled code. Tightly coupled code is also hard to be reused in multiple contexts.&lt;/p&gt;
 
 &lt;p&gt;There are techniques to write loosely coupled code such as dependency injection and dependency isolation.&lt;/p&gt;
 
-&lt;h3&gt;Dependency injection&lt;/h3&gt;
+&lt;h3 id=&quot;dependency-injection&quot;&gt;Dependency injection&lt;/h3&gt;
 
-&lt;p&gt;When an object's dependencies are injected, the object knows less about them. Instead of knowing about concrete class names AND method names, an object can just know about the method names that it sends messages to. In a statically typed language like C#, the object will still have to know about interfaces containing the methods it sends message to, but this is a lot more flexible than knowing about concrete types.&lt;/p&gt;
+&lt;p&gt;When an object’s dependencies are injected, the object knows less about them. Instead of knowing about concrete class names AND method names, an object can just know about the method names that it sends messages to. In a statically typed language like C#, the object will still have to know about interfaces containing the methods it sends message to, but this is a lot more flexible than knowing about concrete types.&lt;/p&gt;
 
-&lt;h3&gt;Dependency isolation&lt;/h3&gt;
+&lt;h3 id=&quot;dependency-isolation&quot;&gt;Dependency isolation&lt;/h3&gt;
 
 &lt;p&gt;Sometimes, it may not be possible to perform dependency injection. The next best thing you can do is tightly restrict when dependencies are created and how they are referenced. If you are able to isolate the creation of a dependency into one place, you expose the dependency, making it easier to work with. You also make it easier to refactor code in the future. When you isolate the sending of messages to other objects by wrapping them in wrapper methods, should those dependencies change, side effects are limited to those methods.&lt;/p&gt;
 
-&lt;h2&gt;Interfaces&lt;/h2&gt;
+&lt;h2 id=&quot;interfaces&quot;&gt;Interfaces&lt;/h2&gt;
 
 &lt;p&gt;Going back to the messages metaphor, objects pass messages to each other. Messages being passed between objects represent the lifeblood of the application. Objects pass messages to each other via their interfaces. Sandi devotes a chapter to creating flexible interfaces.&lt;/p&gt;
 
-&lt;h3&gt;Asking for &quot;what&quot; instead of telling &quot;how&quot;&lt;/h3&gt;
+&lt;h3 id=&quot;asking-for-what-instead-of-telling-how&quot;&gt;Asking for “what” instead of telling “how”&lt;/h3&gt;
 
-&lt;p&gt;Sandi makes use of a great metaphor for interfaces. Imagine a restaurant with customers, waiters, and kitchen staff. The customer says to the waiter, &quot;I want spaghetti.&quot; The waiter gives the spaghetti order to the kitchen staff. They prepare the spaghetti and put in on a plate for the waiter to bring back to the customer.&lt;/p&gt;
+&lt;p&gt;Sandi makes use of a great metaphor for interfaces. Imagine a restaurant with customers, waiters, and kitchen staff. The customer says to the waiter, “I want spaghetti.” The waiter gives the spaghetti order to the kitchen staff. They prepare the spaghetti and put in on a plate for the waiter to bring back to the customer.&lt;/p&gt;
 
-&lt;p&gt;At each point in the process, there is an interface where one entity communicates with another. The customer knows to ask the waiter for an item from the menu. The waiter knows to place an order for spaghetti for the kitchen staff. The kitchen staff knows to leave a plate of prepared spaghetti for the waiter to pick up and serve to the customer. Each entity knows what they want and they know who to ask for it. And they don't care how the other entities get that thing to them. The customer doesn't (and shouldn't) care that the kitchen staff boils the pasta for 14 minutes instead of 12, or that the sous chef made the sauce instead of the head chef. Also, the customers themselves shouldn't be in the kitchen stirring the sauce.&lt;/p&gt;
+&lt;p&gt;At each point in the process, there is an interface where one entity communicates with another. The customer knows to ask the waiter for an item from the menu. The waiter knows to place an order for spaghetti for the kitchen staff. The kitchen staff knows to leave a plate of prepared spaghetti for the waiter to pick up and serve to the customer. Each entity knows what they want and they know who to ask for it. And they don’t care how the other entities get that thing to them. The customer doesn’t (and shouldn’t) care that the kitchen staff boils the pasta for 14 minutes instead of 12, or that the sous chef made the sauce instead of the head chef. Also, the customers themselves shouldn’t be in the kitchen stirring the sauce.&lt;/p&gt;
 
-&lt;p&gt;If an object knows &lt;em&gt;what&lt;/em&gt; to ask for, it relies on less. It knows to ask another object for what it wants and trusts that it will receive it. If an object is dictating to another object &lt;em&gt;how&lt;/em&gt; to give it what it wants, it knows more that it should about that other object (and possibly other objects THAT object knows). This goes back to tight coupling. It's better for an object to ask &quot;what&quot; instead of tell &quot;how.&quot; This will make the objects more loosely coupled.&lt;/p&gt;
+&lt;p&gt;If an object knows &lt;em&gt;what&lt;/em&gt; to ask for, it relies on less. It knows to ask another object for what it wants and trusts that it will receive it. If an object is dictating to another object &lt;em&gt;how&lt;/em&gt; to give it what it wants, it knows more that it should about that other object (and possibly other objects THAT object knows). This goes back to tight coupling. It’s better for an object to ask “what” instead of tell “how.” This will make the objects more loosely coupled.&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;There's a lot from the book that I didn't mention here because I don't feel like basically plagiarizing the whole book, so I suggest you pick it up and read it for yourself. It changes the way you think about different aspects of OO design. Like I said, we're only halfway through reading the book and I've picked up a lot of great knowledge. Sandi has a way with words and is able to intelligently and concisely communicate her ideas about OO design.&lt;/p&gt;
+&lt;p&gt;There’s a lot from the book that I didn’t mention here because I don’t feel like basically plagiarizing the whole book, so I suggest you pick it up and read it for yourself. It changes the way you think about different aspects of OO design. Like I said, we’re only halfway through reading the book and I’ve picked up a lot of great knowledge. Sandi has a way with words and is able to intelligently and concisely communicate her ideas about OO design.&lt;/p&gt;
 
-&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330/ref=sr_1_sc_1?ie=UTF8&amp;amp;qid=1450447653&amp;amp;sr=8-1-spell&amp;amp;keywords=practical+oo+design+in+ruby&quot;&gt;Practical Object-Oriented Design in Ruby: An Agile Primer&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -285,105 +287,105 @@ Exemplary -  The code itself should encourage those who change it to perpetuate 
         <title>Closures in JavaScript</title>
         <description>&lt;p&gt;In a previous post, I discussed some subtleties in regard to different ways to define functions in JavaScript, as well as a number of JavaScript features and how they relate to the various ways functions can be defined. I want to build upon that last post and discuss another interesting feature of JavaScript: closures.&lt;/p&gt;
 
-&lt;p&gt;Closures seem to be one of those concepts that people have difficulty grasping until they're shown how simple they really are. Most people seem to agree that they grasped closures more easily when shown examples.&lt;/p&gt;
+&lt;p&gt;Closures seem to be one of those concepts that people have difficulty grasping until they’re shown how simple they really are. Most people seem to agree that they grasped closures more easily when shown examples.&lt;/p&gt;
 
 &lt;p&gt;Here is some code:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function race(distance) {
-    var totalDistance = 0;
-    var move = function() { 
-        totalDistance += distance; 
-        alert(&quot;Moved &quot; + distance + &quot; for &quot; + totalDistance + &quot; total.&quot;);
-    };
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function race(distance) {
+	var totalDistance = 0;
+	var move = function() { 
+		totalDistance += distance; 
+		alert(&quot;Moved &quot; + distance + &quot; for &quot; + totalDistance + &quot; total.&quot;);
+	};
 
-    return move;
+	return move;
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Within the function &lt;code&gt;race&lt;/code&gt; I create a function called &lt;code&gt;move&lt;/code&gt; and return it. In JavaScript, this is nothing special. There's not really anything crazy going on here. A parameter is passed into &lt;code&gt;race&lt;/code&gt;, there are some assignments, and there is an alert within the returned function.&lt;/p&gt;
+&lt;p&gt;Within the function &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt; I create a function called &lt;code class=&quot;highlighter-rouge&quot;&gt;move&lt;/code&gt; and return it. In JavaScript, this is nothing special. There’s not really anything crazy going on here. A parameter is passed into &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, there are some assignments, and there is an alert within the returned function.&lt;/p&gt;
 
-&lt;p&gt;With this function available, I'll write some more code:&lt;/p&gt;
+&lt;p&gt;With this function available, I’ll write some more code:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var walker = race(2);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var walker = race(2);
 walker(); //Moved 2 for 2 total.
 walker(); //Moved 2 for 4 total.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;First I call race, passing in a value of 2, and assign the result to &lt;code&gt;walker&lt;/code&gt;. &lt;code&gt;walker&lt;/code&gt; now references a function.&lt;/p&gt;
+&lt;p&gt;First I call race, passing in a value of 2, and assign the result to &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt;. &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; now references a function.&lt;/p&gt;
 
-&lt;p&gt;Within &lt;code&gt;race&lt;/code&gt;, when &lt;code&gt;move&lt;/code&gt; is created, it knows about the local variables within &lt;code&gt;race&lt;/code&gt;. This is due to the fact that JavaScript has &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope&quot;&gt;lexical scoping&lt;/a&gt; with &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope&quot;&gt;function scope&lt;/a&gt;. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.&lt;/p&gt;
+&lt;p&gt;Within &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, when &lt;code class=&quot;highlighter-rouge&quot;&gt;move&lt;/code&gt; is created, it knows about the local variables within &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;. This is due to the fact that JavaScript has &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Lexical_scope_vs._dynamic_scope&quot;&gt;lexical scoping&lt;/a&gt; with &lt;a href=&quot;https://en.wikipedia.org/wiki/Scope_%28computer_science%29#Function_scope&quot;&gt;function scope&lt;/a&gt;. As a result, a function that is created will have access to the variables within the parent function, even after the parent function terminates.&lt;/p&gt;
 
-&lt;p&gt;At the start of &lt;code&gt;race&lt;/code&gt;, &lt;code&gt;totalDistance&lt;/code&gt; is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is &lt;code&gt;distance&lt;/code&gt;, whose value is 2.&lt;/p&gt;
+&lt;p&gt;At the start of &lt;code class=&quot;highlighter-rouge&quot;&gt;race&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; is set to 0. It ALSO knows about any parameters passed into the function. In our case the parameter is &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt;, whose value is 2.&lt;/p&gt;
 
-&lt;p&gt;When I invoke &lt;code&gt;walker&lt;/code&gt; the first time, it knows that &lt;code&gt;totalDistance&lt;/code&gt; is 0. After all, that was the value when the parent function returned. It adds &lt;code&gt;distance&lt;/code&gt;, whose value was also 2 when the parent function terminated, to &lt;code&gt;totalDistance&lt;/code&gt;, giving it a total of 2. The alert then gets called.&lt;/p&gt;
+&lt;p&gt;When I invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; the first time, it knows that &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; is 0. After all, that was the value when the parent function returned. It adds &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt;, whose value was also 2 when the parent function terminated, to &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt;, giving it a total of 2. The alert then gets called.&lt;/p&gt;
 
-&lt;p&gt;I invoke &lt;code&gt;walker&lt;/code&gt; again. &lt;code&gt;walker&lt;/code&gt; still knows about the same variables as it did before. It knows that &lt;code&gt;distance&lt;/code&gt; has a value of 2 and &lt;code&gt;totalDistance&lt;/code&gt; also has a value of 2. &lt;code&gt;distance&lt;/code&gt; is added to &lt;code&gt;totalDistance&lt;/code&gt; giving &lt;code&gt;totalDistance&lt;/code&gt; a value of 4. The alert is called again.&lt;/p&gt;
+&lt;p&gt;I invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; again. &lt;code class=&quot;highlighter-rouge&quot;&gt;walker&lt;/code&gt; still knows about the same variables as it did before. It knows that &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt; has a value of 2 and &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; also has a value of 2. &lt;code class=&quot;highlighter-rouge&quot;&gt;distance&lt;/code&gt; is added to &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; giving &lt;code class=&quot;highlighter-rouge&quot;&gt;totalDistance&lt;/code&gt; a value of 4. The alert is called again.&lt;/p&gt;
 
-&lt;h2&gt;What is a closure?&lt;/h2&gt;
+&lt;h2 id=&quot;what-is-a-closure&quot;&gt;What is a closure?&lt;/h2&gt;
 
-&lt;p&gt;Defining what a closure is can be difficult. Here's how &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures&quot;&gt;Mozilla&lt;/a&gt; defines them:&lt;/p&gt;
+&lt;p&gt;Defining what a closure is can be difficult. Here’s how &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures&quot;&gt;Mozilla&lt;/a&gt; defines them:&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure 'remembers' the environment in which it was created.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Closures are functions that refer to independent (free) variables. In other words, the function defined in the closure ‘remembers’ the environment in which it was created.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The way I see it, three things are needed for a closure:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;1) A containing function.
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) A containing function.
 2) An environment (read: variables) within #1.
 3) A function returned by #1 that knows about #2.
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Since Mozilla refers to the containing function as the closure, I would say that the product of a closure is a function that has access to an environment from a function that is now terminated.&lt;/p&gt;
 
-&lt;h2&gt;A practical application for closures - information hiding&lt;/h2&gt;
+&lt;h2 id=&quot;a-practical-application-for-closures---information-hiding&quot;&gt;A practical application for closures - information hiding&lt;/h2&gt;
 
-&lt;p&gt;I'd like to show you how closures are great for hiding information. Look at the following function:&lt;/p&gt;
+&lt;p&gt;I’d like to show you how closures are great for hiding information. Look at the following function:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function greeter(name) {
-    var nice = function() {
-        alert(&quot;Why, hello there &quot; + name + &quot;!&quot;);
-    };
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function greeter(name) {
+	var nice = function() {
+		alert(&quot;Why, hello there &quot; + name + &quot;!&quot;);
+	};
 
-    var ecstatic = function() {
-        alert(&quot;OMG &quot; + capitalize() + &quot; IS HERE!&quot;);
-    };
+	var ecstatic = function() {
+		alert(&quot;OMG &quot; + capitalize() + &quot; IS HERE!&quot;);
+	};
 
-    var capitalize = function() {
-        return name.toUpperCase();  
-    };
+	var capitalize = function() {
+		return name.toUpperCase();	
+	};
 
-    return {
-        nice: nice,
-        ecstatic: ecstatic
-    };
+	return {
+		nice: nice,
+		ecstatic: ecstatic
+	};
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;I've created a greeter module that has a few functions for performing different types of greetings. Here is an example of it in use:&lt;/p&gt;
+&lt;p&gt;I’ve created a greeter module that has a few functions for performing different types of greetings. Here is an example of it in use:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var jarvis = greeter(&quot;Chris&quot;);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var jarvis = greeter(&quot;Chris&quot;);
 
 jarvis.nice(); //Why, hello there Chris!
 jarvis.ecstatic(); //OMG CHRIS IS HERE!
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here's the cool thing. I'll try and call &lt;code&gt;capitalize&lt;/code&gt;, also a function defined in &lt;code&gt;greeter&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Here’s the cool thing. I’ll try and call &lt;code class=&quot;highlighter-rouge&quot;&gt;capitalize&lt;/code&gt;, also a function defined in &lt;code class=&quot;highlighter-rouge&quot;&gt;greeter&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jarvis.capitalize(); //TypeError: jarvis.capitalize is not a known function
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You can return JavaScript objects that hold multiple functions that reference the same closure. &lt;code&gt;nice&lt;/code&gt; and &lt;code&gt;ecstatic&lt;/code&gt; can access &lt;code&gt;capitalize&lt;/code&gt; because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding.&lt;/p&gt;
+&lt;p&gt;You can return JavaScript objects that hold multiple functions that reference the same closure. &lt;code class=&quot;highlighter-rouge&quot;&gt;nice&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;ecstatic&lt;/code&gt; can access &lt;code class=&quot;highlighter-rouge&quot;&gt;capitalize&lt;/code&gt; because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding.&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;As I said before, closures appear to be a difficult concept to grasp, but that is just a deception. When you know about a few prerequisite concepts and then are shown some examples, grasping closures becomes much easier.&lt;/p&gt;
 
 &lt;p&gt;I have included references to other resources that aided me in learning about closures. Feel free to check them out below.&lt;/p&gt;
 
-&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/111102/how-do-javascript-closures-work&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/&quot;&gt;JavaScript, JavaScript...&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/&quot;&gt;JavaScript, JavaScript…&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/1047454/what-is-lexical-scope&quot;&gt;What is Lexical Scope?&lt;/a&gt;&lt;/p&gt;
 
@@ -402,93 +404,93 @@ jarvis.ecstatic(); //OMG CHRIS IS HERE!
     
       <item>
         <title>Functions In JavaScript</title>
-        <description>&lt;p&gt;At my job, I usually work on our C# backend, but I occasionally get to do some work in JavaScript. Not having nearly as much JavaScript experience as C# experience, I encounter things I don't quite understand.&lt;/p&gt;
+        <description>&lt;p&gt;At my job, I usually work on our C# backend, but I occasionally get to do some work in JavaScript. Not having nearly as much JavaScript experience as C# experience, I encounter things I don’t quite understand.&lt;/p&gt;
 
 &lt;p&gt;One such thing is the number of ways in which a function can be declared. Here are several examples of ways I see functions written in JavaScript:&lt;/p&gt;
 
 &lt;p&gt;#1)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function isOdd(number) {
-    return number % 2 == 1;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function isOdd(number) {
+	return number % 2 == 1;
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;#2)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var isOdd = function(number) {
-    return number % 2 == 1;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var isOdd = function(number) {
+	return number % 2 == 1;
 };
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;#3)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var isOdd = function isOdd(number) {
-    return number % 2 == 1;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var isOdd = function isOdd(number) {
+	return number % 2 == 1;
 };
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;What's going on here? I'll explain. But first, I'd like to talk about a few different features of JavaScript that will aid in understanding the differences.&lt;/p&gt;
+&lt;p&gt;What’s going on here? I’ll explain. But first, I’d like to talk about a few different features of JavaScript that will aid in understanding the differences.&lt;/p&gt;
 
-&lt;h2&gt;First class functions&lt;/h2&gt;
+&lt;h2 id=&quot;first-class-functions&quot;&gt;First class functions&lt;/h2&gt;
 
-&lt;p&gt;In JavaScript, functions are first-class citizens. This means that they can be assigned to values and passed around as values to other functions. This is pretty nifty. This is the reason why you're even able to define a function like how the functions in examples #2 and #3 are defined. This concept is pretty standard in a lot of functional languages like Clojure, Haskell, and Elixir.&lt;/p&gt;
+&lt;p&gt;In JavaScript, functions are first-class citizens. This means that they can be assigned to values and passed around as values to other functions. This is pretty nifty. This is the reason why you’re even able to define a function like how the functions in examples #2 and #3 are defined. This concept is pretty standard in a lot of functional languages like Clojure, Haskell, and Elixir.&lt;/p&gt;
 
-&lt;h2&gt;Function declarations vs function expressions&lt;/h2&gt;
+&lt;h2 id=&quot;function-declarations-vs-function-expressions&quot;&gt;Function declarations vs function expressions&lt;/h2&gt;
 
-&lt;p&gt;When you define a function in the manner done in example #1, you are giving the function a name. This is an example of a &lt;em&gt;function declaration.&lt;/em&gt; The function is defined at parse time, which means that the function is available within all of the scope it's declared in. This way of defining a function also gives the function a meaningful name in the call stack when trying to debug JavaScript code.&lt;/p&gt;
+&lt;p&gt;When you define a function in the manner done in example #1, you are giving the function a name. This is an example of a &lt;em&gt;function declaration.&lt;/em&gt; The function is defined at parse time, which means that the function is available within all of the scope it’s declared in. This way of defining a function also gives the function a meaningful name in the call stack when trying to debug JavaScript code.&lt;/p&gt;
 
 &lt;p&gt;Examples #2 and #3 are examples of &lt;em&gt;function expressions&lt;/em&gt;. This means that the function is defined within an expression, usually a variable assignment expression. This results in the function being defined at run time. With function expressions, the function name is optional. However, if a name is not given to a function in a function expression, it will have no name in the stacktrace, which makes debugging difficult. Example #3 is an example of a &lt;em&gt;named function expression&lt;/em&gt;. Due to variable hoisting in JavaScript, this way of defining functions can potentially lead to a bad situation.&lt;/p&gt;
 
-&lt;h2&gt;Hoisting&lt;/h2&gt;
+&lt;h2 id=&quot;hoisting&quot;&gt;Hoisting&lt;/h2&gt;
 
-&lt;p&gt;In JavaScript, variables are hoisted. This means that a variable can be declared anywhere within a given scope, but programs will execute as if the variable was declared right away at the top of the scope. In another language, such as C#, hoisting doesn't exist, so the following code would be invalid:&lt;/p&gt;
+&lt;p&gt;In JavaScript, variables are hoisted. This means that a variable can be declared anywhere within a given scope, but programs will execute as if the variable was declared right away at the top of the scope. In another language, such as C#, hoisting doesn’t exist, so the following code would be invalid:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;x = 7 + 3;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = 7 + 3;
 int x;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The C# compiler would inform you that there is an error with this code: x does not exist at the point of assigning it 7 + 3. However, a JavaScript analog such as the following code would be acceptable:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;x = 7 + 3;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = 7 + 3;
 var x;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;In JavaScript, the variable &lt;code&gt;x&lt;/code&gt; would be assigned the value 10 and everything would be fine and dandy. The idiom in JavaScript is to declare all variables intended to be used within a given scope at the top of the scope. Coming from languages without hoisting and having a habit of declaring variables as close as I can to where they are used for the first time, I find this strange. But I get the idea of letting people know what they're going to encounter in a function.&lt;/p&gt;
+&lt;p&gt;In JavaScript, the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; would be assigned the value 10 and everything would be fine and dandy. The idiom in JavaScript is to declare all variables intended to be used within a given scope at the top of the scope. Coming from languages without hoisting and having a habit of declaring variables as close as I can to where they are used for the first time, I find this strange. But I get the idea of letting people know what they’re going to encounter in a function.&lt;/p&gt;
 
 &lt;p&gt;Going back to our examples above, here is a contrived instance where assigning the function to a variable would result in an error:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function example(){
-    return isOdd(7);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function example(){
+	return isOdd(7);
 
-    var isOdd = function(number) {
-        return number % 2 == 1;
-    };
+	var isOdd = function(number) {
+		return number % 2 == 1;
+	};
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When I paste this in my browser console, I get the following error:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;TypeError: isOdd is not a function
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;TypeError: isOdd is not a function
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;However, this will execute without error, returning true.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;function example(){
-    return isOdd(7);
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function example(){
+	return isOdd(7);
 
-    function isOdd(number) {
-        return number % 2 == 1;
-    }
+	function isOdd(number) {
+		return number % 2 == 1;
+	}
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;I don't consider myself educated or experienced enough in JavaScript to say which of these methods is best for defining functions. At the very least, I would say using names with function expressions would be much better than not using names. That leaves the choice between function declarations and named function expressions.&lt;/p&gt;
+&lt;p&gt;I don’t consider myself educated or experienced enough in JavaScript to say which of these methods is best for defining functions. At the very least, I would say using names with function expressions would be much better than not using names. That leaves the choice between function declarations and named function expressions.&lt;/p&gt;
 
 &lt;p&gt;Feel free to leave a comment if you have an opinion on where one way would be used over another.&lt;/p&gt;
 
-&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
 
@@ -500,7 +502,7 @@ var x;
 
 &lt;p&gt;&lt;a href=&quot;http://kangax.github.io/nfe/&quot;&gt;Named function expressions demystified&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/&quot;&gt;JavaScript, JavaScript...&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/&quot;&gt;JavaScript, JavaScript…&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 25 Oct 2015 00:00:00 -0400</pubDate>
         <link>http://localhost:4000/2015/10/25/Functions-In-JavaScript.html</link>
@@ -509,108 +511,107 @@ var x;
     
       <item>
         <title>Breaking Down Syntactic Sugar With The Saliva Of Curiosity - The foreach Statement In C#</title>
-        <description>&lt;p&gt;A feature of C# that I frequently use to process collections is the foreach statement. foreach is just syntactic sugar for making it easier to iterate over collections. I'd like to delve a bit into what's going on under the hood.&lt;/p&gt;
+        <description>&lt;p&gt;A feature of C# that I frequently use to process collections is the foreach statement. foreach is just syntactic sugar for making it easier to iterate over collections. I’d like to delve a bit into what’s going on under the hood.&lt;/p&gt;
 
-&lt;h2&gt;Syntactic sugar&lt;/h2&gt;
+&lt;h2 id=&quot;syntactic-sugar&quot;&gt;Syntactic sugar&lt;/h2&gt;
 
-&lt;p&gt;Syntactic sugar is syntax in a language that makes it easier to read. It makes the language &quot;sweeter&quot; to work with (ha!). While syntactic sugar is great for increasing readability in a language, it's also good to know what's going on underneath.&lt;/p&gt;
+&lt;p&gt;Syntactic sugar is syntax in a language that makes it easier to read. It makes the language “sweeter” to work with (ha!). While syntactic sugar is great for increasing readability in a language, it’s also good to know what’s going on underneath.&lt;/p&gt;
 
-&lt;h2&gt;foreach&lt;/h2&gt;
+&lt;h2 id=&quot;foreach&quot;&gt;foreach&lt;/h2&gt;
 
-&lt;p&gt;foreach allows you to pass in each individual element of a collection into a code block and execute that block of code with the element. In this way, you iterate over the collection. I'd like to show you a code sample to make what I mean a bit clearer.&lt;/p&gt;
+&lt;p&gt;foreach allows you to pass in each individual element of a collection into a code block and execute that block of code with the element. In this way, you iterate over the collection. I’d like to show you a code sample to make what I mean a bit clearer.&lt;/p&gt;
 
-&lt;p&gt;Let's take a look at the following method:&lt;/p&gt;
+&lt;p&gt;Let’s take a look at the following method:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    private void PrintNumbers()
-    {
-        IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	private void PrintNumbers()
+	{
+		IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
 
-        foreach(int number in numbers)
-        {
-            Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
-        }
-    }
-&lt;/code&gt;&lt;/pre&gt;
+		foreach(int number in numbers)
+		{
+			Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
+		}
+	}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;First, a list of integers is declared. This is pretty straightforward. The next line is the start of the foreach statement. The format of a foreach statement is such:&lt;/p&gt;
 
 &lt;p&gt;foreach(&lt;em&gt;type&lt;/em&gt; &lt;em&gt;element&lt;/em&gt; in &lt;em&gt;collection&lt;/em&gt;) &lt;em&gt;inner-statement&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;type&lt;/em&gt; declares the type of element being passed into the code block. Because we're working with a list of integers, the type is int.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;type&lt;/em&gt; declares the type of element being passed into the code block. Because we’re working with a list of integers, the type is int.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;element&lt;/em&gt; specifies the individual element that is used in the &lt;em&gt;inner-statement&lt;/em&gt;. The scope of the &lt;em&gt;element&lt;/em&gt; is only within the &lt;em&gt;inner-statement&lt;/em&gt; for the current iteration. For example, when the foreach block is executed the first time for the number 1, the variable &quot;number&quot; has a value of 1. The second time around, it has the value of 2. The third and last time around, it has the value of 3.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;element&lt;/em&gt; specifies the individual element that is used in the &lt;em&gt;inner-statement&lt;/em&gt;. The scope of the &lt;em&gt;element&lt;/em&gt; is only within the &lt;em&gt;inner-statement&lt;/em&gt; for the current iteration. For example, when the foreach block is executed the first time for the number 1, the variable “number” has a value of 1. The second time around, it has the value of 2. The third and last time around, it has the value of 3.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;collection&lt;/em&gt; specifies the collection being iterated over. In this case, &quot;numbers&quot; is being passed in as the collection. In order for the statement to be syntactically valid, the type of &lt;em&gt;collection&lt;/em&gt; must implement the IEnumerable interface OR satisfy the following criteria:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;collection&lt;/em&gt; specifies the collection being iterated over. In this case, “numbers” is being passed in as the collection. In order for the statement to be syntactically valid, the type of &lt;em&gt;collection&lt;/em&gt; must implement the IEnumerable interface OR satisfy the following criteria:&lt;/p&gt;
 
 &lt;p&gt;1) &lt;em&gt;collection&lt;/em&gt; must have a method on it with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public T GetEnumerator()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public T GetEnumerator()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;where T is a class type, struct type, or interface type.&lt;/p&gt;
 
 &lt;p&gt;2) The type T returned by GetEnumerator() must have a method with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public bool MoveNext()
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public bool MoveNext()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;3) The type T returned by GetEnumerator() must have a property with the following signature:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;public [type of *collection*] Current
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public [type of *collection*] Current
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;that allows the current value to be read.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;inner-statement&lt;/em&gt; is the statement (which can obviously be composed of multiple statements) that gets executed once for each element in the collection. In this case, the &lt;em&gt;inner-statement&lt;/em&gt; is:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
-&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Console.WriteLine(String.Format(&quot;The number is {0}&quot;, number));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;When this method executes, the following output will be printed to the console:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;The number is 1
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The number is 1
 The number is 2
 The number is 3
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h2&gt;Under the hood&lt;/h2&gt;
+&lt;h2 id=&quot;under-the-hood&quot;&gt;Under the hood&lt;/h2&gt;
 
-&lt;p&gt;But like I said before, this is syntactic sugar. What's really going on?&lt;/p&gt;
+&lt;p&gt;But like I said before, this is syntactic sugar. What’s really going on?&lt;/p&gt;
 
 &lt;p&gt;The compiler will perform a transformation, or expansion, on the foreach statement. Whether or not &lt;em&gt;collection&lt;/em&gt; implements IEnumerable or meets the criteria previously mentioned will determine the type of expansion that takes place. Since the example is using a collection implementing IEnumerable, I will show that expansion.&lt;/p&gt;
 
 &lt;p&gt;This is what the method looks like after the expansion takes place:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;private void PrintNumbers()
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private void PrintNumbers()
 {
-    IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
+	IEnumerable&amp;lt;int&amp;gt; numbers = new List&amp;lt;int&amp;gt; { 1, 2, 3 };
 
-    IEnumerator enumerator = 
-            ((System.Collections.IEnumerable)(numbers)).GetEnumerator();
-    try {
-        while (enumerator.MoveNext()) {
-            int element = (int)enumerator.Current;
-            Console.WriteLine(String.Format(&quot;The number is {0}&quot;, element));
-        }
-    }
-    finally {
-        IDisposable disposable = enumerator as System.IDisposable;
-        if (disposable != null) disposable.Dispose();
-    }
+	IEnumerator enumerator = 
+			((System.Collections.IEnumerable)(numbers)).GetEnumerator();
+	try {
+		while (enumerator.MoveNext()) {
+			int element = (int)enumerator.Current;
+			Console.WriteLine(String.Format(&quot;The number is {0}&quot;, element));
+		}
+	}
+	finally {
+		IDisposable disposable = enumerator as System.IDisposable;
+		if (disposable != null) disposable.Dispose();
+	}
 }
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Basically, an enumerator is created that makes use of the methods on it that allow it to access each element in the collection. After the work has been done for a given element, it moves onto the next one. After all the elements have been iterated over, the enumerator is disposed of to free up memory.&lt;/p&gt;
 
-&lt;p&gt;These two code blocks effectively achieve the same result. But wouldn't you agree that the foreach statement pre-expansion looks a lot more pleasant and clearer?&lt;/p&gt;
+&lt;p&gt;These two code blocks effectively achieve the same result. But wouldn’t you agree that the foreach statement pre-expansion looks a lot more pleasant and clearer?&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We discussed how syntactic sugar makes it easier to read a given programming language. We also looked at the foreach statement in C# as an example of syntactic sugar and what really goes on under the hood. You can read more about foreach at &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft’s website&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;We discussed how syntactic sugar makes it easier to read a given programming language. We also looked at the foreach statement in C# as an example of syntactic sugar and what really goes on under the hood. You can read more about foreach at &lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft's website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
 
-&lt;h2&gt;References&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft's documentation on the foreach statement&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/aa664754%28v=vs.71%29.aspx&quot;&gt;Microsoft’s documentation on the foreach statement&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Wed, 30 Sep 2015 00:00:00 -0400</pubDate>
         <link>http://localhost:4000/2015/09/30/ForEach.html</link>
@@ -621,51 +622,51 @@ The number is 3
         <title>My Thoughts and Experiences on Pair Programming - Challenges</title>
         <description>&lt;p&gt;This is the final post in a three part series. In &lt;a href=&quot;../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html&quot;&gt;part 1&lt;/a&gt; of this series, I gave an introduction to pair programming. In &lt;a href=&quot;../11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html&quot;&gt;part 2&lt;/a&gt;, I discussed the benefits of pair programming. I will now talk about the challenges of pair programming.&lt;/p&gt;
 
-&lt;h2&gt;Challenges&lt;/h2&gt;
+&lt;h2 id=&quot;challenges&quot;&gt;Challenges&lt;/h2&gt;
 
-&lt;p&gt;Pairing isn't a silver bullet. Like anything, there are drawbacks that come with the advantages. There are also times when it's better to not pair on work.&lt;/p&gt;
+&lt;p&gt;Pairing isn’t a silver bullet. Like anything, there are drawbacks that come with the advantages. There are also times when it’s better to not pair on work.&lt;/p&gt;
 
-&lt;h3&gt;Tasks not meant for a pair&lt;/h3&gt;
+&lt;h3 id=&quot;tasks-not-meant-for-a-pair&quot;&gt;Tasks not meant for a pair&lt;/h3&gt;
 
-&lt;p&gt;Are you making trivial changes to a configuration file? Are you tweaking the position of a UI control on a web page?  Are you doing a boring, repetitive task? If you said yes to any of these, you probably don't need another person with you on these tasks. Some tasks are awful enough with just one person doing them and there is no benefit to subjecting another developer to the work. In fact, that other developer's time is most likely better spent working on something else.&lt;/p&gt;
+&lt;p&gt;Are you making trivial changes to a configuration file? Are you tweaking the position of a UI control on a web page?  Are you doing a boring, repetitive task? If you said yes to any of these, you probably don’t need another person with you on these tasks. Some tasks are awful enough with just one person doing them and there is no benefit to subjecting another developer to the work. In fact, that other developer’s time is most likely better spent working on something else.&lt;/p&gt;
 
-&lt;p&gt;At my old job, I worked on a WinForms app. Occasionally, we'd have to make changes to the UI. This involved using a designer in Visual Studio that didn't *quite* show what would actually appear in the app, so we'd have to make our changes in the designer, compile, fire up the app, and go to the view to make sure the changes appeared how we intended them to appear. The cycle of tweak/compile/fire-up-app/go-to-view was several minutes. It was brutal. I paired on that task with somebody. It was totally unnecessary to have two people working on that task.&lt;/p&gt;
+&lt;p&gt;At my old job, I worked on a WinForms app. Occasionally, we’d have to make changes to the UI. This involved using a designer in Visual Studio that didn’t *quite* show what would actually appear in the app, so we’d have to make our changes in the designer, compile, fire up the app, and go to the view to make sure the changes appeared how we intended them to appear. The cycle of tweak/compile/fire-up-app/go-to-view was several minutes. It was brutal. I paired on that task with somebody. It was totally unnecessary to have two people working on that task.&lt;/p&gt;
 
-&lt;h3&gt;Staying engaged&lt;/h3&gt;
+&lt;h3 id=&quot;staying-engaged&quot;&gt;Staying engaged&lt;/h3&gt;
 
-&lt;p&gt;It's important that both people stay engaged on the task. Sometimes, a pair might have one person who has a more assertive personality and ends up hogging the keyboard, leaving the other person bored. Try to share duties. Practicing &lt;a href=&quot;https://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test-Driven Development&lt;/a&gt; and &lt;a href=&quot;http://c2.com/cgi/wiki?PairProgrammingPingPongPattern&quot;&gt;ping-pong pairing&lt;/a&gt; help alleviate this issue. Each member of the pair doesn't go too long without doing work.&lt;/p&gt;
+&lt;p&gt;It’s important that both people stay engaged on the task. Sometimes, a pair might have one person who has a more assertive personality and ends up hogging the keyboard, leaving the other person bored. Try to share duties. Practicing &lt;a href=&quot;https://en.wikipedia.org/wiki/Test-driven_development&quot;&gt;Test-Driven Development&lt;/a&gt; and &lt;a href=&quot;http://c2.com/cgi/wiki?PairProgrammingPingPongPattern&quot;&gt;ping-pong pairing&lt;/a&gt; help alleviate this issue. Each member of the pair doesn’t go too long without doing work.&lt;/p&gt;
 
-&lt;p&gt;If your pair looks bored, you can try asking an innocuous question without sounding accusatory like, &quot;What do you think if we do X here?&quot; That will usually get the other person back into the work.&lt;/p&gt;
+&lt;p&gt;If your pair looks bored, you can try asking an innocuous question without sounding accusatory like, “What do you think if we do X here?” That will usually get the other person back into the work.&lt;/p&gt;
 
-&lt;h3&gt;Friction&lt;/h3&gt;
+&lt;h3 id=&quot;friction&quot;&gt;Friction&lt;/h3&gt;
 
 &lt;p&gt;Sometimes you get stuck working with people you may disagree with professionally. Or even with people who are complete jerks. It happens. The best way to deal with this problem, in my experience, is to avoid it. Work with people who share your values. Work with people you enjoy working with.&lt;/p&gt;
 
-&lt;p&gt;Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Switch to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don't have to deal with it.&lt;/p&gt;
+&lt;p&gt;Ask your manager to switch you to a team of people you want to work with. It might not always be able to happen, but you can still ask. Switch to another team at another company, if necessary. It sounds a little childish, but the friction of working directly with somebody who stresses you out all day can take its toll. And you don’t have to deal with it.&lt;/p&gt;
 
-&lt;p&gt;If you can't avoid working with them, try to communicate your issues with the person in a constructive way. Retrospectives are a good venue for this. Talking to the person one-on-one works as well.&lt;/p&gt;
+&lt;p&gt;If you can’t avoid working with them, try to communicate your issues with the person in a constructive way. Retrospectives are a good venue for this. Talking to the person one-on-one works as well.&lt;/p&gt;
 
-&lt;p&gt;There was a point in time where I dreaded every third day of work (assuming the pairing rotation remained constant) because it meant pairing with someone who didn't share my code quality values. There was arguing about the worth of tests, whether or not to refactor code, whether or not to &quot;just put this one quick hack in&quot;, and a number of related topics. This took away from enjoyment of my job. Fortunately, the problem solved itself and the person moved to another team. My day-to-day became much better.&lt;/p&gt;
+&lt;p&gt;There was a point in time where I dreaded every third day of work (assuming the pairing rotation remained constant) because it meant pairing with someone who didn’t share my code quality values. There was arguing about the worth of tests, whether or not to refactor code, whether or not to “just put this one quick hack in”, and a number of related topics. This took away from enjoyment of my job. Fortunately, the problem solved itself and the person moved to another team. My day-to-day became much better.&lt;/p&gt;
 
-&lt;h3&gt;Imposter syndrome, ho!&lt;/h3&gt;
+&lt;h3 id=&quot;imposter-syndrome-ho&quot;&gt;Imposter syndrome, ho!&lt;/h3&gt;
 
-&lt;p&gt;When you're working next to a person all day for 8 hours a day, they will see you make mistakes. This constant visibility into how you perform as a programmer can be stressful, especially if you're somebody like me with imposter syndrome. My way of dealing with this is reminding myself that I'm a human being that makes mistakes. As long as I'm giving my best, that's all that anyone can ask for.&lt;/p&gt;
+&lt;p&gt;When you’re working next to a person all day for 8 hours a day, they will see you make mistakes. This constant visibility into how you perform as a programmer can be stressful, especially if you’re somebody like me with imposter syndrome. My way of dealing with this is reminding myself that I’m a human being that makes mistakes. As long as I’m giving my best, that’s all that anyone can ask for.&lt;/p&gt;
 
-&lt;h3&gt;It's exhausting&lt;/h3&gt;
+&lt;h3 id=&quot;its-exhausting&quot;&gt;It’s exhausting&lt;/h3&gt;
 
-&lt;p&gt;It's hard to be on mentally all the time. Many people I know, myself included, have attested to being totally exhausted at the end of the day when we first started pairing. It takes a lot more to be involved all day with your pair, but I feel way more productive when with a pair than when not. Make sure to take breaks regularly. Get water and snacks. Go to the bathroom. Get up and stretch. Being on for extended periods of time can be unhealthy, so make sure you take breaks.&lt;/p&gt;
+&lt;p&gt;It’s hard to be on mentally all the time. Many people I know, myself included, have attested to being totally exhausted at the end of the day when we first started pairing. It takes a lot more to be involved all day with your pair, but I feel way more productive when with a pair than when not. Make sure to take breaks regularly. Get water and snacks. Go to the bathroom. Get up and stretch. Being on for extended periods of time can be unhealthy, so make sure you take breaks.&lt;/p&gt;
 
-&lt;h3&gt;It's not for everybody&lt;/h3&gt;
+&lt;h3 id=&quot;its-not-for-everybody&quot;&gt;It’s not for everybody&lt;/h3&gt;
 
 &lt;p&gt;Some people have certain personality types that prevent them from being effective in a pairing environment. This does not make them a bad developer; they just operate more efficiently in a different setting. Some people need to be in their own zone to be effective at what they do.&lt;/p&gt;
 
-&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can't be lazy. I can't be on autopilot. I'm kept honest. I feel that this keeps me at the top of my game. I also get opportunities to share my knowledge with other developers. This results in a better team, a better community of developers.&lt;/p&gt;
+&lt;p&gt;For me personally, I find pairing beneficial mostly because I feel challenged when with another developer. I can’t be lazy. I can’t be on autopilot. I’m kept honest. I feel that this keeps me at the top of my game. I also get opportunities to share my knowledge with other developers. This results in a better team, a better community of developers.&lt;/p&gt;
 
-&lt;p&gt;Hopefully, my experiences have given you some insight into pair programming. If you want to read about some of my colleagues' thoughts on pair programming, you can check out &lt;a href=&quot;http://anthonysciamanna.com/2015/04/18/ping-pong-pair-programming.html&quot;&gt;Anthony Sciamanna's post on Ping Pong Pair Programming&lt;/a&gt; and &lt;a href=&quot;http://dandonahue.net/2013/11/20/my-thoughts-on-pair-programming-intro.html&quot;&gt;Dan Donahue's series of pair programming posts&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Hopefully, my experiences have given you some insight into pair programming. If you want to read about some of my colleagues’ thoughts on pair programming, you can check out &lt;a href=&quot;http://anthonysciamanna.com/2015/04/18/ping-pong-pair-programming.html&quot;&gt;Anthony Sciamanna’s post on Ping Pong Pair Programming&lt;/a&gt; and &lt;a href=&quot;http://dandonahue.net/2013/11/20/my-thoughts-on-pair-programming-intro.html&quot;&gt;Dan Donahue’s series of pair programming posts&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you would like to get started with pair programming, check out Avdi Grimm's site &lt;a href=&quot;http://www.pairprogramwith.me/&quot;&gt;Pairprogramwith.me&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you would like to get started with pair programming, check out Avdi Grimm’s site &lt;a href=&quot;http://www.pairprogramwith.me/&quot;&gt;Pairprogramwith.me&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Wed, 12 Aug 2015 00:00:00 -0400</pubDate>
         <link>http://localhost:4000/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html</link>
@@ -674,23 +675,23 @@ The number is 3
     
       <item>
         <title>My Thoughts and Experiences on Pair Programming - Benefits</title>
-        <description>&lt;p&gt;In &lt;a href=&quot;../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html&quot;&gt;part 1&lt;/a&gt; of my series, I gave an introduction to pair programming and discussed setting up an environment conducive to pair programming. I'll now talk about the benefits of pair programming.&lt;/p&gt;
+        <description>&lt;p&gt;In &lt;a href=&quot;../10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html&quot;&gt;part 1&lt;/a&gt; of my series, I gave an introduction to pair programming and discussed setting up an environment conducive to pair programming. I’ll now talk about the benefits of pair programming.&lt;/p&gt;
 
-&lt;h2&gt;Benefits&lt;/h2&gt;
+&lt;h2 id=&quot;benefits&quot;&gt;Benefits&lt;/h2&gt;
 
-&lt;h3&gt;No single point of failure&lt;/h3&gt;
+&lt;h3 id=&quot;no-single-point-of-failure&quot;&gt;No single point of failure&lt;/h3&gt;
 
-&lt;p&gt;As I said, there are many benefits to pair programming. For starters, because two developers are actively working on solving a problem or writing a feature, both devs will have the knowledge of the work in their heads. This results in redundancy on the team. There is no &quot;The Guy&quot; on the team who, should they get hit by a bus, go on vacation, or decide to quit, would end up screwing the team over (whether intentionally or unintentionally). There is no single point of failure.&lt;/p&gt;
+&lt;p&gt;As I said, there are many benefits to pair programming. For starters, because two developers are actively working on solving a problem or writing a feature, both devs will have the knowledge of the work in their heads. This results in redundancy on the team. There is no “The Guy” on the team who, should they get hit by a bus, go on vacation, or decide to quit, would end up screwing the team over (whether intentionally or unintentionally). There is no single point of failure.&lt;/p&gt;
 
-&lt;h3&gt;Collaboration and improved design&lt;/h3&gt;
+&lt;h3 id=&quot;collaboration-and-improved-design&quot;&gt;Collaboration and improved design&lt;/h3&gt;
 
 &lt;p&gt;When two brains are working on writing software, both are giving input and critique to the design of the software being written. Pairing is a great vessel for collaboration. With pairing, you get multiple perspectives of a problem.&lt;/p&gt;
 
 &lt;p&gt;Pairing is also great for experimentation. One person in the pair can propose an experimental idea to try and the other can critique and improve it. If there are feelings that the pair is going too far down a rabbit hole, the experiment can be aborted.&lt;/p&gt;
 
-&lt;h3&gt;Mentoring&lt;/h3&gt;
+&lt;h3 id=&quot;mentoring&quot;&gt;Mentoring&lt;/h3&gt;
 
-&lt;p&gt;I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it's truly needed. When a junior and senior developer pair, it's usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn't stray too far off.&lt;/p&gt;
+&lt;p&gt;I have had the extreme pleasure of working with awesome, intelligent people who have mentored me over the past few years. In my experience, the best way to learn is by doing. When I started my first job, my pair would explain something new to me then let me try doing the work myself, offering me help if I needed it. I think this is a great way to have the struggle that leads to growth while having help nearby if it’s truly needed. When a junior and senior developer pair, it’s usually very beneficial for the junior. It can be a little stressful for the senior since they have to keep on task while making sure the junior doesn’t stray too far off.&lt;/p&gt;
 
 &lt;p&gt;I find pairing is most optimal for both people in the pair when they 1) have a similar skill level or 2) have a similar level of familiarity with the codebase.&lt;/p&gt;
 
@@ -698,23 +699,23 @@ The number is 3
 
 &lt;p&gt;About six months into it, another developer joined our team. He had a few more years of experience than I, but he was unfamiliar with the codebase. Since we both had a degree of unfamiliarity, we were able to explore the codebase together. There was no person with all of the answers right there solving the problem for us. This was great because we were able to explore the codebase and grow together.&lt;/p&gt;
 
-&lt;h3&gt;Being kept on track&lt;/h3&gt;
+&lt;h3 id=&quot;being-kept-on-track&quot;&gt;Being kept on track&lt;/h3&gt;
 
-&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you're kept on task.&lt;/p&gt;
+&lt;p&gt;Having another human being present is great for keeping yourself on track. Because someone else is right there, you feel guilty for goofing off on Reddit or Hacker News, so you’re kept on task.&lt;/p&gt;
 
 &lt;p&gt;I also mean this in a benign way. Having a pair present is great for preventing rabbit-holes that are normally traversed when a developer is working by themself. Your pair is there to catch you when you fall. Stupid things like syntax errors are quickly found and resolved with another set of eyes on the code being written.&lt;/p&gt;
 
-&lt;h3&gt;Growth and challenge&lt;/h3&gt;
+&lt;h3 id=&quot;growth-and-challenge&quot;&gt;Growth and challenge&lt;/h3&gt;
 
-&lt;p&gt;I can say that I'm always challenged when pairing with someone (unless we're stuck doing a menial or tedious task). I might have to explain work that was done on a task to a newcomer. It might be the other way around; I might have to get myself up to speed on work that I was not involved in.&lt;/p&gt;
+&lt;p&gt;I can say that I’m always challenged when pairing with someone (unless we’re stuck doing a menial or tedious task). I might have to explain work that was done on a task to a newcomer. It might be the other way around; I might have to get myself up to speed on work that I was not involved in.&lt;/p&gt;
 
-&lt;p&gt;I have to be way more into it mentally than if I were by myself because I don't want to let my pair down. Hands down, this has made me a better software developer. When pairing, I'm constantly pushed and I'm cool with that.&lt;/p&gt;
+&lt;p&gt;I have to be way more into it mentally than if I were by myself because I don’t want to let my pair down. Hands down, this has made me a better software developer. When pairing, I’m constantly pushed and I’m cool with that.&lt;/p&gt;
 
-&lt;h3&gt;Gelling&lt;/h3&gt;
+&lt;h3 id=&quot;gelling&quot;&gt;Gelling&lt;/h3&gt;
 
 &lt;p&gt;I consider many of the people I have paired with over the years good friends. As you work together with the people you pair with, you get to know them really well and gel. I feel that a team works much better if they get along really well and trust each other.&lt;/p&gt;
 
-&lt;h2&gt;Part 3&lt;/h2&gt;
+&lt;h2 id=&quot;part-3&quot;&gt;Part 3&lt;/h2&gt;
 
 &lt;p&gt;In &lt;a href=&quot;../12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html&quot;&gt;part 3&lt;/a&gt; I discuss the challenges of pair programming.&lt;/p&gt;
 </description>

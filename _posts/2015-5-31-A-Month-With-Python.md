@@ -13,13 +13,13 @@ In Justin Campbell's talk, he discusses the importance and benefits of learning 
 
 I decided to try this idea and timebox learning a new language to a month. The language I chose: Python. My version of 'Hello, world!': a [sudoku](http://en.wikipedia.org/wiki/Sudoku) solver. With a sudoku solver, you can learn how to get user input in several ways: from a file, from them typing it in by hand, from a web form. Once you get the input, you need to parse and validate the puzzle to see if it's already invalid. If not, you can attempt to solve it. As far as solving goes, I kept my solver simple and used a brute force algorithm to solve the puzzle. 
 
-##Motivation
+## Motivation
 
 I regard Python and Ruby as the Pepsi and Coke of dynamically typed languages. They're pretty similar, or so I've heard. Before taking this journey, I only knew Ruby. I have used Ruby mostly as a scripting language to help automate tasks at my previous job. Other than that, I like to work on small side projects in Ruby. I find Ruby very enjoyable to work in. 
 
 However, I wanted to make sure I wasn't missing out on anything. I heard that Python had fantastic libraries like SciPy and NumPy for support in science and math-related tasks. After attending this talk, I saw this as a great opportunity to get a taste for a language without heavily investing in it.
 
-##Project(s)
+## Project(s)
 
 For my first week or so with Python, I went through a good deal of [Automating the Boring Stuff With Python](https://automatetheboringstuff.com/) by Al Sweigart. Because of my Ruby background, I didn't find much in Python too unfamiliar. Going through this book got my head around fundamentals of Python like how to name variables/classes/methods and basic syntax. 
 
@@ -89,19 +89,19 @@ One method reads the file, getting a list of strings as output. Another method s
 
 The responsibility of the `Solver` class is to take that list of lists and 1) make sure that the puzzle is even solvable with the squares that are already filled in and 2) to find the solution if one can be found. As said before, I use a [brute force algorithm](http://en.wikipedia.org/wiki/Sudoku_solving_algorithms#Backtracking) to solve the puzzle. Once the puzzle is solved, the solution is printed.
 
-##Impressions of Python
+## Impressions of Python
 
 As I expected, I found Python very similar to Ruby. I didn't discover anything mind-blowing like I most likely would have if I had tried something unfamiliar, like ELM, Swift, or Haskell. I found this to be a bummer, as one of the potential benefits of learning a new programming language is having your brain expanded in different ways.
 
 I like Python. But I like Ruby better. Mostly due to personal preferences, I suppose. Ruby actually has private methods. Python has no concept of privateness. I like chaining methods. I prefer `"kitties".upcase.reverse.length` over `len("kitties".upper()[::-1])`. If I had a job where I wrote in Python, I wouldn't be upset. But Ruby would be a much more preferable alternative. 
 
-##Conclusion
+## Conclusion
 
 I'm glad that I did this exercise, even if I found out that Python isn't a language that I would like to pursue further at this time. Justin has a really great way for looking into new programming languages and I'm glad that I tried his idea. I highly recommend taking a similar approach for learning a new programming language.
 
 You can find the source code for my solver [here](https://github.com/chriszimmerman/python_month/tree/master/sudoku).
 
-##References
+## References
 [Make Up Your Own 'Hello, World!'](http://lanyrd.com/2015/mwrc/sdkmkc/#link-cbfhz)
 
 [Automating the Boring Stuff With Python](https://automatetheboringstuff.com/)

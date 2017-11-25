@@ -97,7 +97,6 @@ text:
   og_locale: 'en_US'
 
 # Build settings
-markdown:     rdiscount
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    date

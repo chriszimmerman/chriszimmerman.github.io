@@ -8,7 +8,7 @@ tags:
 
 Let's talk about something not fun: equality comparison in JavaScript. In most languages, operators for checking equality and inequality between two values exist. They usually are == and !=, respectively. JavaScript has these operators as well, but they come with a not fun surprise. In addition to performing comparison, these operators perform type coercion in order to match the types if they are different. The tricky thing is that sometimes JavaScript coerces types to values that you wouldn't expect. 
 
-##Truthy and Falsy Values
+## Truthy and Falsy Values
 
 When comparing two different values that are of different types, JavaScript will coerce these values into booleans when == and != are used. What makes this weird is that values in JavaScript can be 'truthy' or 'falsy'. For example, if you opened up a console in your browser and typed the following statement:
 
@@ -36,7 +36,7 @@ Truthy values evaluate to true when coerced into booleans. Examples of truthy va
 	true
 	{ location: "Minnesota", population: 12000000 }
 
-##Just Use === and !==
+## Just Use === and !==
 
 I probably should have said this right off the bat:
 
@@ -52,7 +52,7 @@ and
 
 These are known as the strict equality and strict inequality operators, respectively. They behave like how == and != operators work in most other languages. Unlike == and !=, if two values of different types are being compared, no type coercion will occur and the expression will evaluate to false.  
 
-##Conclusion
+## Conclusion
 
 In JavaScript, use === and !== for comparision. Your brain (and other brains!) will thank you.
 

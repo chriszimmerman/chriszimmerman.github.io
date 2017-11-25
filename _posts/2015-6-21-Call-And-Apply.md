@@ -8,7 +8,7 @@ tags:
 
 When I first encountered the call() and apply() functions in Javascript, I had difficulty wrapping my head around how they worked. I also wasn't really sure what practical purpose they served. I'm going to explain how these two functions work and what they are used for.
 
-##call()
+## call()
 
 call() is a function that allows you to execute a function while specifying your own context in which it will run. For example, let's say we had the following function:
 
@@ -36,7 +36,7 @@ Now I get the expected output:
 
 Why on earth would you want to do this? What practical purpose does this serve?  Why not just make the pokemon an argument of the function? I'll explain shortly. But first, I want to also show you apply().
 
-##apply()
+## apply()
 
 Let's take the above example where we use call and replace call with apply:
 
@@ -70,7 +70,7 @@ I get the same result. I get three alert dialogs that say:
 
 	Bulbasaur is Pokemon #001 and is a Grass type. It is cool.
 
-##Practical Applications
+## Practical Applications
 
 A great practical purpose of using call() and apply() is to make use of faking subclassing in JavaScript. Although JavaScript is a prototype-based language and not a classical one, you can still perform a facsimile of inheritance by using call() or apply().
 
@@ -108,6 +108,6 @@ The Student class works similarly:
 	var jimmy = new Student('Jimmy', 'Jones', 'Psychology');
 	//	{ firstName: "Jimmy", lastName: "Jones", major: "Psychology" }
 
-##Conclusion
+## Conclusion
 
 The call() and apply() functions allow you to specify a context for a given function, along with any parameters needed for that function. These functions provide a great way to emulate subclassing in JavaScript.

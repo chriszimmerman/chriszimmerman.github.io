@@ -30,7 +30,7 @@ One such thing is the number of ways in which a function can be declared. Here a
 
 What's going on here? I'll explain. But first, I'd like to talk about a few different features of JavaScript that will aid in understanding the differences.
 
-##First class functions
+## First class functions
 
 In JavaScript, functions are first-class citizens. This means that they can be assigned to values and passed around as values to other functions. This is pretty nifty. This is the reason why you're even able to define a function like how the functions in examples #2 and #3 are defined. This concept is pretty standard in a lot of functional languages like Clojure, Haskell, and Elixir.
 
@@ -40,7 +40,7 @@ When you define a function in the manner done in example #1, you are giving the 
 
 Examples #2 and #3 are examples of *function expressions*. This means that the function is defined within an expression, usually a variable assignment expression. This results in the function being defined at run time. With function expressions, the function name is optional. However, if a name is not given to a function in a function expression, it will have no name in the stacktrace, which makes debugging difficult. Example #3 is an example of a *named function expression*. Due to variable hoisting in JavaScript, this way of defining functions can potentially lead to a bad situation.
 
-##Hoisting
+## Hoisting
 
 In JavaScript, variables are hoisted. This means that a variable can be declared anywhere within a given scope, but programs will execute as if the variable was declared right away at the top of the scope. In another language, such as C#, hoisting doesn't exist, so the following code would be invalid:
 
@@ -78,13 +78,13 @@ However, this will execute without error, returning true.
 		}
 	}
 
-##Conclusion
+## Conclusion
 
 I don't consider myself educated or experienced enough in JavaScript to say which of these methods is best for defining functions. At the very least, I would say using names with function expressions would be much better than not using names. That leaves the choice between function declarations and named function expressions.
 
 Feel free to leave a comment if you have an opinion on where one way would be used over another.
 
-##Resources
+## Resources
 
 [Stack Overflow](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname)
 

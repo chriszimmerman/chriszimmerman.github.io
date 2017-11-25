@@ -40,7 +40,7 @@ When I invoke `walker` the first time, it knows that `totalDistance` is 0. After
 
 I invoke `walker` again. `walker` still knows about the same variables as it did before. It knows that `distance` has a value of 2 and `totalDistance` also has a value of 2. `distance` is added to `totalDistance` giving `totalDistance` a value of 4. The alert is called again.
 
-##What is a closure?
+## What is a closure?
 
 Defining what a closure is can be difficult. Here's how [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures) defines them:
 
@@ -54,7 +54,7 @@ The way I see it, three things are needed for a closure:
 
 Since Mozilla refers to the containing function as the closure, I would say that the product of a closure is a function that has access to an environment from a function that is now terminated.
 
-##A practical application for closures - information hiding
+## A practical application for closures - information hiding
 
 I'd like to show you how closures are great for hiding information. Look at the following function:
 
@@ -90,13 +90,13 @@ Here's the cool thing. I'll try and call `capitalize`, also a function defined i
 
 You can return JavaScript objects that hold multiple functions that reference the same closure. `nice` and `ecstatic` can access `capitalize` because THEY know about it, but we cannot access it from the outside. This makes closures great for information hiding. 
 
-##Conclusion
+## Conclusion
 
 As I said before, closures appear to be a difficult concept to grasp, but that is just a deception. When you know about a few prerequisite concepts and then are shown some examples, grasping closures becomes much easier.
 
 I have included references to other resources that aided me in learning about closures. Feel free to check them out below.
 
-##Resources
+## Resources
 
 [Stack Overflow](http://stackoverflow.com/questions/111102/how-do-javascript-closures-work)
 
