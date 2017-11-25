@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Riffing About Stand-ups &#8211; House of Black and White</title>
+    <title>Build, Clean, and Rebuild in Visual Studio &#8211; House of Black and White</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="I post about my thoughts and experiences with software.">
     <meta name="robots" content="all">
     <meta name="author" content="Chris Zimmerman">
     <meta name="keywords" content="">
-    <link rel="canonical" href="http://blog.chriszimmerman.net/2016/01/20/standups/">
+    <link rel="canonical" href="http://localhost:4000/2017/11/25/Build-Clean-Rebuild.html">
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for House of Black and White" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201603071223" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?201711251604" type="text/css">
 
     <!-- Fonts -->
     
@@ -33,17 +33,17 @@
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Riffing About Stand-ups">
+    <meta property="og:title" content="Build, Clean, and Rebuild in Visual Studio">
     <meta property="og:description" content="I post about my thoughts and experiences with software.">
-    <meta property="og:url" content="http://blog.chriszimmerman.net/2016/01/20/standups/">
+    <meta property="og:url" content="http://localhost:4000/2017/11/25/Build-Clean-Rebuild.html">
     <meta property="og:site_name" content="House of Black and White">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
     
-    <meta name="twitter:title" content="Riffing About Stand-ups" />
+    <meta name="twitter:title" content="Build, Clean, and Rebuild in Visual Studio" />
     <meta name="twitter:description" content="I post about my thoughts and experiences with software." />
-    <meta name="twitter:url" content="http://blog.chriszimmerman.net/2016/01/20/standups/" />
+    <meta name="twitter:url" content="http://localhost:4000/2017/11/25/Build-Clean-Rebuild.html" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
@@ -81,7 +81,7 @@
     <header class="site-header px2 px-responsive">
   <div class="mt2 wrap">
     <div class="measure">
-      <a href="http://blog.chriszimmerman.net" class="site-title">House of Black and White</a>
+      <a href="http://localhost:4000" class="site-title">House of Black and White</a>
       <div class="clearfix"></div>
       
     </div>
@@ -95,39 +95,48 @@
 
 
 <div class="post-header mb2">
-  <h1>Riffing About Stand-ups</h1>
-  <span class="post-meta">Jan 20, 2016</span><br>
+  <h1>Build, Clean, and Rebuild in Visual Studio</h1>
+  <span class="post-meta">Nov 25, 2017</span><br>
   
   <span class="post-meta small">
   
-    3 minute read
+    1 minute read
   
   </span>
 </div>
 
 <article class="post-content">
-  <p>I recently had an experience where my team's stand-ups were taking almost <em>half an hour</em> to do. They should never go on that long. Thankfully, several people noticed, spoke up about it, and we as a team took steps to resolve the issue. This made me think about stand-ups. I figured, why not write a blog post about my stand-up thoughts and experiences?</p>
+  <p>In the .NET environment, the process of compiling source code into output files is called <em>building</em>. Two common ways of building are via an IDE, such as the Visual Studio IDE (or the recent Rider IDE from JetBrains), and via the command line using <code>devenv.exe</code>.</p>
 
-<p>For most of my programming career, I have participated in stand-up meetings, or stand-ups. Stand-ups serve as a way for members of a team to update the rest of the team on what they are doing <strong>in a concise manner</strong>. People stand in a circle, going around and saying what they did. Some people participate in a formalization of this process, referred to as "daily scrums", taken from the Scrum agile methodology. In Jim Shore's <em>The Art of Agile Development</em> he explains that participants in a daily scrum answer three questions:</p>
+<p>If you build via an IDE, you'll notice that there are three options under the Build menu: Build, Rebuild, and Clean.</p>
 
-<pre><code>1. What did I do yesterday?
-2. What will I do today?
-3. What problems are preventing me from making progress?
-</code></pre>
+<p><img src="../../../images/11-25-17/build.png" title="Visual Studio build options" alt="Visual Studio build options" /></p>
 
-<p>Stand-ups don't have to be a once-a-day deal. I have worked in places where we had two stand-ups a day: one in the morning at a designated time and one right after lunch. I've also worked in places where we had one stand-up in the late morning once all of the team members arrived in the office. I've even worked on a team where we had four 2-hour pairing sessions per day and had a stand-up before each pairing session. It's all about doing what works for you and your team.</p>
+<p>They're pretty straightforward, but have some subtle differences between them.</p>
 
-<p>An arbitrary member of the team gives their status update first. Then go around in a circle (clockwise, or counterclockwise, it doesn't matter) and have each other member of the team give their update. I've worked on teams where the developers give their updates first, then QA and business. I don't like this idea because I think it suggests that somehow devs are more important than QA and business. I don't believe that at all.</p>
+<h2>Build</h2>
 
-<p>It's very important that all members of the team <em>stand up</em> during the stand-up. This discourages stand-ups from going on for too long. If people have to stand for a long time, they get tired and want people to wrap it up.</p>
+<p>Build will compile files have changed since the last build. It will only do this for projects that contain files that have changed since the last build. Like I said, pretty straightforward.</p>
 
-<p>It's also important that stand-ups are brief. They should consicsely deliver information to the rest of the time and no more. Jim Shore suggests about 30 seconds per person for giving their update. 10 minutes for the whole team is a good max time to shoot for. They really shouldn't go longer than that. They should not feel like meetings, except that everyone is standing. Personally, I like to keep a "work diary" where I enter the work I've done, along with any challenges or triumps I've experienced. This helps me remember what information to deliver during a stand-up.</p>
+<h2>Clean</h2>
 
-<p>Try to keep non-stand-up-related chitchat before a stand-up to a minimum. While I do think it's great for team members to shoot the shit with each other (I think this promotes jelling, which is terrific for a team), it increases the time length of the stand-up, taking away from it's briefness.</p>
+<p>Clean deletes intermediate and output files (e.g. .exe and .dll files), regardless of whether source code files have changed or not.</p>
 
-<p>There are times when managers of different sorts attend a stand-up. If they tend to have long announcements, it's important that they go last. That way, members of the team can decide if the information is important to them and stay, or if it's not and get to work.</p>
+<h2>Rebuild</h2>
 
-<p>Feel free to share your stand-up experiences.</p>
+<p>Rebuild is essentially a Clean and then a Build. It deletes existing output files and performs a build, regardless if source code files have changed or not.</p>
+
+<p>There's a subtle difference between Rebuild vs. doing a Clean and then a build. Doing a Clean then a Build cleans all projects at once and then builds all projects at once, whereas doing a Rebuild will clean then build each project <em>one project at a time</em>. I can't think of any circumstances off the top of my head where this would be an issue, but it's an interesting note.</p>
+
+<h2>When to do what</h2>
+
+<p>In most cases, doing a Build should be sufficient. If you have a solution with a large project that takes a long time to build, you certainly wouldn't want to rebuild it every time if you're not making changes to it. If you're only making changes to smaller projects that build quicker, Build will be smart and only handle those projects.</p>
+
+<h2>Resources</h2>
+
+<p><a href="https://msdn.microsoft.com/en-us/library/5tdasz7h.aspx">Building and Cleaning Projects and Solutions in Visual Studio</a></p>
+
+<p><a href="https://msdn.microsoft.com/en-us/library/b20w810z.aspx">Devenv.exe (MSDN documentation)</a></p>
 
 </article>
 
@@ -147,8 +156,8 @@
   <div id="disqus_thread"></div>
   <script type="text/javascript">
     var disqus_shortname  = 'houseofblackandwhite';
-    var disqus_identifier = '/2016/01/20/standups';
-    var disqus_title      = 'Riffing About Stand-ups';
+    var disqus_identifier = '/2017/11/25/Build-Clean-Rebuild';
+    var disqus_title      = 'Build, Clean, and Rebuild in Visual Studio';
 
     (function() {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -165,71 +174,71 @@
   <h3 class="related-post-title">Related Posts</h3>
   
     <div class="post ml2">
-      <a href="/2016/02/27/dreyfus/" class="post-link">
+      <a href="/2016/02/27/dreyfus.html" class="post-link">
         <h4 class="post-title">The Dreyfus Model and "It depends"</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2016/02/07/Releases/" class="post-link">
+      <a href="/2016/02/07/Releases.html" class="post-link">
         <h4 class="post-title">Release With Less Stress</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/12/21/Poodr/" class="post-link">
+      <a href="/2016/01/20/standups.html" class="post-link">
+        <h4 class="post-title">Riffing About Stand-ups</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/2015/12/21/Poodr.html" class="post-link">
         <h4 class="post-title">Lessons Learned From Sandi Metz's Practical Object-Oriented Design In Ruby (The First Half)</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/11/28/Closures-in-JavaScript/" class="post-link">
+      <a href="/2015/11/28/Closures-in-JavaScript.html" class="post-link">
         <h4 class="post-title">Closures in JavaScript</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/10/25/Functions-In-JavaScript/" class="post-link">
+      <a href="/2015/10/25/Functions-In-JavaScript.html" class="post-link">
         <h4 class="post-title">Functions In JavaScript</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/09/30/ForEach/" class="post-link">
+      <a href="/2015/09/30/ForEach.html" class="post-link">
         <h4 class="post-title">Breaking Down Syntactic Sugar With The Saliva Of Curiosity - The foreach Statement In C#</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges/" class="post-link">
+      <a href="/2015/08/12/My-Thoughts-And-Experiences-On-Pair-Programming-Challenges.html" class="post-link">
         <h4 class="post-title">My Thoughts and Experiences on Pair Programming - Challenges</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits/" class="post-link">
+      <a href="/2015/08/11/My-Thoughts-And-Experiences-On-Pair-Programming-Benefits.html" class="post-link">
         <h4 class="post-title">My Thoughts and Experiences on Pair Programming - Benefits</h4>
         <p class="post-summary"></p>
       </a>
     </div>
   
     <div class="post ml2">
-      <a href="/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro/" class="post-link">
+      <a href="/2015/08/10/My-Thoughts-And-Experiences-On-Pair-Programming-Intro.html" class="post-link">
         <h4 class="post-title">My Thoughts and Experiences on Pair Programming - Intro</h4>
-        <p class="post-summary"></p>
-      </a>
-    </div>
-  
-    <div class="post ml2">
-      <a href="/2015/07/22/Equality-Comparison-In-JavaScript/" class="post-link">
-        <h4 class="post-title">Equality Comparison In JavaScript</h4>
         <p class="post-summary"></p>
       </a>
     </div>
