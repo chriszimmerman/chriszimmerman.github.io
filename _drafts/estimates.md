@@ -27,7 +27,7 @@ These estimates are all over the place. In my experience, when this happens, it 
 
 This wide variance in estimates warrants a conversation. Everyone goes around and gives their rationale for their estimation. It's discovered that some of the developers gave a lower esimate because they knew of some existing code in the system that would be able to be reused for this feature. The QA folks didn't know that, and several of them estimated higher because of a bunch of test cases they'll have to test. This was not known to the developers.
 
-After this discussion, the team wants to re-estimate. Once again, they put their planning poker cards face-down. On the product owner's cue, they are once again revealed:
+After this discussion, the team wants to re-estimate. Once again, they put their planning poker cards face-down. On the product owner's cue, the estimates are once again revealed:
 
 `2, 3, 3, 3, 5, 3`
 
