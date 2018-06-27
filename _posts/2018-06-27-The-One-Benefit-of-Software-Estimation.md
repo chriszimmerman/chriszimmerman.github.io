@@ -9,9 +9,9 @@ tags:
 
 Software estimates are mostly a waste of time. Here are some observations I have made in my career that have driven me to this conclusion:
 
-1) Most software development is inherently filled with unknowns and surprise complexity. This uncertainty is difficult to communicate to managers in the form of a single number.
-2) Management has a tendency to compare points between teams as a means of performance, despite the number of differences between the teams (size, skillset, and scale of point estimation, to name a few).
-3) Sometimes, if a project is big enough, teams are coerced into making estimations for batches of work that will be handed off to other teams. See observation #2 above regarding differences between teams. These differences immediately render the estimates meaningless.
+1. Most software development is inherently filled with unknowns and surprise complexity. This uncertainty is difficult to communicate to managers in the form of a single number.
+2. Management has a tendency to compare points between teams as a means of performance, despite the number of differences between the teams (size, skillset, and scale of point estimation, to name a few).
+3. Sometimes, if a project is big enough, teams are coerced into making estimations for batches of work that will be handed off to other teams. See observation #2 above regarding differences between teams. These differences immediately render the estimates meaningless.
 
 In fact, I can only think of one benefit of estimating that may be its saving grace.
 
