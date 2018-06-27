@@ -1,6 +1,5 @@
 Gemfile.lock
 *.swp
-.gitignore
 *.DS_Store
 .DS_Store
 install/
