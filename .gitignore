@@ -6,3 +6,4 @@ Gemfile.lock
 install/
 vendor/
 *.scssc
+_site
