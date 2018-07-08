@@ -41,7 +41,7 @@ I created an alias called `git amend` that does a slight modification of the `gi
 
 ### Deleting a branch
 
-The command to delete a branch in git is NOT straightforward at all. It is `git branch -D` (e.g. `git branch -D branch-to-delete). I have to think about this sometimes and don't always remember it.
+The command to delete a branch in git is NOT straightforward at all. It is `git branch -D` (e.g. `git branch -D branch-to-delete`). I have to think about this sometimes and don't always remember it.
 
 I created a straightforward alias for this command: `git delete` (e.g. `git delete branch-to-delete`).
 
