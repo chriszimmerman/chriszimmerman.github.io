@@ -4,7 +4,7 @@ I recently gave a talk at the [Philly XP meetup](https://www.meetup.com/PhillyXP
 
 ## Motivation
 
-A while back, I read several books by Adam Tornhill that had some interesting ideas about how to do behavioral analysis on your codebase. While talking about these ideas to Nick Goede, a co-organizer of Philly XP, he suggested I give a talk about it. Without having much of an idea of what I'd talk about, I said yes and committed before actually having a talk put together. I believe this is how many talks are born. :)
+A while back, I read [several](https://pragprog.com/book/atevol/software-design-x-rays) [books](https://pragprog.com/book/atcrime/your-code-as-a-crime-scene) by Adam Tornhill that had some interesting ideas about how to do behavioral analysis on your codebase. While talking about these ideas to Nick Goede, a co-organizer of Philly XP, he suggested I give a talk about it. Without having much of an idea of what I'd talk about, I said yes and committed before actually having a talk put together. I believe this is how many talks are born. :)
 
 ## Desired Outcome
 
@@ -35,15 +35,21 @@ For rehearsing the talk, I had a 4-step process:
 
 ### Record
 
-I recorded myself giving the talk on my phone using a sound recorder app. A number of sound recorder apps are freely available.
+I recorded myself giving the talk on my phone using a sound recorder app. A number of sound recorder apps are freely available for iOS and Android.
 
 ### Listen
 
-After recording the talk, I would play it back and make notes about areas where I stuttered or blanked out, things that didn't make sense, or places in the talk where the flow wasn't great. Another benefit of being able to listen to my talk is that I know how long I took. This gave me an idea of how long my talk was going to be.
+After recording the talk, I would play it back and make notes about:
+
+- Areas where I stuttered or blanked out
+- Things that didn't make sense
+- Places in the talk where the flow wasn't great.
+
+Another benefit of being able to listen to my talk is that I know how long I took. This gave me an idea of how long my talk was going to be when I actually gave it.
 
 ### Tweak
 
-Based on my recording, I would add, remove, or reorder slides. I would also adjust my notes to reflect the changes in the slides.
+Based on my recording, I would add, remove, or reorder slides. I would also adjust my notes to reflect the changes in the slides. This would become the basis for the next iteration of rehearsing the talk.
 
 ### Repeat
 
@@ -51,13 +57,15 @@ This was an iterative process. With every iteration, the talk would have more co
 
 ## Giving The Talk
 
-Despite having the material down pat, I was still really nervous. I was afraid that folks would think that what I was talking about was BS and feared having an argument with an audience member that would expose my ideas for foolishness.
+Despite having the material down pat, I was still really nervous. I was afraid that folks would think that what I was talking about was BS and I feared having an argument with an audience member that would expose my ideas for foolishness.
 
 I believe being nervous for giving a talk is normal. If you're not nervous, you may not really care about the talk you're giving.
 
-Also, my fears were completely unfounded. Everybody was very respectful and at the questions section at the end, a lot of people had really good questions, which led to great discussion. And even though I thought that my talk was basically a rehash of a talk that Adam Tornhill gave, some folks at the meetup told me that, with some work, the talk could be a great conference talk.
+Also, my fears were completely unfounded. Everybody was very respectful and at the questions section at the end, a lot of people had really good questions, which led to great discussion. And even though I thought that my talk was basically a rehash of [a talk that Adam Tornhill gave](https://www.youtube.com/watch?v=3G6PoBsDmMo), some folks at the meetup told me that, with some work, the talk could be a great conference talk.
 
-The actual speaking part wasn't too difficult for me. I've performed music and sang karaoke in front of people, and I've also moderated a reading group at work, so I have a level of comfort with addressing a group of people. I understand that other folks have trouble with this part, and that's okay. Just remember, your audience is here because they're interested in what you're there to talk about, so they're with you. They're not out to criticize you and tear you to shreds; they're here to learn.
+The actual speaking part wasn't too difficult for me. I've performed music and sang karaoke in front of people, and I've also moderated a reading group at work, so I have a level of comfort with addressing a group of people. I understand that other folks have trouble with this part, and that's okay.
+
+Just remember, your audience is here because they're interested in what you're there to talk about, so they're with you. They're not out to criticize you and tear you to shreds; they came to learn.
 
 The piece that really helps is rehearsing. **Rehearse, rehearse, rehearse.** If you know your material, you're less likely to blank out and get thrown off.
 
