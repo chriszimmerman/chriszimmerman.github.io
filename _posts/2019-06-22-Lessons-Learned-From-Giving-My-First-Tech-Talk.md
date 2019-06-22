@@ -1,4 +1,11 @@
-# Lessons Learned From Giving My First Tech Talk
+---
+layout: post
+title: Lessons Learned From Giving My First Tech Talk
+comments: true
+tags:
+- tech talks
+- public speaking
+---
 
 I recently gave a talk at the [Philly XP meetup](https://www.meetup.com/PhillyXP/) on how to use your version control data to find technical debt hotspots. It was the first tech talk that I had ever given. I'd like to talk about the process I used to come up with the talk, as well as some techniques for preparing to give the presentation.
 
@@ -28,10 +35,10 @@ I had about 70 slides and got through the talk in about 35 minutes, so I'd say I
 
 For rehearsing the talk, I had a 4-step process:
 
-1) Record
-2) Listen
-3) Tweak
-4) Repeat
+1. Record
+2. Listen
+3. Tweak
+4. Repeat
 
 ### Record
 
